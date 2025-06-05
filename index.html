@@ -1,847 +1,874 @@
-<!DOCTYPE html>
-<html lang="es">
+  <!DOCTYPE html>
+  <html lang="es">
 
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="google-site-verification" content="ogBIzZpZG34czVtV41qKoiN17OP2RxM8Q94nAbjv1iU" />
-  <title>Soluciones TI</title>
-  <!-- Bootstrap CSS -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" />
-  <!-- Font Awesome -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
-  <link rel="stylesheet" href="./css/stilos.css" />
-  <link rel="icon" href="./assets/img/Nuevos logos/fusoft simplificado.png" type="image/x-icon" />
+  <head>
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <meta name="google-site-verification" content="ogBIzZpZG34czVtV41qKoiN17OP2RxM8Q94nAbjv1iU" />
+      <title>Soluciones TI</title>
+      <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" />
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+      <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet" />
+      <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+      <link rel="stylesheet" href="./css/stilos.css" />
+      <link rel="icon" href="./assets/img/Nuevos logos/fusoft simplificado.png" type="image/x-icon" />
+  </head>
+  <body>
 
-</head>
+      <nav class="navbar navbar-expand-lg navbar-light fixed-top">
+          <div class="container-fluid">
+              <div class="d-flex align-items-center">
+                  <button class="navbar-toggler me-2" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                      aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                      <span class="navbar-toggler-icon"></span>
+                  </button>
 
-<body>
-  <section>
-    <!-- Navbar -->
-    <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top py-2">
-      <div class="container-fluid">
-        <!-- Logos y botón toggler alineados -->
-        <div class="d-flex align-items-center">
-          <!-- Botón Responsive (solo visible en móvil) -->
-          <button class="navbar-toggler me-2 d-lg-none" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-          </button>
-  
-          <!-- Logos -->
-          <div class="d-flex align-items-center">
-            <a class="navbar-brand me-2" href="#">
-              <img src="./assets/img/Nuevos logos/fUSoft corregido simple.png" alt="Logo" style="height: 40px; width: auto; max-width: 160px;">
-            </a>
-            <a class="navbar-brand d-none d-md-block" href="#">
-              <img src="./assets/img/Official Uniempresarial bussines material/Logo uniempresarial rectangular CCB_Logo Completo Uniempresarial a color.png" 
-                   alt="Logo" style="height: 40px; width: auto; max-width: 240px;">
-            </a>
+                  <div class="d-flex align-items-center">
+                      <a class="navbar-brand me-2" href="./index.html">
+                          <img src="./assets/img/Nuevos logos/fUSoft corregido.png" alt="FUSoft Logo"
+                              style="height: 50px; width: auto; max-width: 200px;">
+                      </a>
+                      <a class="navbar-brand d-none d-md-block" href="https://uniempresarial.edu.co/" target="_blank">
+                          <img src="./assets/img/Official Uniempresarial bussines material/Logo uniempresarial rectangular CCB_Logo Completo Uniempresarial a color.png"
+                              alt="Uniempresarial Logo" style="height: 50px; width: auto; max-width: 300px;">
+                      </a>
+                  </div>
+              </div>
+
+              <div class="collapse navbar-collapse justify-content-between" id="navbarNav">
+                  <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
+                      <li class="nav-item mx-2">
+                          <a class="nav-link active" aria-current="page" href="./index.html">INICIO</a>
+                      </li>
+                      <li class="nav-item mx-2">
+                          <a class="nav-link" href="./pages/nosotros.html">NOSOTROS</a>
+                      </li>
+                      <li class="nav-item dropdown mx-2">
+                          <a class="nav-link dropdown-toggle" href="#" id="serviciosDropdown" role="button"
+                              data-bs-toggle="dropdown" aria-expanded="false">SERVICIOS</a>
+                          <ul class="dropdown-menu" aria-labelledby="serviciosDropdown">
+                              <li><a class="dropdown-item" href="./pages/consultoria.html">CONSULTORIA EN SOFTWARE</a>
+                              </li>
+                              <li><a class="dropdown-item" href="./pages/desarrollo.html">DESARROLLO DE SOFTWARE A LA MEDIDA</a>
+                              </li>
+                              <li><a class="dropdown-item" href="./pages/integracion.html">INTEGRACION DE SISTEMAS</a>
+                              </li>
+                              <li><a class="dropdown-item" href="./pages/capacitaciones.html">CAPACITACION EN SOFTWARE</a>
+                              </li>
+                          </ul>
+                      </li>
+                      <li class="nav-item mx-2">
+                          <a class="nav-link" href="./pages/equipo.html">EQUIPO</a>
+                      </li>
+                      <li class="nav-item mx-2">
+                          <a class="nav-link" href="./pages/proyectos.html">PROYECTOS</a>
+                      </li>
+                      <li class="nav-item mx-2">
+                          <a class="nav-link" href="https://uniempresarial.edu.co/" target="_blank"
+                              rel="noreferrer noopener">UNIEMPRESARIAL</a>
+                      </li>
+                  </ul>
+
+                  <div class="d-flex ms-lg-3">
+                      <a href="./pages/contacto.html" class="btn btn-danger px-4 pulse-animation">CONTACTANOS</a>
+                  </div>
+              </div>
           </div>
-        </div>
-  
-        <!-- Contenido colapsable -->
-        <div class="collapse navbar-collapse justify-content-between" id="navbarNav">
-          <!-- Links centrados -->
-          <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
-            <li class="nav-item mx-2">
-              <a class="nav-link" href="../pages/nosotros.html">NOSOTROS</a>
-            </li>
-            <li class="nav-item dropdown mx-2">
-              <a class="nav-link dropdown-toggle" href="#" id="serviciosDropdown" role="button"
-                data-bs-toggle="dropdown" aria-expanded="false">SERVICIOS</a>
-              <ul class="dropdown-menu" aria-labelledby="serviciosDropdown">
-                <li><a class="dropdown-item" href="../pages/consultoria.html">CONSULTORIA EN SOFTWARE</a></li>
-                <li><a class="dropdown-item" href="../pages/desarrollo.html">DESARROLLO DE SOFTWARE A LA MEDIDA</a></li>
-                <li><a class="dropdown-item" href="../pages/integracion.html">INTEGRACION DE SISTEMAS</a></li>
-                <li><a class="dropdown-item" href="../pages/capacitaciones.html">CAPACITACION EN SOFTWARE</a></li>
-              </ul>
-            </li>
-            <li class="nav-item mx-2">
-              <a class="nav-link" href="../pages/equipo.html">EQUIPO</a>
-            </li>
-            <li class="nav-item mx-2">
-              <a class="nav-link" href="../pages/proyectos.html">PROYECTOS</a>
-            </li>
-            <li class="nav-item mx-2">
-              <a class="nav-link" href="https://uniempresarial.edu.co/" target="_blank"
-                rel="noreterrer noopener">UNIEMPRESARIAL</a>
-            </li>
-          </ul>
-          
-          <!-- Botón Contáctanos alineado a la derecha -->
-          <div class="d-flex ms-lg-3">
-            <a href="./contacto.html" class="btn btn-danger px-4">CONTACTANOS</a>
+      </nav>
+
+      <div class="hero-section">
+          <div class="floating-shapes">
+              <div class="shape shape-1"></div>
+              <div class="shape shape-2"></div>
+              <div class="shape shape-3"></div>
+              <div class="shape shape-4"></div>
+              <div class="shape shape-5"></div>
           </div>
-        </div>
+
+          <div class="hero-overlay"></div>
+          <div class="container position-relative" style="z-index: 3;">
+              <div class="hero-content" data-aos="fade-up">
+                  <i class="fas fa-cog gear-icon"></i>
+                  <h1 class="display-4 fw-bold mb-4">
+                      Transformamos tus ideas en soluciones digitales que impulsan el
+                      <span class="highlight text-secondary">futuro</span> de tu negocio
+                  </h1>
+                  <a href="./pages/contacto.html" class="btn btn-custom pulse-animation" data-aos="zoom-in" data-aos-delay="300">
+                      MAS INFORMACION
+                  </a>
+              </div>
+          </div>
       </div>
-    </nav>
-  </section>
 
-  <!-- Hero Section -->
-  <div class="hero-section">
-    <div class="hero-overlay"></div>
-    <div class="hero-content">
-      <i class="fas fa-cog gear-icon"></i>
-      <h1>
-        Transformamos tus ideas en soluciones digitales que impulsan el
-        <span class="highlight">futuro</span> de tu negocio
-      </h1>
-      <a href="./pages/contacto.html" class="hero-button">MAS INFORMACION</a>
-    </div>
+      <section class="uniempresarial-banner py-5 bg-light" data-aos="fade-up" data-aos-duration="1000">
+          <div class="container text-center">
+              <img src="./assets/img/Official Uniempresarial bussines material/Logo uniempresarial rectangular CCB_Logo Completo Uniempresarial a color.png" alt="Logo Uniempresarial" class="uniempresarial-logo mb-4">
+              <h2 class="mb-3">Forma parte de la <span class="text-red">Comunidad Uniempresarial</span></h2>
+              <p class="lead mb-3 text-muted">
+                  Conoce los programas académicos, la innovación y las oportunidades que ofrece nuestra casa matriz.
+              </p>
+              <p class="mb-3 fw-bold">Explora sus programas en áreas clave como:</p>
+              <ul class="list-inline program-list mb-4">
+                  <li class="list-inline-item">Tecnología</li>
+                  <li class="list-inline-item">Negocios</li>
+                  <li class="list-inline-item">Innovación</li>
+                  <li class="list-inline-item">Marketing</li>
+                  </ul>
+
+              <a href="https://uniempresarial.edu.co/pregrados/" target="_blank" class="btn btn-custom pulse-animation me-2">Explorar Programas</a> <a href="https://uniempresarial.edu.co/" target="_blank" class="btn btn-outline-primary mt-2 mt-md-0">Visitar Sitio Web</a> </div>
+      </section>
+
+
+      <section id="servicios" class="py-5 bg-light">
+          <div class="container text-center">
+              <div class="section-title mb-5" data-aos="fade-up">
+                  <h2>Innovación que impulsa <span class="text-red">resultados</span></h2>
+              </div>
+              <div class="row justify-content-center g-4">
+                  <div class="col-lg-3 col-md-6 mb-4" data-aos="fade-up" data-aos-delay="100">
+                      <div class="card service-card h-100">
+                          <div class="service-img-container">
+                              <img src="assets/img/Consultoria iconos/consultoria azul.png" alt="Consultoría en Soluciones"
+                                  class="img-fluid">
+                          </div>
+
+                          <div class="card-body">
+                              <h5 class="card-title">Consultoría en Soluciones</h5>
+                              <p class="card-text">
+                                  Transformamos ideas en soluciones tecnológicas para optimizar procesos y maximizar tu
+                                  competitividad digital.
+                              </p>
+                              <a href="./pages/consultoria.html" class="btn btn-primary">MÁS INFORMACIÓN</a>
+                          </div>
+                      </div>
+                  </div>
+
+                  <div class="col-lg-3 col-md-6 mb-4" data-aos="fade-up" data-aos-delay="200">
+                      <div class="card service-card h-100">
+                          <div class="service-img-container">
+                              <img src="assets/img/Software a la medida iconos/software azul.png"
+                                  alt="Desarrollo de Software" class="img-fluid">
+                          </div>
+
+                          <div class="card-body">
+                              <h5 class="card-title">Desarrollo de Soluciones</h5>
+                              <p class="card-text">
+                                  Transformamos tu visión en código, creando soluciones a medida que potencian la
+                                  eficiencia de tu empresa.
+                              </p>
+                              <a href="./pages/desarrollo.html" class="btn btn-primary">MÁS INFORMACIÓN</a>
+                          </div>
+                      </div>
+                  </div>
+
+                  <div class="col-lg-3 col-md-6 mb-4" data-aos="fade-up" data-aos-delay="300">
+                      <div class="card service-card h-100">
+                          <div class="service-img-container">
+                              <img src="assets/img/Integración de sistemas logos/Integración de sistemas azul.png"
+                                  alt="Integración de Sistemas" class="img-fluid">
+                          </div>
+
+                          <div class="card-body">
+                              <h5 class="card-title">Integración de Sistemas</h5>
+                              <p class="card-text">
+                                  Conectamos tus plataformas digitales para un flujo de trabajo eficiente y sin
+                                  interrupciones.
+                              </p>
+                              <a href="./pages/integracion.html" class="btn btn-primary">MÁS INFORMACIÓN</a>
+                          </div>
+                      </div>
+                  </div>
+
+                  <div class="col-lg-3 col-md-6 mb-4" data-aos="fade-up" data-aos-delay="400">
+                      <div class="card service-card h-100">
+                          <div class="service-img-container">
+                              <img src="assets/img/Capacitaciones iconos/Capacitaciones azul.png"
+                                  alt="Capacitación en Software" class="img-fluid">
+                          </div>
+
+                          <div class="card-body">
+                              <h5 class="card-title">Capacitación en Software</h5>
+                              <p class="card-text">
+                                  Potencia el conocimiento de tu equipo con formación especializada y metodologías
+                                  prácticas.
+                              </p>
+                              <a href="./pages/capacitaciones.html" class="btn btn-primary">MÁS INFORMACIÓN</a>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </section>
+      <section id="mendix-portfolio-banner" class="mendix-portfolio-banner py-5" data-aos="fade-up" data-aos-duration="1000">
+        <div class="container text-center">
+            <img src="./assets/img/Nuevos logos/fUSoft corregido.png" alt="Logo Mendix" class="mendix-logo mb-4">
+            <h2 class="mb-3">Explora Nuestro <span class="text-red">Portafolio Mendix</span></h2>
+            <p class="lead mb-3 text-muted">
+                En FUSoft, hemos desarrollado soluciones innovadoras y a la medida utilizando la potente plataforma Mendix.
+                Descubre cómo nuestras aplicaciones de bajo código están transformando negocios.
+            </p>
+            <a href="https://fusoft2100-sandbox.mxapps.io/index.html?profile=Responsive" target="_blank" class="btn btn-custom pulse-animation">
+                VER PORTAFOLIO MENDIX
+            </a>
+        </div>
+    </section>
+
+      <section class="about-us py-5 bg-white" data-aos="fade-up" data-aos-duration="1500">
+          <div class="container">
+              <div class="row align-items-center">
+                  <div class="col-md-6 text-center mb-4 mb-md-0" data-aos="fade-right" data-aos-duration="800">
+                      <div class="image-container">
+                          <img src="assets/img/porque.jpg" alt="Imagen representativa"
+                              class="img-fluid rounded-circle shadow-lg" />
+                      </div>
+                  </div>
+
+                  <div class="col-md-6" data-aos="fade-left" data-aos-duration="800">
+                      <div class="section-title text-start mb-4">
+                          <h2>¿Quiénes <span class="text-red">somos?</span></h2>
+                      </div>
+                      <p class="description text-muted mb-4" style="font-size: 1.1rem; line-height: 1.6">
+                          Somos un equipo innovador nacido en el corazón de
+                          <span class="highlight text-secondary">Uniempresarial</span>, donde
+                          la experiencia académica se fusiona con el dinamismo empresarial.
+                          Bajo la mentoría de profesionales expertos, hemos creado un
+                          espacio único que combina el rigor universitario con soluciones
+                          tecnológicas de vanguardia.
+                      </p>
+                      <p class="description text-muted mb-4" style="font-size: 1.1rem; line-height: 1.6">
+                          Nuestro grupo reúne el talento joven más destacado con la guía de
+                          mentores especializados, ofreciendo un enfoque fresco y
+                          profesional.
+                      </p>
+                      <a href="./pages/nosotros.html" class="btn btn-custom px-4 py-2 rounded-pill shadow-lg mt-3"
+                          data-aos="zoom-in" data-aos-duration="1000"
+                          style="font-size: 1.2rem; transition: transform 0.3s ease">
+                          Conoce más de nosotros
+                      </a>
+                  </div>
+              </div>
+          </div>
+      </section>
+
+      <section id="portafolio" class="bg-light py-5" data-aos="fade-up" data-aos-duration="1500">
+          <div class="container text-center">
+              <div class="section-title mb-5" data-aos="fade-up">
+                  <h2>Nuestro <span class="text-red">Portafolio</span></h2>
+              </div>
+              <div class="row g-4">
+                  <div class="col-md-4" data-aos="zoom-in" data-aos-duration="1000" data-aos-delay="200">
+                      <div class="portfolio-item">
+                          <video class="portfolio-video rounded shadow-lg" autoplay loop muted playsinline>
+                              <source src="assets/video/22.mp4" type="video/mp4" />
+                              Tu navegador no soporta videos HTML5.
+                          </video>
+                          <div class="portfolio-overlay">
+                              <p class="portfolio-description">
+                                  Plataforma innovadora para facilitar la compra y arriendo de
+                                  apartamentos en Bogotá, mejorando la experiencia de
+                                  propietarios y arrendatarios.
+                              </p>
+                          </div>
+                      </div>
+                  </div>
+
+                  <div class="col-md-4" data-aos="zoom-in" data-aos-duration="1000" data-aos-delay="400">
+                      <div class="portfolio-item">
+                          <video class="portfolio-video rounded shadow-lg" autoplay loop muted playsinline>
+                              <source src="assets/video/carton.mp4" type="video/mp4" />
+                              Tu navegador no soporta videos HTML5.
+                          </video>
+                          <div class="portfolio-overlay">
+                              <p class="portfolio-description">
+                                  Se desarrolló la página web solicitada por la empresa.
+                              </p>
+                          </div>
+                      </div>
+                  </div>
+
+                  <div class="col-md-4" data-aos="zoom-in" data-aos-duration="1000" data-aos-delay="600">
+                      <div class="portfolio-item">
+                          <video class="portfolio-video rounded shadow-lg" autoplay loop muted playsinline>
+                              <source src="assets/video//proyectoGeneral.mp4" type="video/mp4" />
+                              Tu navegador no soporta videos HTML5.
+                          </video>
+                          <div class="portfolio-overlay">
+                              <p class="portfolio-description">
+                                  Unificamos en una sola plataforma todos los proyectos en
+                                  ejecución, brindando acceso centralizado para los encargados
+                                  de distintas áreas.
+                              </p>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </section>
+
+      
+
+      <section class="team-section text-center py-5" data-aos="fade-up" data-aos-duration="1500">
+        <div class="container">
+          <h2 class="fw-bold mb-5" style="font-size: 2.5rem; color: #333">
+            Nuestro <span class="text-danger">Equipo</span>
+          </h2>
+
+          <!-- Carrusel Mejorado -->
+          <div class="team-carousel-container">
+            <div id="teamCarousel" class="carousel slide" data-bs-ride="carousel" data-bs-interval="5000" data-bs-touch="true">
+              <div class="carousel-inner">
+                <!-- Grupo 1 -->
+                <div class="carousel-item active">
+                  <div class="row justify-content-center">
+                    <div class="col-lg-3 col-md-6 col-12 d-flex justify-content-center mb-4">
+                      <div class="card team-card">
+                        <div class="card-body text-center">
+                          <div class="img-container">
+                            <img src="assets/img/integrantes/Alejandro Aguilera.jpg" alt="Alejandro Aguilera" class="img-fluid" />
+                          </div>
+                          <h5 class="fw-bold mt-3">Alejandro Aguilera</h5>
+                          <p class="text-muted">Bases de Datos</p>
+                          <a href="https://linktr.ee/alejoaguilera" target="_blank" class="btn btn-custom">Portafolio</a>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="col-lg-3 col-md-6 col-12 d-flex justify-content-center mb-4">
+                      <div class="card team-card">
+                        <div class="card-body text-center">
+                          <div class="img-container">
+                            <img src="assets/img/integrantes/Anderson Castro.jpg" alt="Anderson Castro" class="img-fluid" />
+                          </div>
+                          <h5 class="fw-bold mt-3">Anderson Castro</h5>
+                          <p class="text-muted">Soporte</p>
+                          <a href="https://heylink.me/AndersonCC/" target="_blank" class="btn btn-custom">Portafolio</a>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="col-lg-3 col-md-6 col-12 d-flex justify-content-center mb-4">
+                      <div class="card team-card">
+                        <div class="card-body text-center">
+                          <div class="img-container">
+                            <img src="assets/img/integrantes/Angel Canchilla.jpg" alt="Angel Canchilla" class="img-fluid" />
+                          </div>
+                          <h5 class="fw-bold mt-3">Angel Canchilla</h5>
+                          <p class="text-muted">Desarrollador</p>
+                          <a href="https://linktr.ee/Angel_Da" target="_blank" class="btn btn-custom">Portafolio</a>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="col-lg-3 col-md-6 col-12 d-flex justify-content-center mb-4">
+                      <div class="card team-card">
+                        <div class="card-body text-center">
+                          <div class="img-container">
+                            <img src="assets/img/integrantes/Brayam chavarro.jpg" alt="Brayam Chavarro" class="img-fluid" />
+                          </div>
+                          <h5 class="fw-bold mt-3">Brayam Chavarro</h5>
+                          <p class="text-muted">Bases de Datos</p>
+                          <a href="https://heylink.me/AndersonCC/" target="_blank" class="btn btn-custom">Portafolio</a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                
+                <!-- Grupo 2 -->
+                <div class="carousel-item">
+                  <div class="row justify-content-center">
+                    <div class="col-lg-3 col-md-6 col-12 d-flex justify-content-center mb-4">
+                      <div class="card team-card">
+                        <div class="card-body text-center">
+                          <div class="img-container">
+                            <img src="assets/img/integrantes/cristian reyes-removebg-preview.jpg" alt="Cristian Reyes" class="img-fluid" />
+                          </div>
+                          <h5 class="fw-bold mt-3">Cristian Reyes</h5>
+                          <p class="text-muted">Desarrollador</p>
+                          <a href="https://linktr.ee/Cristian_Reyes" target="_blank" class="btn btn-custom">Portafolio</a>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="col-lg-3 col-md-6 col-12 d-flex justify-content-center mb-4">
+                      <div class="card team-card">
+                        <div class="card-body text-center">
+                          <div class="img-container">
+                            <img src="assets/img/integrantes/crsitian vega.jpg" alt="Cristian Vega" class="img-fluid" />
+                          </div>
+                          <h5 class="fw-bold mt-3">Cristian Vega</h5>
+                          <p class="text-muted">Inteligencia Artificial</p>
+                          <a href="https://linktr.ee/cristian_vega_cv" target="_blank" class="btn btn-custom">Portafolio</a>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="col-lg-3 col-md-6 col-12 d-flex justify-content-center mb-4">
+                      <div class="card team-card">
+                        <div class="card-body text-center">
+                          <div class="img-container">
+                            <img src="assets/img/integrantes/Daniel Garcia.jpg" alt="Daniel Garcia" class="img-fluid" />
+                          </div>
+                          <h5 class="fw-bold mt-3">Daniel Garcia</h5>
+                          <p class="text-muted">Diseño Web</p>
+                          <a href="https://linktr.ee/garciadanielof" target="_blank" class="btn btn-custom">Portafolio</a>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="col-lg-3 col-md-6 col-12 d-flex justify-content-center mb-4">
+                      <div class="card team-card">
+                        <div class="card-body text-center">
+                          <div class="img-container">
+                            <img src="assets/img/integrantes/Daniela Bernal.jpg" alt="Daniela Bernal" class="img-fluid" />
+                          </div>
+                          <h5 class="fw-bold mt-3">Daniela Bernal</h5>
+                          <p class="text-muted">Finanzas y Comercio Exterior</p>
+                          <a href="https://linktr.ee/dani11bernal" target="_blank" class="btn btn-custom">Portafolio</a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                
+                <!-- Grupo 3 -->
+                <div class="carousel-item">
+                  <div class="row justify-content-center">
+                    <div class="col-lg-3 col-md-6 col-12 d-flex justify-content-center mb-4">
+                      <div class="card team-card">
+                        <div class="card-body text-center">
+                          <div class="img-container">
+                            <img src="assets/img/integrantes/David Niño.jpg" alt="David Niño" class="img-fluid" />
+                          </div>
+                          <h5 class="fw-bold mt-3">David Niño</h5>
+                          <p class="text-muted">Diseñador Web</p>
+                          <a href="https://linktr.ee/David_nino" target="_blank" class="btn btn-custom">Portafolio</a>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="col-lg-3 col-md-6 col-12 d-flex justify-content-center mb-4">
+                      <div class="card team-card">
+                        <div class="card-body text-center">
+                          <div class="img-container">
+                            <img src="assets/img/integrantes/David Perez.jpg" alt="David Perez" class="img-fluid" />
+                          </div>
+                          <h5 class="fw-bold mt-3">David Paez</h5>
+                          <p class="text-muted">Inteligencia Artificial</p>
+                          <a href="https://linktr.ee/David10Paez" target="_blank" class="btn btn-custom">Portafolio</a>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="col-lg-3 col-md-6 col-12 d-flex justify-content-center mb-4">
+                      <div class="card team-card">
+                        <div class="card-body text-center">
+                          <div class="img-container">
+                            <img src="assets/img/integrantes/Deivid Arevalo.jpg" alt="Deivid Arevalo" class="img-fluid" />
+                          </div>
+                          <h5 class="fw-bold mt-3">Deivid Arevalo</h5>
+                          <p class="text-muted">Diseño Web</p>
+                          <a href="https://linktr.ee/darevalo79" target="_blank" class="btn btn-custom">Portafolio</a>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="col-lg-3 col-md-6 col-12 d-flex justify-content-center mb-4">
+                      <div class="card team-card">
+                        <div class="card-body text-center">
+                          <div class="img-container">
+                            <img src="assets/img/integrantes/Deivid Garcia.jpg" alt="Deivid Garcia" class="img-fluid" />
+                          </div>
+                          <h5 class="fw-bold mt-3">Deivid Garcia</h5>
+                          <p class="text-muted">Negocios Internacionales</p>
+                          <a href="https://linktr.ee/dim0864" target="_blank" class="btn btn-custom">Portafolio</a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                
+                <!-- Grupo 4 -->
+                <div class="carousel-item">
+                  <div class="row justify-content-center">
+                    <div class="col-lg-3 col-md-6 col-12 d-flex justify-content-center mb-4">
+                      <div class="card team-card">
+                        <div class="card-body text-center">
+                          <div class="img-container">
+                            <img src="assets/img/integrantes/Fabian Camargo.jpg" alt="Fabian Camargo" class="img-fluid" />
+                          </div>
+                          <h5 class="fw-bold mt-3">Fabian Camargo</h5>
+                          <p class="text-muted">Inteligencia Artificial</p>
+                          <a href="https://linktr.ee/Iskahn" target="_blank" class="btn btn-custom">Portafolio</a>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="col-lg-3 col-md-6 col-12 d-flex justify-content-center mb-4">
+                      <div class="card team-card">
+                        <div class="card-body text-center">
+                          <div class="img-container">
+                            <img src="assets/img/integrantes/holmant Alarcon.jpg" alt="Holmant Alarcon" class="img-fluid" />
+                          </div>
+                          <h5 class="fw-bold mt-3">Holmant Alarcon</h5>
+                          <p class="text-muted">Soporte</p>
+                          <a href="https://linktr.ee/HolmantAlarcon" target="_blank" class="btn btn-custom">Portafolio</a>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="col-lg-3 col-md-6 col-12 d-flex justify-content-center mb-4">
+                      <div class="card team-card">
+                        <div class="card-body text-center">
+                          <div class="img-container">
+                            <img src="assets/img/integrantes/Juan Piraquive.jpg" alt="Juan Piraquive" class="img-fluid" />
+                          </div>
+                          <h5 class="fw-bold mt-3">Juan Piraquive</h5>
+                          <p class="text-muted">Soporte</p>
+                          <a href="https://linktr.ee/Pirvito" target="_blank" class="btn btn-custom">Portafolio</a>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="col-lg-3 col-md-6 col-12 d-flex justify-content-center mb-4">
+                      <div class="card team-card">
+                        <div class="card-body text-center">
+                          <div class="img-container">
+                            <img src="assets/img/integrantes/Juan Gomez.jpg" alt="Juan Gomez" class="img-fluid" />
+                          </div>
+                          <h5 class="fw-bold mt-3">Juan Gomez</h5>
+                          <p class="text-muted">Diseño Web</p>
+                          <a href="https://linktr.ee/jGomezL" target="_blank" class="btn btn-custom">Portafolio</a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                
+                <!-- Grupo 5 -->
+                <div class="carousel-item">
+                  <div class="row justify-content-center">
+                    <div class="col-lg-3 col-md-6 col-12 d-flex justify-content-center mb-4">
+                      <div class="card team-card">
+                        <div class="card-body text-center">
+                          <div class="img-container">
+                            <img src="assets/img/integrantes/Melissa Saenz.jpg" alt="Karol Garzon" class="img-fluid" />
+                          </div>
+                          <h5 class="fw-bold mt-3">Melissa Saenz</h5>
+                          <p class="text-muted">Investigadora</p>
+                          <a href="https://linktr.ee/lamelaa17" target="_blank" class="btn btn-custom">Portafolio</a>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="col-lg-3 col-md-6 col-12 d-flex justify-content-center mb-4">
+                      <div class="card team-card">
+                        <div class="card-body text-center">
+                          <div class="img-container">
+                            <img src="assets/img/integrantes/Daniel chisica.jpg" alt="Laura Casteblanco" class="img-fluid" />
+                          </div>
+                          <h5 class="fw-bold mt-3">Daniel Chisica</h5>
+                          <p class="text-muted">Finanzas</p>
+                          <a href="https://linktr.ee/DanielChisica" target="_blank" class="btn btn-custom">Portafolio</a>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="col-lg-3 col-md-6 col-12 d-flex justify-content-center mb-4">
+                      <div class="card team-card">
+                        <div class="card-body text-center">
+                          <div class="img-container">
+                            <img src="assets/img/integrantes/Luis Forero.jpg" alt="Luis Forero" class="img-fluid" />
+                          </div>
+                          <h5 class="fw-bold mt-3">Luis Forero</h5>
+                          <p class="text-muted">Desarrollador</p>
+                          <a href="https://linktr.ee/luissforero" target="_blank" class="btn btn-custom">Portafolio</a>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="col-lg-3 col-md-6 col-12 d-flex justify-content-center mb-4">
+                      <div class="card team-card">
+                        <div class="card-body text-center">
+                          <div class="img-container">
+                            <img src="assets/img/integrantes/Paula Rubio.jpg" alt="Paula Rubio" class="img-fluid" />
+                          </div>
+                          <h5 class="fw-bold mt-3">Paula Rubio</h5>
+                          <p class="text-muted">Investigadora</p>
+                          <a href="https://linktr.ee/PaulaAndreaRubioMoreno" target="_blank" class="btn btn-custom">Portafolio</a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                
+                <!-- Grupo 6 -->
+                <div class="carousel-item">
+                  <div class="row justify-content-center">
+                    <div class="col-lg-3 col-md-6 col-12 d-flex justify-content-center mb-4">
+                      <div class="card team-card">
+                        <div class="card-body text-center">
+                          <div class="img-container">
+                            <img src="assets/img/integrantes/Santiago Garcia.jpg" alt="Santiago Garcia" class="img-fluid" />
+                          </div>
+                          <h5 class="fw-bold mt-3">Santiago Garcia</h5>
+                          <p class="text-muted">Desarrollador</p>
+                          <a href="https://linktr.ee/Santiago2412?utm_source=linktree_admin_share" target="_blank" class="btn btn-custom">Portafolio</a>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="col-lg-3 col-md-6 col-12 d-flex justify-content-center mb-4">
+                      <div class="card team-card">
+                        <div class="card-body text-center">
+                          <div class="img-container">
+                            <img src="assets/img/integrantes/Santiago Marin.jpg" alt="Santiago Marin" class="img-fluid" />
+                          </div>
+                          <h5 class="fw-bold mt-3">Santiago Marin</h5>
+                          <p class="text-muted">Bases de Datos</p>
+                          <a href="#" target="_blank" class="btn btn-custom">Portafolio</a>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="col-lg-3 col-md-6 col-12 d-flex justify-content-center mb-4">
+                      <div class="card team-card">
+                        <div class="card-body text-center">
+                          <div class="img-container">
+                            <img src="assets/img/integrantes/Sebastian Romero.jpg" alt="Sebastian Romero" class="img-fluid" />
+                          </div>
+                          <h5 class="fw-bold mt-3">Sebastian Romero</h5>
+                          <p class="text-muted">Inteligencia Artificial</p>
+                          <a href="https://linktr.ee/SebastianDavidRomero" target="_blank" class="btn btn-custom">Portafolio</a>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="col-lg-3 col-md-6 col-12 d-flex justify-content-center mb-4">
+                      <div class="card team-card">
+                        <div class="card-body text-center">
+                          <div class="img-container">
+                            <img src="assets/img/integrantes/Zullie Diaz.jpg" alt="Zullie Diaz" class="img-fluid" />
+                          </div>
+                          <h5 class="fw-bold mt-3">Zullie Diaz</h5>
+                          <p class="text-muted">Investigadora</p>
+                          <a href="https://www.atom.bio/zulliediaz" target="_blank" class="btn btn-custom">Portafolio</a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                
+                <!-- Grupo 7 -->
+                <div class="carousel-item">
+                  <div class="row justify-content-center">
+                    <div class="col-lg-3 col-md-6 col-12 d-flex justify-content-center mb-4">
+                      <div class="card team-card">
+                        <div class="card-body text-center">
+                          <div class="img-container">
+                            <img src="assets/img/integrantes/Eidan Cardenas.jpg" alt="Eidan Cardenas" class="img-fluid" />
+                          </div>
+                          <h5 class="fw-bold mt-3">Eidan Cardenas</h5>
+                          <p class="text-muted">Bases de Datos</p>
+                          <a href="https://linktr.ee/eidancardenas" target="_blank" class="btn btn-custom">Portafolio</a>
+                        </div>
+                      </div>
+                    </div>
+                
+                
+
+                    <div class="col-lg-3 col-md-6 col-12 d-flex justify-content-center mb-4">
+                      <div class="card team-card">
+                        <div class="card-body text-center">
+                          <div class="img-container">
+                            <img src="assets/img/integrantes/Alejandra Cano.jpg" alt="Eidan Cardenas" class="img-fluid" />
+                          </div>
+                          <h5 class="fw-bold mt-3">Alejandra Cano</h5>
+                          <p class="text-muted">Finanzas</p>
+                          <a href="https://linktr.ee/Alejandracano27" target="_blank" class="btn btn-custom">Portafolio</a>
+                        </div>
+                      </div>
+                    </div>
+                
+                    <div class="col-lg-3 col-md-6 col-12 d-flex justify-content-center mb-4">
+                      <div class="card team-card">
+                        <div class="card-body text-center">
+                          <div class="img-container">
+                            <img src="assets/img/integrantes/Juan Alarcon.jpg" alt="Eidan Cardenas" class="img-fluid" />
+                          </div>
+                          <h5 class="fw-bold mt-3">Juan Alarcon</h5>
+                          <p class="text-muted">Inteligencia Artificial</p>
+                          <a href="https://linktr.ee/juandasss" target="_blank" class="btn btn-custom">Portafolio</a>
+                        </div>
+                      </div>
+                    </div>
+                  
+
+                
+                    <div class="col-lg-3 col-md-6 col-12 d-flex justify-content-center mb-4">
+                      <div class="card team-card">
+                        <div class="card-body text-center">
+                          <div class="img-container">
+                            <img src="assets/img/integrantes/Andres Quintana.jpg" alt="Eidan Cardenas" class="img-fluid" />
+                          </div>
+                          <h5 class="fw-bold mt-3">Andres Quintana</h5>
+                          <p class="text-muted">Soporte</p>
+                          <a href="https://linktr.ee/andresfqq" target="_blank" class="btn btn-custom">Portafolio</a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Indicadores -->
+              <div class="carousel-indicators position-relative mt-4">
+                <button type="button" data-bs-target="#teamCarousel" data-bs-slide-to="0" class="active"></button>
+                <button type="button" data-bs-target="#teamCarousel" data-bs-slide-to="1"></button>
+                <button type="button" data-bs-target="#teamCarousel" data-bs-slide-to="2"></button>
+                <button type="button" data-bs-target="#teamCarousel" data-bs-slide-to="3"></button>
+                <button type="button" data-bs-target="#teamCarousel" data-bs-slide-to="4"></button>
+                <button type="button" data-bs-target="#teamCarousel" data-bs-slide-to="5"></button>
+                <button type="button" data-bs-target="#teamCarousel" data-bs-slide-to="6"></button>
+              </div>
+
+              <!-- Controles -->
+              <button class="carousel-control-prev" type="button" data-bs-target="#teamCarousel"
+                data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+              </button>
+              <button class="carousel-control-next" type="button" data-bs-target="#teamCarousel"
+                data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+              </button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <footer class="bg-primary text-light py-5">
+        <div class="container">
+            <div class="row">
+                <!-- Logo y Redes Sociales -->
+                <div class="col-md-3 text-center text-md-start">
+                    <img src="../assets/img/Logo uniempresarial rectangular CCB_Logo Completo Uniempresarial a color.png  "
+                        alt="FUSoft Logo" class="mb-3" style="max-width: 250px" />
+                    <div class="d-flex justify-content-center justify-content-md-start gap-2">
+                        <a href="https://youtube.com/@fusoft-ue?si=_kKNXcFy6iKOH2Jp" class="text-light"><i
+                                class="fab fa-youtube fa-lg"></i></a>
+                        <a href="https://www.linkedin.com/company/fusoftuniempresarial/posts/?feedView=all" class="text-light"><i
+                                class="fab fa-linkedin fa-lg"></i></a>
+                    </div>
+                </div>
+
+  <!-- Programas y Enlaces Directos -->
+  <div class="col-md-3">
+    <h5 class="fw-bold">Nuestros Servicios</h5>
+    <ul class="list-unstyled">
+      <li>
+        <a href="../pages/consultoria.html" class="text-light text-decoration-none">Consultoria en software</a>
+      </li>
+      <li>
+        <a href="../pages/desarrollo.html" class="text-light text-decoration-none">Desarrollo de Software a la
+          Medida</a>
+      </li>
+      <li>
+        <a href="../pages/integracion.html" class="text-light text-decoration-none">Integración de Sistemas</a>
+      </li>
+      <li>
+        <a href="../pages/capacitaciones.html" class="text-light text-decoration-none">Capacitacion en
+          Software</a>
+      </li>
+    </ul>
+    <h5 class="fw-bold mt-4">Enlaces Directos</h5>
+    <ul class="list-unstyled">
+      <li>
+        <a href="#" class="text-light text-decoration-none">Uniempresarial en Cifras</a>
+      </li>
+      <li>
+        <a href="https://www.kawak.com.co/uniempresarial/index.php?ref=bWFpbi9ob21lLnBocA%3D%3D&exp=1"
+          target="_blank" rel="noreterrer noopener" class="text-light text-decoration-none">Sistema de Gestión
+          Académica</a>
+      </li>
+      <li>
+        <a href="https://uniempresarial.edu.co/faqs/" target="_blank" rel="noreterrer noopener"
+          class="text-light text-decoration-none">FAQs</a>
+      </li>
+    </ul>
   </div>
 
-  <!-- Servicios -->
-  <section id="servicios" class="py-5 bg-light">
-    <div class="container text-center">
-      <h2 class="mb-5 text-body fw-bold">
-        Innovación que impulsa <span class="text-danger">resultados</span>
-      </h2>
-      <div class="row justify-content-center g-4">
-        <!-- Consultoría en Software -->
-        <div class="col-lg-3 col-md-6 col-12">
-          <div class="card shadow-lg border-0 rounded-4 h-100 service-card p-3" data-aos="fade-up" data-aos-delay="100">
-            <div class="service-icon text-center">
-              <img src="assets/img/Consultoria iconos/consultoria azul.png" class="img-fluid"
-                alt="Consultoría en Software" />
-            </div>
-            <div class="card-body d-flex flex-column text-center">
-              <h5 class="card-title text-danger mb-3">Consultoría en Soluciones</h5>
-              <p class="card-text mb-4 text-muted">
-                Transformamos ideas en soluciones tecnológicas para optimizar procesos y maximizar tu competitividad
-                digital.
-              </p>
-              <a href="./pages/consultoria.html" class="btn btn-danger mt-auto">Más información</a>
-            </div>
-          </div>
-        </div>
+  <!-- Normatividad -->
+  <div class="col-md-3">
+    <h5 class="fw-bold">Normatividad y Políticas</h5>
+    <ul class="list-unstyled">
+      <li>
+        <a href="https://uniempresarial.edu.co/sobre-nosotros/" target="_blank" rel="noreterrer noopener"
+          class="text-light text-decoration-none">Acceso a la Información Pública</a>
+      </li>
+      <li>
+        <a href="../assets/pdf/Derechos-pecuniarios-2025.pdf" target="_blank" rel="noreterrer noopener"
+          class="text-light text-decoration-none">Derechos Pecuniarios 2025</a>
+      </li>
+      <li>
+        <a href="../assets/pdf/derechos-pecuniarios-2024.pdf" target="_blank" rel="noreterrer noopener"
+          class="text-light text-decoration-none">Derechos Pecuniarios 2024</a>
+      </li>
+      <li>
+        <a href="../assets/pdf/Estados-Financieros-Uniempresarial.pdf" target="_blank" rel="noreterrer noopener"
+          class="text-light text-decoration-none">Estados Financieros</a>
+      </li>
+    </ul>
+  </div>
 
-        <!-- Desarrollo de Software -->
-        <div class="col-lg-3 col-md-10 col-12">
-          <div class="card shadow-lg border-0 rounded-4 h-100 service-card p-3" data-aos="fade-up" data-aos-delay="200">
-            <div class="service-icon text-center">
-              <img src="assets/img/Software a la medida iconos/software azul.png" class="img-fluid"
-                alt="Desarrollo de Software" />
-            </div>
-            <div class="card-body d-flex flex-column text-center">
-              <h5 class="card-title text-danger mb-3">Desarrollo de Soluciones</h5>
-              <p class="card-text mb-4 text-muted">
-                Transformamos tu visión en código, creando soluciones a medida que potencian la eficiencia de tu
-                empresa.
-              </p>
-              <a href="./pages/desarrollo.html" class="btn btn-danger mt-auto">Más información</a>
-            </div>
-          </div>
-        </div>
-
-        <!-- Integración de Sistemas -->
-        <div class="col-lg-3 col-md-10 col-12">
-          <div class="card shadow-lg border-0 rounded-4 h-100 service-card p-3" data-aos="fade-up" data-aos-delay="300">
-            <div class="service-icon text-center">
-              <img src="assets/img/Integración de sistemas logos/Integración de sistemas azul.png" class="img-fluid"
-                alt="Integración de Sistemas" />
-            </div>
-            <div class="card-body d-flex flex-column text-center">
-              <h5 class="card-title text-danger mb-3">Integración de Sistemas</h5>
-              <p class="card-text mb-4 text-muted">
-                Conectamos tus plataformas digitales para un flujo de trabajo eficiente y sin interrupciones.
-              </p>
-              <a href="./pages/integracion.html" class="btn btn-danger mt-auto">Más información</a>
-            </div>
-          </div>
-        </div>
-
-        <!-- Capacitación en Software -->
-        <div class="col-lg-3 col-md-10 col-12">
-          <div class="card shadow-lg border-0 rounded-4 h-100 service-card p-3" data-aos="fade-up" data-aos-delay="400">
-            <div class="service-icon text-center">
-              <img src="assets/img/Capacitaciones iconos/Capacitaciones azul.png" class="img-fluid"
-                alt="Capacitación en Software" />
-            </div>
-            <div class="card-body d-flex flex-column text-center">
-              <h5 class="card-title text-danger mb-3">Capacitación en Software</h5>
-              <p class="card-text mb-4 text-muted">
-                Potencia el conocimiento de tu equipo con formación especializada y metodologías prácticas.
-              </p>
-              <a href="./pages/capacitaciones.html" class="btn btn-danger mt-auto">Más información</a>
-            </div>
-          </div>
-        </div>
-      </div>
+  <!-- Mapa y Contacto -->
+  <div class="col-md-3 text-center text-md-start">
+    <h5 class="fw-bold">Ubicación</h5>
+    <div class="map-container" style="
+        height: 150px;
+        border-radius: 10px;
+        overflow: hidden;
+        margin-bottom: 10px;
+      ">
+      <iframe
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3976.973787931933!2d-74.06826532520925!3d4.629385496328969!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8e3f99bb2cf3b09f%3A0xf1e2f25691e3f1d8!2sCra.%2033a%20%2330-20%2C%20Bogot%C3%A1%2C%20Colombia!5e0!3m2!1ses!2sus!4v1693328598471!5m2!1ses!2sus"
+        width="100%" height="100%" style="border: 0" allowfullscreen="" loading="lazy"></iframe>
     </div>
-  </section>
-
-
-  <section class="about-us py-5 bg-light" data-aos="fade-up" data-aos-duration="1500">
-    <div class="container">
-      <div class="row align-items-center">
-        <!-- Imagen -->
-        <div class="col-md-6 text-center mb-4 mb-md-0" data-aos="fade-right" data-aos-duration="800">
-          <div class="image-container">
-            <img src="assets/img/porque.jpg" alt="Imagen representativa" class="img-fluid rounded-circle shadow-lg" />
-          </div>
-        </div>
-
-        <!-- Contenido de texto -->
-        <div class="col-md-6" data-aos="fade-left" data-aos-duration="800">
-          <h2 class="section-title mb-4 text-dark" style="font-size: 2.5rem; font-weight: bold">
-            ¿Quiénes somos?
-          </h2>
-          <p class="description text-muted mb-4" style="font-size: 1.1rem; line-height: 1.6">
-            Somos un equipo innovador nacido en el corazón de
-            <span class="highlight text-danger">Uniempresarial</span>, donde
-            la experiencia académica se fusiona con el dinamismo empresarial.
-            Bajo la mentoría de profesionales expertos, hemos creado un
-            espacio único que combina el rigor universitario con soluciones
-            tecnológicas de vanguardia.
-          </p>
-          <p class="description text-muted mb-4" style="font-size: 1.1rem; line-height: 1.6">
-            Nuestro grupo reúne el talento joven más destacado con la guía de
-            mentores especializados, ofreciendo un enfoque fresco y
-            profesional.
-          </p>
-          <a href="./pages/nosotros.html" class="btn btn-danger px-4 py-2 rounded-pill shadow-lg mt-3"
-            data-aos="zoom-in" data-aos-duration="1000" style="font-size: 1.2rem; transition: transform 0.3s ease">
-            Conoce más de nosotros
-          </a>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section id="portafolio" class="bg-light py-5" data-aos="fade-up" data-aos-duration="1500">
-    <div class="container text-center">
-      <h2 class="mb-5 text-dark" style="font-size: 2.5rem; font-weight: bold">
-        Nuestro <span class="text-danger">Portafolio</span>
-      </h2>
-      <div class="row g-4">
-        <!-- Proyecto 1 -->
-        <div class="col-md-4" data-aos="zoom-in" data-aos-duration="1000" data-aos-delay="200">
-          <div class="portfolio-item">
-            <video class="portfolio-video rounded shadow-lg" autoplay loop muted playsinline>
-              <source src="assets/video/22.mp4" type="video/mp4" />
-              Tu navegador no soporta videos HTML5.
-            </video>
-            <div class="portfolio-overlay">
-              <p class="portfolio-description">
-                Plataforma innovadora para facilitar la compra y arriendo de
-                apartamentos en Bogotá, mejorando la experiencia de
-                propietarios y arrendatarios.
-              </p>
-            </div>
-          </div>
-        </div>
-
-        <!-- Proyecto 2 -->
-        <div class="col-md-4" data-aos="zoom-in" data-aos-duration="1000" data-aos-delay="400">
-          <div class="portfolio-item">
-            <video class="portfolio-video rounded shadow-lg" autoplay loop muted playsinline>
-              <source src="assets/video/carton.mp4" type="video/mp4" />
-              Tu navegador no soporta videos HTML5.
-            </video>
-            <div class="portfolio-overlay">
-              <p class="portfolio-description">
-                Se desarrolló la página web solicitada por la empresa.
-              </p>
-            </div>
-          </div>
-        </div>
-
-        <!-- Proyecto 3 -->
-        <div class="col-md-4" data-aos="zoom-in" data-aos-duration="1000" data-aos-delay="600">
-          <div class="portfolio-item">
-            <video class="portfolio-video rounded shadow-lg" autoplay loop muted playsinline>
-              <source src="assets/video//proyectoGeneral.mp4" type="video/mp4" />
-              Tu navegador no soporta videos HTML5.
-            </video>
-            <div class="portfolio-overlay">
-              <p class="portfolio-description">
-                Unificamos en una sola plataforma todos los proyectos en
-                ejecución, brindando acceso centralizado para los encargados
-                de distintas áreas.
-              </p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- AOS JS Initializer -->
-  <script>
-    AOS.init();
-  </script>
-
-  <!-- Estadísticas -->
-  <!-- Sección de Logros -->
-  <section class="testimonials-section text-center py-5 position-relative" data-aos="fade-up" data-aos-duration="1500">
-    <!-- Capa oscura semi-transparente -->
-    <div class="overlay"></div>
-    
-    <div class="container position-relative">
-        <h2 class="mb-5 fw-bold text-white" style="font-size: 2.5rem">
-            Lo que dicen <span class="text-danger">nuestros clientes</span>
-        </h2>
-        <div class="row g-4">
-            <!-- Testimonio 1 -->
-            <div class="col-md-4" data-aos="zoom-in" data-aos-duration="1000" data-aos-delay="200">
-                <div class="testimonial-item shadow-lg p-4 rounded-4 bg-white">
-                    <div class="testimonial-img mb-3">
-                        <img src="assets/img/testimonios/persona1.jpg" alt="Cliente 1" class="rounded-circle" width="80">
-                    </div>
-                    <p class="text-muted">"El equipo superó mis expectativas. Excelente servicio y resultados increíbles."</p>
-                    <h5 class="fw-bold">Juan Pérez</h5>
-                    <small class="text-muted">CEO de Empresa X</small>
-                </div>
-            </div>
-
-            <!-- Testimonio 2 -->
-            <div class="col-md-4" data-aos="zoom-in" data-aos-duration="1000" data-aos-delay="400">
-                <div class="testimonial-item shadow-lg p-4 rounded-4 bg-white">
-                    <div class="testimonial-img mb-3">
-                        <img src="assets/img/testimonios/persona2.jpg" alt="Cliente 2" class="rounded-circle" width="80">
-                    </div>
-                    <p class="text-muted">"Muy profesionales y atentos a los detalles. Recomiendo su trabajo al 100%."</p>
-                    <h5 class="fw-bold">María López</h5>
-                    <small class="text-muted">Gerente de Marketing</small>
-                </div>
-            </div>
-
-            <!-- Testimonio 3 -->
-            <div class="col-md-4" data-aos="zoom-in" data-aos-duration="1000" data-aos-delay="600">
-                <div class="testimonial-item shadow-lg p-4 rounded-4 bg-white">
-                    <div class="testimonial-img mb-3">
-                        <img src="assets/img/testimonios/persona3.jpg" alt="Cliente 3" class="rounded-circle" width="80">
-                    </div>
-                    <p class="text-muted">"Increíble experiencia. La mejor decisión que tomamos para nuestro negocio."</p>
-                    <h5 class="fw-bold">Carlos Gómez</h5>
-                    <small class="text-muted">Fundador de Startup Y</small>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-
-  <!-- Sección de Equipo -->
-  <section class="team-section text-center py-5" data-aos="fade-up" data-aos-duration="1500">
-    <div class="container">
-      <h2 class="fw-bold mb-5" style="font-size: 2.5rem; color: #333">
-        Nuestro <span class="text-danger">Equipo</span>
-      </h2>
-
-      <!-- Carrusel -->
-      <div id="teamCarousel" class="carousel slide" data-bs-ride="carousel" data-bs-interval="5000">
-        <div class="carousel-inner">
-          <!-- Grupo 1 -->
-          <div class="carousel-item active">
-            <div class="row justify-content-center">
-              <div class="col-lg-3 col-md-6 col-12 d-flex justify-content-center">
-                <div class="card team-card">
-                  <div class="card-body text-center">
-                    <div class="img-container">
-                      <img src="assets/img/integrantes/Alejandro Aguilera.jpg" alt="Alejandro Aguilera" />
-                    </div>
-                    <h5 class="fw-bold mt-3">Alejandro Aguilera</h5>
-                    <p class="text-muted">Bases de Datos</p>
-                    <a href="https://linktr.ee/alejoaguilera" target="_blank" class="btn btn-custom">Portafolio</a>
-                  </div>
-                </div>
-              </div>
-
-              <div class="col-lg-3 col-md-6 col-12 d-flex justify-content-center">
-                <div class="card team-card">
-                  <div class="card-body text-center">
-                    <div class="img-container">
-                      <img src="assets/img/integrantes/Anderson Castro.jpg" alt="Anderson Castro" />
-                    </div>
-                    <h5 class="fw-bold mt-3">Anderson Castro</h5>
-                    <p class="text-muted">Soporte</p>
-                    <a href="https://heylink.me/AndersonCC/" target="_blank" class="btn btn-custom">Portafolio</a>
-                  </div>
-                </div>
-              </div>
-
-              <div class="col-lg-3 col-md-6 col-12 d-flex justify-content-center">
-                <div class="card team-card">
-                  <div class="card-body text-center">
-                    <div class="img-container">
-                      <img src="assets/img/integrantes/Angel Canchilla.jpg" alt="Angel Canchilla" />
-                    </div>
-                    <h5 class="fw-bold mt-3">Angel Canchilla</h5>
-                    <p class="text-muted">Desarrollador</p>
-                    <a href="https://linktr.ee/Angel_Da" target="_blank" class="btn btn-custom">Portafolio</a>
-                  </div>
-                </div>
-              </div>
-
-              <div class="col-lg-3 col-md-6 col-12 d-flex justify-content-center">
-                <div class="card team-card">
-                  <div class="card-body text-center">
-                    <div class="img-container">
-                      <img src="assets/img/integrantes/Brayam chavarro.jpg" alt="Anderson Castro" />
-                    </div>
-                    <h5 class="fw-bold mt-3">Brayam Chavarro</h5>
-                    <p class="text-muted">Bases de Datos</p>
-                    <a href="https://heylink.me/AndersonCC/" target="_blank" class="btn btn-custom">Portafolio</a>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <!--grupo 2-->
-          <div class="carousel-item">
-            <div class="row justify-content-center">
-              <div class="col-lg-3 col-md-6 col-12 d-flex justify-content-center">
-                <div class="card team-card">
-                  <div class="card-body text-center">
-                    <div class="img-container">
-                      <img src="assets/img/integrantes/cristian reyes-removebg-preview.jpg" alt="Alejandro Aguilera" />
-                    </div>
-                    <h5 class="fw-bold mt-3">Cristian Reyes</h5>
-                    <p class="text-muted">Desarrollador</p>
-                    <a href="https://linktr.ee/Cristian_Reyes " target="_blank" class="btn btn-custom">Portafolio</a>
-                  </div>
-                </div>
-              </div>
-
-              <div class="col-lg-3 col-md-6 col-12 d-flex justify-content-center">
-                <div class="card team-card">
-                  <div class="card-body text-center">
-                    <div class="img-container">
-                      <img src="assets/img/integrantes/crsitian vega.jpg" alt="Anderson Castro" />
-                    </div>
-                    <h5 class="fw-bold mt-3">Cristian Vega</h5>
-                    <p class="text-muted">Inteligencia Artificial</p>
-                    <a href="https://linktr.ee/cristian_vega_cv" target="_blank" class="btn btn-custom">Portafolio</a>
-                  </div>
-                </div>
-              </div>
-
-              <div class="col-lg-3 col-md-6 col-12 d-flex justify-content-center">
-                <div class="card team-card">
-                  <div class="card-body text-center">
-                    <div class="img-container">
-                      <img src="assets/img/integrantes/Daniel Garcia.jpg" alt="Angel Canchilla" />
-                    </div>
-                    <h5 class="fw-bold mt-3">Daniel Garcia</h5>
-                    <p class="text-muted">Diseño Web</p>
-                    <a href="https://linktr.ee/garciadanielof" target="_blank" class="btn btn-custom">Portafolio</a>
-                  </div>
-                </div>
-              </div>
-
-              <div class="col-lg-3 col-md-6 col-12 d-flex justify-content-center">
-                <div class="card team-card">
-                  <div class="card-body text-center">
-                    <div class="img-container">
-                      <img src="assets/img/integrantes/Daniela Bernal.jpg" alt="Brayam Chavarro" />
-                    </div>
-                    <h5 class="fw-bold mt-3">Daniela Bernal</h5>
-                    <p class="text-muted">Finanzas y Comercio Exterior</p>
-                    <a href="https://linktr.ee/dani11bernal" target="_blank" class="btn btn-custom">Portafolio</a>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <!--grupo 3-->
-          <div class="carousel-item">
-            <div class="row justify-content-center">
-              <div class="col-lg-3 col-md-6 col-12 d-flex justify-content-center">
-                <div class="card team-card">
-                  <div class="card-body text-center">
-                    <div class="img-container">
-                      <img src="assets/img/integrantes/David Niño.jpg" alt="Alejandro Aguilera" />
-                    </div>
-                    <h5 class="fw-bold mt-3">David Niño</h5>
-                    <p class="text-muted">Diseñador Web</p>
-                    <a href="https://linktr.ee/David_nino" target="_blank" class="btn btn-custom">Portafolio</a>
-                  </div>
-                </div>
-              </div>
-
-              <div class="col-lg-3 col-md-6 col-12 d-flex justify-content-center">
-                <div class="card team-card">
-                  <div class="card-body text-center">
-                    <div class="img-container">
-                      <img src="assets/img/integrantes/David Perez.jpg" alt="Anderson Castro" />
-                    </div>
-                    <h5 class="fw-bold mt-3">David Peez</h5>
-                    <p class="text-muted">Inteligencia Artificial</p>
-                    <a href="https://linktr.ee/David10Paez" target="_blank" class="btn btn-custom">Portafolio</a>
-                  </div>
-                </div>
-              </div>
-
-              <div class="col-lg-3 col-md-6 col-12 d-flex justify-content-center">
-                <div class="card team-card">
-                  <div class="card-body text-center">
-                    <div class="img-container">
-                      <img src="assets/img/integrantes/Deivid Arevalo.jpg" alt="Angel Canchilla" />
-                    </div>
-                    <h5 class="fw-bold mt-3">Deivid Arevalo</h5>
-                    <p class="text-muted">Diseño Web</p>
-
-                    <a href="https://linktr.ee/darevalo79" target="_blank" class="btn btn-custom">Portafolio</a>
-                  </div>
-                </div>
-              </div>
-
-              <div class="col-lg-3 col-md-6 col-12 d-flex justify-content-center">
-                <div class="card team-card">
-                  <div class="card-body text-center">
-                    <div class="img-container">
-                      <img src="assets/img/integrantes/Deivid Garcia.jpg" alt="Brayam Chavarro" />
-                    </div>
-                    <h5 class="fw-bold mt-3">Deivid Garcia</h5>
-                    <p class="text-muted">Negocios Internacionales</p>
-                    <a href="https://linktr.ee/dim0864" target="_blank" class="btn btn-custom">Portafolio</a>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <!--grupo 4-->
-          <div class="carousel-item">
-            <div class="row justify-content-center">
-
-              <div class="col-lg-3 col-md-6 col-12 d-flex justify-content-center">
-                <div class="card team-card">
-                  <div class="card-body text-center">
-                    <div class="img-container">
-                      <img src="assets/img/integrantes/Fabian Camargo.jpg" alt="Anderson Castro" />
-                    </div>
-                    <h5 class="fw-bold mt-3">Fabian Camargo</h5>
-                    <p class="text-muted">Inteligencia Artificial</p>
-                    <a href="https://linktr.ee/Iskahn" target="_blank" class="btn btn-custom">Portafolio</a>
-                  </div>
-                </div>
-              </div>
-
-              <div class="col-lg-3 col-md-6 col-12 d-flex justify-content-center">
-                <div class="card team-card">
-                  <div class="card-body text-center">
-                    <div class="img-container">
-                      <img src="assets/img/integrantes/holmant Alarcon.jpg" alt="Angel Canchilla" />
-                    </div>
-                    <h5 class="fw-bold mt-3">Holmant Alarcon</h5>
-                    <p class="text-muted">Soporte</p>
-
-                    <a href="https://linktr.ee/HolmantAlarcon" target="_blank" class="btn btn-custom">Portafolio</a>
-                  </div>
-                </div>
-              </div>
-
-              <div class="col-lg-3 col-md-6 col-12 d-flex justify-content-center">
-                <div class="card team-card">
-                  <div class="card-body text-center">
-                    <div class="img-container">
-                      <img src="assets/img/integrantes/Juan Piraquive.jpg" alt="Alejandro Aguilera" />
-                    </div>
-                    <h5 class="fw-bold mt-3">Juan Piraquive</h5>
-                    <p class="text-muted">Soporte</p>
-                    <a href="https://linktr.ee/Pirvito" target="_blank" class="btn btn-custom">Portafolio</a>
-                  </div>
-                </div>
-              </div>
-
-              <div class="col-lg-3 col-md-6 col-12 d-flex justify-content-center">
-                <div class="card team-card">
-                  <div class="card-body text-center">
-                    <div class="img-container">
-                      <img src="assets/img/integrantes/Juan Gomez.jpg" alt="Brayam Chavarro" />
-                    </div>
-                    <h5 class="fw-bold mt-3">Juan Gomez</h5>
-                    <p class="text-muted">Diseño Web</p>
-                    <a href="https://linktr.ee/jGomezL" target="_blank" class="btn btn-custom">Portafolio</a>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <!--grupo 5-->
-          <div class="carousel-item">
-            <div class="row justify-content-center">
-
-              <div class="col-lg-3 col-md-6 col-12 d-flex justify-content-center">
-                <div class="card team-card">
-                  <div class="card-body text-center">
-                    <div class="img-container">
-                      <img src="assets/img/integrantes/karol Garzon.jpg" alt="Anderson Castro" />
-                    </div>
-                    <h5 class="fw-bold mt-3">Karol Garzon</h5>
-                    <p class="text-muted">Investigadora</p>
-                    <a href="https://linktr.ee/karolgarzon" target="_blank" class="btn btn-custom">Portafolio</a>
-                  </div>
-                </div>
-              </div>
-
-              <div class="col-lg-3 col-md-6 col-12 d-flex justify-content-center">
-                <div class="card team-card">
-                  <div class="card-body text-center">
-                    <div class="img-container">
-                      <img src="assets/img/integrantes/Laura Casteblanco.jpg" alt="Angel Canchilla" />
-                    </div>
-                    <h5 class="fw-bold mt-3">Laura Casteblanco</h5>
-                    <p class="text-muted">Marketing</p>
-
-                    <a href="https://linktr.ee/laurascastel" target="_blank" class="btn btn-custom">Portafolio</a>
-                  </div>
-                </div>
-              </div>
-
-              <div class="col-lg-3 col-md-6 col-12 d-flex justify-content-center">
-                <div class="card team-card">
-                  <div class="card-body text-center">
-                    <div class="img-container">
-                      <img src="assets/img/integrantes/Luis Forero.jpg" alt="Brayam Chavarro" />
-                    </div>
-                    <h5 class="fw-bold mt-3">Luis Forero</h5>
-                    <p class="text-muted">Desarrollador</p>
-                    <a href="https://linktr.ee/luissforero" target="_blank" class="btn btn-custom">Portafolio</a>
-                  </div>
-                </div>
-              </div>
-
-              <div class="col-lg-3 col-md-6 col-12 d-flex justify-content-center">
-                <div class="card team-card">
-                  <div class="card-body text-center">
-                    <div class="img-container">
-                      <img src="assets/img/integrantes/Paula Rubio.jpg" alt="Alejandro Aguilera" />
-                    </div>
-                    <h5 class="fw-bold mt-3">Paula Rubio</h5>
-                    <p class="text-muted">Investigadora</p>
-                    <a href="https://linktr.ee/PaulaAndreaRubioMoreno" target="_blank"
-                      class="btn btn-custom">Portafolio</a>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          
-
-          <!--grupo 7-->
-          <div class="carousel-item">
-            <div class="row justify-content-center">
-
-              <div class="col-lg-3 col-md-6 col-12 d-flex justify-content-center">
-                <div class="card team-card">
-                  <div class="card-body text-center">
-                    <div class="img-container">
-                      <img src="assets/img/integrantes/Santiago Garcia.jpg" alt="Anderson Castro" />
-                    </div>
-                    <h5 class="fw-bold mt-3">Santiago Garcia</h5>
-                    <p class="text-muted">Desarrollador</p>
-                    <a href="https://linktr.ee/Santiago2412?utm_source=linktree_admin_share" target="_blank"
-                      class="btn btn-custom">Portafolio</a>
-                  </div>
-                </div>
-              </div>
-
-              <div class="col-lg-3 col-md-6 col-12 d-flex justify-content-center">
-                <div class="card team-card">
-                  <div class="card-body text-center">
-                    <div class="img-container">
-                      <img src="assets/img/integrantes/Santiago Marin.jpg" alt="Angel Canchilla" />
-                    </div>
-                    <h5 class="fw-bold mt-3">Santiago Marin</h5>
-                    <p class="text-muted">Bases de Datos</p>
-
-                    <a href="#" target="_blank" class="btn btn-custom">Portafolio</a>
-                  </div>
-                </div>
-              </div>
-
-              <div class="col-lg-3 col-md-6 col-12 d-flex justify-content-center">
-                <div class="card team-card">
-                  <div class="card-body text-center">
-                    <div class="img-container">
-                      <img src="assets/img/integrantes/Sebastian Romero.jpg" alt="Alejandro Aguilera" />
-                    </div>
-                    <h5 class="fw-bold mt-3">Sebastian Romero</h5>
-                    <p class="text-muted">Inteligencia Artificial</p>
-                    <a href="https://linktr.ee/SebastianDavidRomero" target="_blank"
-                      class="btn btn-custom">Portafolio</a>
-                  </div>
-                </div>
-              </div>
-
-              
-            </div>
-          </div>
-          <!--grupo 7-->
-          <div class="carousel-item">
-            <div class="row justify-content-center">
-
-              <div class="col-lg-3 col-md-6 col-12 d-flex justify-content-center">
-                <div class="card team-card">
-                  <div class="card-body text-center">
-                    <div class="img-container">
-                      <img src="assets/img/integrantes/Zullie Diaz.jpg" alt="Anderson Castro" />
-                    </div>
-                    <h5 class="fw-bold mt-3">Zullie Diaz</h5>
-                    <p class="text-muted">Investigadora</p>
-                    <a href="https://www.atom.bio/zulliediaz" target="_blank" class="btn btn-custom">Portafolio</a>
-                  </div>
-                </div>
-              </div>
-
-              <div class="col-lg-3 col-md-6 col-12 d-flex justify-content-center">
-                <div class="card team-card">
-                  <div class="card-body text-center">
-                    <div class="img-container">
-                      <img src="assets/img/integrantes/Eidan Cardenas.jpg" alt="Angel Canchilla" />
-                    </div>
-                    <h5 class="fw-bold mt-3">Eidan Cardenas</h5>
-                    <p class="text-muted">Bases de Datos</p>
-
-                    <a href="https://linktr.ee/eidancardenas" target="_blank" class="btn btn-custom">Portafolio</a>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- Indicadores -->
-        <div class="carousel-indicators">
-          <button type="button" data-bs-target="#teamCarousel" data-bs-slide-to="0" class="active"></button>
-          <button type="button" data-bs-target="#teamCarousel" data-bs-slide-to="1"></button>
-          <button type="button" data-bs-target="#teamCarousel" data-bs-slide-to="2"></button>
-          <button type="button" data-bs-target="#teamCarousel" data-bs-slide-to="3"></button>
-          <button type="button" data-bs-target="#teamCarousel" data-bs-slide-to="4"></button>
-          <button type="button" data-bs-target="#teamCarousel" data-bs-slide-to="5"></button>
-          <button type="button" data-bs-target="#teamCarousel" data-bs-slide-to="6"></button>
-        </div>
-
-        <!-- Controles (ocultos en móvil) -->
-        <button class="carousel-control-prev d-none d-md-block" type="button" data-bs-target="#teamCarousel"
-          data-bs-slide="prev">
-          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-        </button>
-        <button class="carousel-control-next d-none d-md-block" type="button" data-bs-target="#teamCarousel"
-          data-bs-slide="next">
-          <span class="carousel-control-next-icon" aria-hidden="true"></span>
-        </button>
-      </div>
-    </div>
-  </section>
-
-  <footer class="bg-primary text-light py-5">
-    <div class="container">
-      <div class="row">
-        <!-- Logo y Redes Sociales -->
-        <div class="col-md-3 text-center text-md-start">
-          <img src="assets/img/Logo uniempresarial rectangular CCB_Logo Completo Uniempresarial a color.png  "
-            alt="Uniempresarial Logo" class="mb-3" style="max-width: 250px" />
-          <div class="d-flex justify-content-center justify-content-md-start gap-2">
-            <a href="https://www.facebook.com/uniempresarial/" class="text-light"><i
-                class="fab fa-facebook fa-lg"></i></a>
-            <a href="https://www.youtube.com/channel/UC7Gal38pmeQ2QxrH0VJwOzg" class="text-light"><i
-                class="fab fa-youtube fa-lg"></i></a>
-            <a href="https://www.instagram.com/uniempresarial/?hl=en" class="text-light"><i
-                class="fab fa-instagram fa-lg"></i></a>
-            <a href="https://x.com/i/flow/login?redirect_after_login=%2Fuempresarial" class="text-light"><i
-                class="fab fa-twitter fa-lg"></i></a>
-          </div>
-        </div>
-
-        <!-- Programas y Enlaces Directos -->
-        <div class="col-md-3">
-          <h5 class="fw-bold">Nuestros Servicios</h5>
-          <ul class="list-unstyled">
-            <li>
-              <a href="./pages/consultoria.html" class="text-light text-decoration-none">Consultoria en software</a>
-            </li>
-            <li>
-              <a href="./pages/desarrollo.html" class="text-light text-decoration-none">Desarrollo de Software a la
-                Medida</a>
-            </li>
-            <li>
-              <a href="./pages/integracion.html" class="text-light text-decoration-none">Integración de Sistemas</a>
-            </li>
-            <li>
-              <a href="./pages/capacitaciones.html" class="text-light text-decoration-none">Capacitacion en Software</a>
-            </li>
-          </ul>
-          <h5 class="fw-bold mt-4">Enlaces Directos</h5>
-          <ul class="list-unstyled">
-            <li>
-              <a href="#" class="text-light text-decoration-none">Uniempresarial en Cifras</a>
-            </li>
-            <li>
-              <a href="https://www.kawak.com.co/uniempresarial/index.php?ref=bWFpbi9ob21lLnBocA%3D%3D&exp=1"
-                target="_blank" rel="noreterrer noopener" class="text-light text-decoration-none">Sistema de Gestión
-                Académica</a>
-            </li>
-            <li>
-              <a href="https://uniempresarial.edu.co/faqs/" target="_blank" rel="noreterrer noopener"
-                class="text-light text-decoration-none">FAQs</a>
-            </li>
-          </ul>
-        </div>
-
-        <!-- Normatividad -->
-        <div class="col-md-3">
-          <h5 class="fw-bold">Normatividad y Políticas</h5>
-          <ul class="list-unstyled">
-            <li>
-              <a href="https://uniempresarial.edu.co/sobre-nosotros/" target="_blank" rel="noreterrer noopener"
-                class="text-light text-decoration-none">Acceso a la Información Pública</a>
-            </li>
-            <li>
-              <a href="./assets/pdf/Derechos-pecuniarios-2025.pdf" target="_blank" rel="noreterrer noopener"
-                class="text-light text-decoration-none">Derechos Pecuniarios 2025</a>
-            </li>
-            <li>
-              <a href="./assets/pdf/derechos-pecuniarios-2024.pdf" target="_blank" rel="noreterrer noopener"
-                class="text-light text-decoration-none">Derechos Pecuniarios 2024</a>
-            </li>
-            <li>
-              <a href="./assets/pdf/Estados-Financieros-Uniempresarial.pdf" target="_blank" rel="noreterrer noopener"
-                class="text-light text-decoration-none">Estados Financieros</a>
-            </li>
-          </ul>
-        </div>
-
-        <!-- Mapa y Contacto -->
-        <div class="col-md-3 text-center text-md-start">
-          <h5 class="fw-bold">Ubicación</h5>
-          <div class="map-container" style="
-                height: 150px;
-                border-radius: 10px;
-                overflow: hidden;
-                margin-bottom: 10px;
-              ">
-            <iframe
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3976.973787931933!2d-74.06826532520925!3d4.629385496328969!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8e3f99bb2cf3b09f%3A0xf1e2f25691e3f1d8!2sCra.%2033a%20%2330-20%2C%20Bogot%C3%A1%2C%20Colombia!5e0!3m2!1ses!2sus!4v1693328598471!5m2!1ses!2sus"
-              width="100%" height="100%" style="border: 0" allowfullscreen="" loading="lazy"></iframe>
-          </div>
-          <p>
-            <i class="fas fa-map-marker-alt"></i> Sede Principal: Cra 33a
-            #30-20 Bogotá D.C.
-          </p>
-          <p>
-            <i class="fas fa-phone-alt"></i> (+601) 3808000 Exts. 1002, 6604,
-            6607, 6608
-          </p>
-          <p>
-            <i class="fas fa-envelope"></i> admisiones@uniempresarial.edu.co
-          </p>
-        </div>
-      </div>
-    </div>
+    <p>
+      <i class="fas fa-map-marker-alt"></i> Sede Principal: Cra 33a
+      #30-20 Bogotá D.C.
+    </p>
+    <p>
+      <i class="fas fa-phone-alt"></i> (+601) 3808000 Exts. 1002, 6604,
+      6607, 6608
+    </p>
+    <p>
+      <i class="fas fa-envelope"></i> admisiones@uniempresarial.edu.co
+    </p>
+  </div>
+  </div>
+  </div>
   </footer>
 
-  <!-- Scripts -->
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"></script>
-  <script src="./js/app.js"></script>
-  <script src="./js/validaciones.js"></script>
-  <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet" />
-  <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
-  <script>
-    AOS.init();
-  </script>
-</body>
 
-</html>
+
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"></script>
+      <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+      <script>
+          AOS.init({
+              duration: 1000, // Duración de las animaciones en milisegundos
+              once: true // Si la animación solo debe ocurrir una vez al desplazarse hacia abajo
+          });
+
+          // Navbar scroll effect
+          window.addEventListener('scroll', function() {
+              const navbar = document.querySelector('.navbar');
+              if (window.scrollY > 50) { // Altura a partir de la cual se aplica el efecto
+                  navbar.classList.add('scrolled');
+              } else {
+                  navbar.classList.remove('scrolled');
+              }
+          });
+      </script>
+  </body>
+
+  </html>

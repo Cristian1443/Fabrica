@@ -1,287 +1,444 @@
+/* Archivo: css/consultoria.css */
+
+/* Variables de color (Alineadas con el tema general) */
+:root {
+  --primary-color: #273474; /* Azul oscuro */
+  --secondary-color: #e4022c; /* Rojo/Vinotinto */
+  --tertiary-color: #394a9e; /* Color terciario (Azul/Morado) */
+  --dark-color: #1a1a2e;
+  --light-color: #f8f9fa;
+  --white-color: #ffffff;
+  --success-color: #28a745; /* Verde estándar de Bootstrap */
+  --warning-color: #f7df1e; /* Amarillo estándar de Bootstrap */
+
+  /* Definir RGB para rgba */
+  --primary-color-rgb: 39, 52, 116;
+  --secondary-color-rgb: 228, 2, 44;
+  --tertiary-color-rgb: 57, 74, 158;
+  --dark-color-rgb: 26, 26, 46;
+  --white-color-rgb: 255, 255, 255;
+}
+
 /* -----------------------------------------------
-   General Styles
-   ----------------------------------------------- */
-
-
+General Styles (Estilos Base para esta página - Replicado para auto-contenido)
+------------------------------------------------ */
 body {
-  font-family: Arial, sans-serif;
+  font-family: "Poppins", sans-serif;
+  background-color: var(--light-color);
+  color: var(--dark-color);
+  padding-top: 72px !important;
+  margin: 0 !important;
+  overflow-x: hidden;
 }
 
-/* Navbar */
-.navbar {
-  position: fixed;
-  top: 0;
-  width: 100%;
-  z-index: 1000;
-  background-color: white;
-  border-bottom: 2px solid #e9ecef;
-  padding: 10px 15px;
-  font-family: 'Arial', sans-serif;
+h1, h2, h3, h4, h5, h6 {
+  color: var(--primary-color);
+  font-weight: 700;
 }
 
-body {
-  padding-top: 80px;
-  /* Ajusta este valor si el navbar es más alto */
+p {
+  color: var(--dark-color);
+  line-height: 1.6;
 }
 
-/* Estilo del Logo */
-.navbar-brand img {
-  max-height: 50px;
-}
-
-/* Links del Navbar */
-.navbar-nav .nav-link {
-  color: black;
-  font-size: 16px;
-  font-weight: bold;
-  margin: 0 10px;
+a {
+  text-decoration: none;
   transition: color 0.3s ease;
 }
 
-.navbar-nav .nav-link:hover {
-  color: #a4022c;
+a:hover {
+  color: var(--secondary-color);
 }
 
-/* Dropdown */
-.dropdown-menu {
-  border-radius: 8px;
-  border: 1px solid #ddd;
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
-}
-
-.dropdown-item {
-  color: black;
-  font-size: 14px;
-  padding: 10px 20px;
-}
-
-.dropdown-item:hover {
-  background-color: #a4022c;
-  color: white;
-  border-radius: 5px;
-}
-
-/* Botón Contáctanos */
-.btn-danger {
-  background-color: #a4022c;
-  border: none;
-  font-size: 16px;
-  font-weight: bold;
-  text-transform: uppercase;
-}
-
-.btn-danger:hover {
-  background-color: #a4022c;
-}
-
-.navbar-brand img {
-  max-height: 50px;
-}
-
-/* Estilos necesarios */
-
-
-/*animacion como funciona*/
-@keyframes float {
-
-  0%,
-  100% {
-    transform: translateY(0);
-  }
-
-  50% {
-    transform: translateY(-20px);
-  }
-}
-
-/*animacion nuestro proceso*/
-.icon-box {
-  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+/* Animaciones (Replicado para auto-contenido) */
+@keyframes floatAnimation {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-15px); }
 }
 
 @keyframes float {
-
-  0%,
-  100% {
-    transform: translateY(0);
-  }
-
-  50% {
-    transform: translateY(-20px);
-  }
+  0%, 100% { transform: translateY(0px) translateX(0px); }
+  50% { transform: translateY(10px) translateX(5px); }
 }
 
-.shadow-lg {
-  box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.2) !important;
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
 }
 
-
-
-
-
-/* Mejoras de responsividad */
-@media (max-width: 768px) {
-  .hero .col-lg-6 {
-    text-align: center;
-  }
-
-  .hero .rounded-circle {
-    width: 70%;
-  }
-
-  .quote-container {
-    bottom: -30px;
-    left: 50%;
-    transform: translateX(-50%);
-  }
+@keyframes pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+  100% { transform: scale(1); }
 }
 
-/* Añadir imagen de fondo y capa oscura */
+.pulse-animation { animation: pulse 2s infinite; }
 
-/* Overlay oscuro encima de la imagen de fondo */
+/* Clases de utilidad (Replicado para auto-contenido) */
+.text-primary { color: var(--primary-color) !important; }
+.text-secondary { color: var(--secondary-color) !important; }
+.text-tertiary { color: var(--tertiary-color) !important; }
+.text-dark { color: var(--dark-color) !important; }
+.text-light { color: var(--light-color) !important; }
+.text-muted { color: rgba(var(--dark-color-rgb), 0.75) !important; }
+.text-red { color: var(--secondary-color) !important; }
 
-footer {
-  background: url("../assets/img/fondo.webp") no-repeat center center/cover;
-  color: #fff;
+.bg-primary { background-color: var(--primary-color) !important; }
+.bg-secondary { background-color: var(--secondary-color) !important; }
+.bg-tertiary { background-color: var(--tertiary-color) !important; }
+.bg-dark { background-color: var(--dark-color) !important; }
+.bg-light { background-color: var(--light-color) !important; }
+.bg-white { background-color: var(--white-color) !important; }
+.bg-success { background-color: var(--success-color) !important; }
+.bg-warning { background-color: var(--warning-color) !important; }
+
+
+/* General Section Title Style (Aplicado a todos los títulos de sección .section-title) */
+.section-title {
+  text-align: center; margin-bottom: 60px;
+}
+
+.section-title h2 {
+  font-size: 2.5rem; font-weight: 700;
+  color: var(--primary-color);
+  position: relative; display: inline-block;
+  line-height: 1.4;
+}
+
+.section-title h2::after {
+  content: ''; position: absolute; bottom: -10px; left: 50%; transform: translateX(-50%);
+  width: 80px; height: 4px;
+  background: var(--secondary-color);
+  border-radius: 2px;
+}
+
+/* General Custom Button Style (Aplicado a todos los botones .btn-custom) */
+.btn-custom {
+  display: inline-block; padding: 15px 40px; font-size: 1.1rem; font-weight: 600;
+  color: var(--white-color);
+  background: linear-gradient(45deg, var(--secondary-color), var(--primary-color));
+  border: none; border-radius: 50px; transition: all 0.4s ease; text-decoration: none;
+  box-shadow: 0 6px 20px rgba(var(--secondary-color-rgb), 0.5);
+  position: relative; overflow: hidden;
+}
+
+.btn-custom:hover {
+  background: linear-gradient(45deg, var(--primary-color), var(--secondary-color));
+  transform: translateY(-3px);
+  box-shadow: 0 8px 25px rgba(var(--primary-color-rgb), 0.7);
+  color: var(--white-color);
+}
+
+.btn-custom::before {
+  content: ''; position: absolute; top: 0; left: -100%; width: 100%; height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+  transition: 0.5s;
+}
+
+.btn-custom:hover::before { left: 100%; }
+
+
+/* ✨ Navbar Styles (Contenidos en este archivo) */
+.navbar {
+  position: fixed; top: 0; width: 100%; z-index: 1000;
+  background-color: var(--white-color);
+  border-bottom: 2px solid var(--light-color);
+  padding: 10px 15px; font-family: "Poppins", sans-serif;
+  box-sizing: border-box;
+  height: 72px; transition: all 0.3s ease; box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
+}
+
+.navbar.scrolled {
+  background-color: rgba(255, 255, 255, 0.95) !important;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+  height: 60px;
+}
+
+.navbar-brand img { transition: height 0.3s ease; max-height: 50px; }
+.navbar.scrolled .navbar-brand img { height: 40px !important; }
+
+.navbar-toggler { border: none; padding: 0.5rem; }
+.navbar-toggler:focus { box-shadow: none; }
+
+.navbar-toggler-icon {
+  background-image: none; position: relative; width: 24px; height: 2px;
+  background-color: var(--primary-color);
+  transition: all 0.3s ease;
+}
+.navbar-toggler-icon::before, .navbar-toggler-icon::after {
+  content: ''; position: absolute; width: 24px; height: 2px;
+  background-color: var(--primary-color);
+  left: 0; transition: all 0.3s ease;
+}
+.navbar-toggler-icon::before { transform: translateY(-6px); }
+.navbar-toggler-icon::after { transform: translateY(6px); }
+.navbar-toggler[aria-expanded="true"] .navbar-toggler-icon { background-color: transparent; }
+.navbar-toggler[aria-expanded="true"] .navbar-toggler-icon::before { transform: rotate(45deg); }
+.navbar-toggler[aria-expanded="true"] .navbar-toggler-icon::after { transform: rotate(-45deg); }
+
+.nav-link {
+  font-weight: 500; color: var(--dark-color) !important; margin: 0 10px;
   position: relative;
 }
+.nav-link::after {
+  content: ''; position: absolute; bottom: 0; left: 0; width: 0; height: 2px;
+  background-color: var(--secondary-color);
+  transition: width 0.3s ease;
+}
+.nav-link:hover::after, .nav-link.active::after { width: 100%; }
 
-footer::after {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(0, 0, 0, 0.8);
+.dropdown-menu { border: none; box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1); }
+.dropdown-item { transition: all 0.3s ease; }
+.dropdown-item:hover {
+  background-color: var(--secondary-color);
+  color: var(--white-color) !important;
 }
 
-/* Asegurarse de que los elementos dentro del footer están por encima de la capa oscura */
+/* Botón Contáctanos en Navbar */
+.navbar .btn-danger {
+  background-color: var(--secondary-color);
+  border: none; font-weight: 500; transition: all 0.3s ease;
+  padding: 10px 25px; border-radius: 30px;
+}
+
+.navbar .btn-danger:hover {
+  background-color: var(--primary-color);
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(var(--secondary-color-rgb), 0.3);
+}
+
+
+/* ✨ Footer Styles (Contenidos en este archivo) */
+footer {
+  position: relative;
+  padding: 60px 0 30px;
+  background: url("../assets/img/fondo.webp") no-repeat center center;
+  background-size: cover;
+  color: var(--light-color);
+  font-family: "Poppins", sans-serif;
+  overflow: hidden;
+}
+
+footer::before { /* Overlay */
+  content: ""; position: absolute; top: 0; left: 0; width: 100%; height: 100%;
+  background: rgba(var(--dark-color-rgb), 0.85);
+  z-index: 1;
+}
+
 footer .container {
   position: relative;
   z-index: 2;
 }
 
+footer h5 {
+  color: var(--secondary-color) !important;
+  font-weight: 600; margin-bottom: 15px;
+}
 
-/* Animación de flotación */
-@keyframes floatAnimation {
+footer a {
+  color: var(--light-color);
+  text-decoration: none; transition: color 0.3s ease;
+}
+footer a:hover {
+  color: var(--white-color);
+  text-decoration: underline !important;
+}
 
-  0%,
-  100% {
-    transform: translateY(0);
-  }
+/* Estilos específicos para los iconos sociales en el footer */
+footer .social-icons a {
+  display: inline-flex; align-items: center; justify-content: center;
+  width: 35px; height: 35px; background: rgba(var(--white-color-rgb), 0.15);
+  border-radius: 50%; margin-right: 8px; color: var(--light-color);
+  transition: all 0.3s ease;
+}
+footer .social-icons a:hover {
+  background: var(--primary-color);
+  color: var(--white-color);
+  transform: translateY(-4px);
+}
 
-  50% {
-    transform: translateY(-10px);
-  }
+.map-container {
+  height: 150px; border-radius: 8px; overflow: hidden; margin-bottom: 15px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2); background-color: #ccc;
+}
+
+footer p {
+  font-size: 0.95rem; margin-bottom: 8px; color: var(--light-color);
+}
+
+footer p i {
+  margin-right: 8px;
+  color: var(--secondary-color);
 }
 
 
-.hero {
-  height: 91vh;
+/* --------------- Estilos Específicos de la página de Consultoría --------------- */
+
+/* Hero Section Consultoría */
+.hero-consultoria { /* Usando clase específica */
+  min-height: 90vh; /* Altura ajustada */
   display: flex;
   align-items: center;
   justify-content: center;
   text-align: center;
-  background: rgb(0, 0, 0);
   position: relative;
   overflow: hidden;
-  padding: 20px;
+  background: linear-gradient(rgba(var(--dark-color-rgb), 0.8), rgba(var(--dark-color-rgb), 0.8)), /* Overlay oscuro con variable */
+              url('../assets/img/consultorias.jpg') center/cover no-repeat; /* Imagen de fondo */
+  background-size: cover;
+  padding: 80px 20px; /* Ajuste de padding */
+  color: var(--white-color); /* Texto blanco por defecto */
 }
 
-/* Fondo con patrón sutil */
-.hero::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: url('../assets/img/consultorias.jpg') center/cover no-repeat;
-  opacity: 0.15;
-}
-
-/* Contenedor del contenido */
-.hero-content {
+.hero-consultoria .hero-content {
   position: relative;
   z-index: 2;
   max-width: 750px;
-  color: #ffffff;
+  color: var(--white-color); /* Asegurar texto blanco */
 }
 
-.hero h1 {
-  font-size: 3.2rem;
+.hero-consultoria h1 {
+  font-size: 3.5rem; /* Ajuste de tamaño */
   font-weight: bold;
-  color: #273474;
+  color: var(--white-color); /* Título blanco */
+  margin-bottom: 15px;
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3); /* Sombra ligera */
 }
 
-.hero h1 span {
-  color: #a4022c;
+.hero-consultoria h1 span {
+  color: var(--secondary-color); /* Parte en secundario (rojo) */
 }
 
-.hero p {
+.hero-consultoria p {
   font-size: 1.2rem;
-  opacity: 0.85;
+  opacity: 0.9;
   margin: 20px 0;
+  color: rgba(var(--white-color-rgb), 0.9); /* Texto blanco semi-transparente */
 }
 
-.hero .btn-custom {
-  background-color: #273474;
-  border: none;
-  font-size: 1.2rem;
-  padding: 12px 30px;
+/* Botón del Hero (Usa la clase btn-custom general) */
+.hero-consultoria .btn-custom {
+   margin-top: 20px; /* Espacio encima del botón */
+   padding: 12px 30px; /* Ajuste de padding */
+   font-size: 1.2rem; /* Ajuste de tamaño de fuente */
+}
+
+
+/* Sección Consultoría en Software (Intro) */
+.consultoria-intro { /* Usando clase específica */
+   padding: 80px 0;
+   background-color: var(--light-color);
+   position: relative;
+   overflow: hidden;
+}
+
+.consultoria-intro .section-title h2 {
+   color: var(--primary-color); /* Título en primario */
+}
+
+.consultoria-intro h5 {
+  font-weight: bold;
+  color: var(--primary-color); /* Subtítulo en primario */
+}
+
+.consultoria-intro p {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  color: rgba(var(--dark-color-rgb), 0.85);
+}
+
+.consultoria-intro ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+.consultoria-intro ul li {
+  margin-bottom: 10px;
+  color: rgba(var(--dark-color-rgb), 0.9);
+  font-size: 1rem;
+}
+
+.consultoria-intro ul li i {
+   color: var(--secondary-color); /* Íconos de lista en secundario */
+   margin-right: 10px;
+}
+
+/* ESTILO DE LA IMAGEN DEL PORTAPAPELES (Sombra eliminada, tamaño ajustado) */
+.consultoria-intro .image-container img {
   border-radius: 8px;
-  transition: all 0.3s ease-in-out;
-  color: white;
-  text-decoration: none;
-  display: inline-block;
+  box-shadow: none; /* Sombra explicitamente eliminada */
+  width: 80%; /* Reducir el ancho */
+  max-width: 200px; /* Nuevo ancho máximo */
+  transition: all 0.3s ease-in-out; /* Añadida transición suave */
 }
 
-.hero .btn-custom:hover {
-  background-color: #a4022c;
-  transform: scale(1.05);
+.consultoria-intro .image-container img:hover {
+  transform: scale(1.05); /* Ligeramente más grande al pasar el ratón (opcional) */
 }
 
-/* Animación flotante */
-@keyframes float {
 
-  0%,
-  100% {
-    transform: translateY(0px);
-  }
-
-  50% {
-    transform: translateY(20px);
-  }
-}
-
-.decorative-circle {
+/* Elementos decorativos animados en esta sección */
+.consultoria-intro .decorative-circle {
   position: absolute;
-  width: 200px;
-  height: 200px;
-  background: rgba(0, 0, 0, 0.05);
-  top: -50px;
-  left: -50px;
   border-radius: 50%;
-  animation: float 8s ease-in-out infinite;
+  opacity: 0.6; /* Menor opacidad */
+  z-index: 0;
+  filter: blur(30px); /* Efecto blur */
 }
 
-/* Animación hover */
-.process-card {
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+/* Sección Nuestro Proceso */
+.proceso-section { /* Usando clase específica */
+   padding: 80px 0;
+   background-color: var(--white-color);
+   position: relative;
+   overflow: hidden;
 }
 
-.process-card:hover {
+.proceso-section .section-title h2 {
+  color: var(--primary-color); /* Título en primario */
+}
+
+
+.proceso-flow {
+  position: relative;
+  padding-top: 30px; /* Espacio para que la línea no toque los cards */
+  padding-bottom: 30px;
+}
+
+.process-line {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: calc(100% - 160px); /* Ajustar ancho para dejar espacio a los lados */
+  max-width: 800px; /* Ancho máximo para la línea */
+  height: 4px;
+    
+  z-index: 0; /* Detrás de las tarjetas */
+  border-radius: 2px;
+  transform: translate(-50%, -50%); /* Centrar la línea */
+  animation: pulse 2s infinite alternate;
+}
+
+
+.proceso-section .card {
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+  border: none;
+  position: relative;
+  z-index: 1; /* Asegurar que las tarjetas estén sobre la línea */
+}
+
+.proceso-section .process-card:hover { /* Mantener efecto hover */
   transform: translateY(-10px);
   box-shadow: 0px 15px 25px rgba(0, 0, 0, 0.15);
 }
 
-/* Círculos de pasos */
 .step-circle {
-  width: 90px;
-  height: 90px;
-  font-size: 2.5rem;
-  color: white;
+  width: 70px; /* Tamaño ajustado */
+  height: 70px;
+  font-size: 2rem; /* Tamaño de fuente ajustado */
+  color: var(--white-color); /* Color del número blanco */
   border-radius: 50%;
   display: flex;
   align-items: center;
@@ -289,31 +446,231 @@ footer .container {
   box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2);
   margin: 0 auto 20px;
   transition: transform 0.3s ease;
+  font-weight: 700; /* Número en negrita */
 }
 
 .process-card:hover .step-circle {
   transform: scale(1.1);
 }
 
-/* Línea de conexión animada */
-.process-line {
-  position: absolute;
-  top: 50%;
-  left: 15%;
-  width: 70%;
-  height: 4px;
-  background: linear-gradient(90deg, #ff5e5e, #007bff);
-  z-index: -1;
-  border-radius: 2px;
-  animation: pulse 2s infinite alternate;
+.proceso-section .card-body h5 {
+  font-weight: bold;
+  color: var(--primary-color); /* Título en primario */
 }
 
-@keyframes pulse {
-  0% {
-    opacity: 0.3;
-  }
+.proceso-section .card-body p {
+  color: rgba(var(--dark-color-rgb), 0.8); /* Texto en color oscuro semitransparente */
+}
 
-  100% {
-    opacity: 1;
-  }
+
+/* Sección ¿Cómo funciona? */
+.como-funciona-section { /* Usando clase específica */
+  padding: 80px 0;
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(to right, var(--primary-color), var(--tertiary-color)); /* Degradado con colores del tema */
+  color: var(--white-color); /* Texto blanco */
+}
+
+.como-funciona-section .section-title h2 {
+   color: var(--white-color); /* Título en blanco */
+}
+/* CORRECCIÓN TAMAÑO PALABRA "funciona" */
+.como-funciona-section .section-title h2 span {
+   color: var(--secondary-color); /* Parte en secundario */
+   font-size: inherit; /* Asegura que herede el tamaño del h2 */
+}
+
+
+.como-funciona-section ul li {
+  margin-bottom: 30px; /* Espacio entre elementos de la lista */
+   color: rgba(var(--white-color-rgb), 0.9); /* Texto blanco semi-transparente */
+}
+
+.como-funciona-section .icon-box { /* Iconos de la lista */
+  width: 60px;
+  height: 60px;
+  font-size: 2rem;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+  background-color: var(--white-color) !important; /* Fondo blanco */
+  flex-shrink: 0; /* Evita que el icono se encoja */
+  transition: transform 0.3s ease;
+}
+
+.como-funciona-section ul li:hover .icon-box {
+   transform: scale(1.1);
+}
+
+.como-funciona-section span {
+   font-size: 1.1rem; /* Tamaño de fuente */
+   color: rgba(var(--white-color-rgb), 0.9); /* Color texto */
+   flex-grow: 1; /* Permite que el texto ocupe el espacio */
+}
+
+/* Elemento decorativo animado en esta sección */
+.como-funciona-section .decorative-circle {
+  position: absolute;
+  border-radius: 50%;
+  opacity: 0.4; /* Menor opacidad */
+  z-index: 0;
+  filter: blur(20px); /* Efecto blur */
+}
+
+
+/* Responsive adjustments (Contenidos en este archivo) */
+
+@media (max-width: 1199.98px) {
+  /* Navbar y Footer responsive ya están arriba */
+
+  /* Hero Consultoría */
+  .hero-consultoria h1 { font-size: 3rem; }
+  .hero-consultoria p { font-size: 1.1rem; }
+  .hero-consultoria .btn-custom { padding: 10px 25px; font-size: 1.1rem; }
+
+  /* Consultoría Intro */
+   .consultoria-intro h2 { font-size: 2.2rem; }
+   .consultoria-intro p { font-size: 1rem; }
+
+  /* Proceso Section */
+   .proceso-section .section-title h2 { font-size: 2.2rem; }
+   .proceso-line { width: calc(100% - 120px); max-width: 600px; } /* Ajuste de línea */
+   .step-circle { width: 60px; height: 60px; font-size: 1.8rem; } /* Ajuste tamaño círculo */
+   .proceso-section .card-body h5 { font-size: 1.2rem; }
+   .proceso-section .card-body p { font-size: 0.9rem; }
+
+
+  /* Cómo Funciona */
+   .como-funciona-section .section-title h2 { font-size: 2.2rem; }
+   .como-funciona-section ul li { margin-bottom: 25px; }
+   .como-funciona-section .icon-box { width: 50px; height: 50px; font-size: 1.8rem; }
+   .como-funciona-section span { font-size: 1rem; }
+
+   /* Elementos decorativos */
+   .hero-consultoria .decorative-circle { width: 150px; height: 150px; filter: blur(20px); }
+   .consultoria-intro .decorative-circle { width: 100px; height: 100px; filter: blur(20px);}
+    .proceso-section .decorative-circle { width: 140px; height: 140px; filter: blur(20px);}
+    .como-funciona-section .decorative-circle { width: 100px; height: 100px; filter: blur(15px);}
+
+}
+
+@media (max-width: 991.98px) {
+  /* Navbar y Footer responsive ya están arriba */
+
+  /* Hero Consultoría */
+   .hero-consultoria { min-height: 70vh; padding: 60px 15px;}
+   .hero-consultoria h1 { font-size: 2.5rem; }
+   .hero-consultoria p { font-size: 1rem; }
+   .hero-consultoria .btn-custom { padding: 10px 20px; font-size: 1rem; }
+
+
+  /* Consultoría Intro */
+  .consultoria-intro .row { flex-direction: column; text-align: center; }
+  .consultoria-intro .col-md-4 { margin-bottom: 30px; }
+   .consultoria-intro ul { text-align: center; padding-left: 20px; padding-right: 20px; }
+   .consultoria-intro ul li { text-align: left; justify-content: center;}
+
+   .consultoria-intro .decorative-circle { display: none !important;}
+
+
+  /* Proceso Section */
+   .proceso-section .section-title h2 { font-size: 2rem; }
+   .proceso-flow { padding-top: 20px; padding-bottom: 20px; }
+   .process-line { display: none; }
+   .proceso-section .col-md-6 { margin-bottom: 30px; }
+    .step-circle { width: 70px; height: 70px; font-size: 2rem; margin-bottom: 15px; }
+    .proceso-section .card-body h5 { font-size: 1.1rem; }
+   .proceso-section .card-body p { font-size: 0.85rem; }
+
+
+  /* Como Funciona */
+   .como-funciona-section { padding: 60px 15px;}
+   .como-funciona-section .section-title h2 { font-size: 2rem; }
+   .como-funciona-section ul li {
+       flex-direction: column;
+       align-items: center;
+       text-align: center;
+       margin-bottom: 25px;
+   }
+   .como-funciona-section .icon-box { margin-bottom: 15px; margin-right: 0; }
+   .como-funciona-section span { font-size: 1rem; }
+
+   .como-funciona-section .decorative-circle { display: none !important;}
+
+}
+
+@media (max-width: 767.98px) {
+  /* Navbar y Footer responsive ya están arriba */
+
+  /* Hero Consultoría */
+   .hero-consultoria { min-height: 60vh; padding: 40px 10px;}
+   .hero-consultoria h1 { font-size: 2rem; line-height: 1.3;}
+   .hero-consultoria p { font-size: 0.9rem; }
+   .hero-consultoria .btn-custom { padding: 10px 20px; font-size: 0.9rem; }
+
+
+  /* Consultoría Intro */
+   .consultoria-intro { padding: 40px 10px;}
+   .consultoria-intro h2 { font-size: 1.8rem; }
+   .consultoria-intro p { font-size: 0.9rem; }
+   .consultoria-intro ul { padding-left: 10px; padding-right: 10px; }
+   .consultoria-intro ul li { justify-content: flex-start;}
+   .consultoria-intro ul li i { margin-right: 5px; }
+
+
+  /* Proceso Section */
+   .proceso-section { padding: 40px 10px;}
+   .proceso-section .section-title h2 { font-size: 1.8rem; }
+    .proceso-section .col-md-6 { margin-bottom: 25px; }
+    .step-circle { width: 60px; height: 60px; font-size: 1.8rem; margin-bottom: 10px;}
+    .proceso-section .card-body h5 { font-size: 1rem; }
+   .proceso-section .card-body p { font-size: 0.8rem; }
+
+
+  /* Como Funciona */
+   .como-funciona-section { padding: 40px 10px;}
+   .como-funciona-section .section-title h2 { font-size: 1.8rem; }
+   .como-funciona-section ul li { margin-bottom: 20px;}
+   .como-funciona-section .icon-box { width: 50px; height: 50px; font-size: 1.6rem; margin-bottom: 10px;}
+   .como-funciona-section span { font-size: 0.9rem; }
+
+}
+
+@media (max-width: 575.98px) {
+  /* Navbar y Footer responsive ya están arriba */
+
+   /* Hero Consultoría */
+   .hero-consultoria { min-height: 50vh; padding: 30px 10px;}
+   .hero-consultoria h1 { font-size: 1.8rem; line-height: 1.2; }
+   .hero-consultoria p { font-size: 0.8rem; }
+   .hero-consultoria .btn-custom { padding: 8px 15px; font-size: 0.8rem; margin-top: 15px;}
+
+
+   /* Consultoría Intro */
+    .consultoria-intro { padding: 30px 10px;}
+   .consultoria-intro h2 { font-size: 1.6rem; }
+   .consultoria-intro p { font-size: 0.8rem; }
+    .consultoria-intro ul { padding-left: 5px; padding-right: 5px; }
+     .consultoria-intro ul li { justify-content: flex-start;}
+     .consultoria-intro ul li i { margin-right: 5px; }
+
+
+   /* Proceso Section */
+    .proceso-section { padding: 30px 10px;}
+    .proceso-section .section-title h2 { font-size: 1.6rem; }
+     .proceso-section .col-md-6 { margin-bottom: 20px; }
+    .step-circle { width: 50px; height: 50px; font-size: 1.6rem; margin-bottom: 8px;}
+    .proceso-section .card-body h5 { font-size: 0.9rem; }
+   .proceso-section .card-body p { font-size: 0.75rem; }
+
+
+   /* Como Funciona */
+    .como-funciona-section { padding: 30px 10px;}
+    .como-funciona-section .section-title h2 { font-size: 1.6rem; }
+    .como-funciona-section ul li { margin-bottom: 15px;}
+   .como-funciona-section .icon-box { width: 40px; height: 40px; font-size: 1.4rem; margin-bottom: 8px;}
+   .como-funciona-section span { font-size: 0.8rem; }
 }

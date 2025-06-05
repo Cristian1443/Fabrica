@@ -1,383 +1,554 @@
+/* Variables de color (Confirmadas: Primario Azul Oscuro, Secundario Rojo) */
+:root {
+  --primary-color: #273474; /* Azul oscuro */
+  --secondary-color: #e4022c; /* Rojo/Vinotinto */
+  --tertiary-color: #394a9e; /* Color terciario (Azul/Morado) */
+  --dark-color: #1a1a2e;
+  --light-color: #f8f9fa;
+  --white-color: #ffffff;
+
+  /* Definir RGB para rgba */
+  --primary-color-rgb: 39, 52, 116;
+  --secondary-color-rgb: 228, 2, 44;
+  --tertiary-color-rgb: 57, 74, 158;
+  --dark-color-rgb: 26, 26, 46;
+  --white-color-rgb: 255, 255, 255;
+}
+
 /* -----------------------------------------------
-   General Styles
-   ----------------------------------------------- */
-
-
-body,
-html {
-  font-family: Arial, sans-serif;
+General Styles
+------------------------------------------------ */
+body {
+  font-family: "Poppins", sans-serif; /* Usar Poppins */
+  background-color: var(--light-color);
+  color: var(--dark-color);
+  padding-top: 72px !important; /* Ajustado a la altura estándar de la navbar */
+  margin: 0 !important;
   overflow-x: hidden;
 }
 
-/* Navbar */
-.navbar {
-  position: fixed;
-  top: 0;
-  width: 100%;
-  z-index: 1000;
-  background-color: white;
-  border-bottom: 2px solid #e9ecef;
-  padding: 10px 15px;
-  font-family: 'Arial', sans-serif;
-}
-
-body {
-  padding-top: 80px;
-  /* Ajusta este valor si el navbar es más alto */
-}
-
-/* Estilo del Logo */
-.navbar-brand img {
-  max-height: 50px;
-}
-
-/* Links del Navbar */
-.navbar-nav .nav-link {
-  color: black;
-  font-size: 16px;
-  font-weight: bold;
-  margin: 0 10px;
-  transition: color 0.3s ease;
-}
-
-.navbar-nav .nav-link:hover {
-  color: #a4022c;
-}
-
-/* Dropdown */
-.dropdown-menu {
-  border-radius: 8px;
-  border: 1px solid #ddd;
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
-}
-
-.dropdown-item {
-  color: black;
-  font-size: 14px;
-  padding: 10px 20px;
-}
-
-.dropdown-item:hover {
-  background-color: #a4022c;
-  color: white;
-  border-radius: 5px;
-}
-
-/* Botón Contáctanos */
-.btn-danger {
-  background-color: #a4022c;
-  border: none;
-  font-size: 16px;
-  font-weight: bold;
-  text-transform: uppercase;
-}
-
-.btn-danger:hover {
-  background-color: #a4022c;
-}
-
-.navbar-brand img {
-  max-height: 50px;
-}
-
-/* Responsive: Centrar los logos en móvil */
-
-
-/* Mejoras de responsividad */
-@media (max-width: 768px) {
-  .hero .col-lg-6 {
-    text-align: center;
-  }
-
-  .hero .rounded-circle {
-    width: 70%;
-  }
-
-  .quote-container {
-    bottom: -30px;
-    left: 50%;
-    transform: translateX(-50%);
-  }
-}
-
-
-footer {
-  background: url("../assets/img/fondo.webp") no-repeat center center/cover;
-  color: #fff;
-  position: relative;
-}
-
-footer::after {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(0, 0, 0, 0.8);
-}
-
-/* Asegurarse de que los elementos dentro del footer están por encima de la capa oscura */
-footer .container {
-  position: relative;
-  z-index: 2;
-}
-
-.hero-section {
-  background-color: #f8f9fa;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  position: relative;
-  overflow: hidden;
-}
-
-.hero-text h1 {
-  font-size: 2.5rem;
+h1, h2, h3, h4, h5, h6 {
+  color: var(--primary-color); /* Títulos en primario (azul) por defecto */
   font-weight: 700;
-  color: #333;
 }
 
-.highlight {
-  color: #a4022c;
-}
-
-.hero-image img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-
-/* --- Recorte de imagen solo en pantallas grandes --- */
-@media (min-width: 992px) {
-  .hero-image img {
-    clip-path: ellipse(70% 100% at 100% 50%);
-  }
-}
-
-/* --- Ajustes en pantallas pequeñas (móviles) --- */
-@media (max-width: 991px) {
-  .hero-section {
-    flex-direction: column;
-    text-align: center;
-    padding: 30px 5%;
-  }
-
-  .hero-text {
-    width: 100%;
-  }
-
-  .hero-image {
-    width: 100%;
-  }
-}
-
-/* --- Cita inferior fija --- */
-.quote {
-  width: 100%;
-  background: black;
-  color: white;
-  text-align: left;
-  padding: 15px 30px;
-  font-size: 1rem;
-}
-
-.floating-bg {
-  position: absolute;
-  width: 80%;
-  height: 80%;
-  background: rgba(0, 123, 255, 0.1);
-  border-radius: 50%;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  z-index: -1;
-  filter: blur(50px);
-}
-
-/* Animación de flotación */
-@keyframes floatAnimation {
-
-  0%,
-  100% {
-    transform: translateY(0);
-  }
-
-  50% {
-    transform: translateY(-10px);
-  }
-}
-
-/* Sección de encabezado con fondo degradado */
-.team-header {
-  background: linear-gradient(to right, #273474, #a4022c);
-  color: white;
-  text-align: center;
-  padding: 40px 20px;
-}
-
-.team-header p {
-  font-size: 1rem;
-  opacity: 0.8;
-}
-
-/* Contenedor del perfil */
-.team-profile {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-wrap: wrap;
-  text-align: left;
-  padding: 40px 10%;
-}
-
-/* Imagen #a4022conda */
-.profile-img {
-  width: 220px;
-  height: 280px;
-  border-radius: 5%;
-  object-fit: cover;
-  margin-right: 30px;
-}
-
-/* Nombre y contenido */
-.profile-content {
-  max-width: 600px;
-}
-
-.profile-content h2 {
-  font-size: 1.8rem;
-  font-weight: bold;
-  color: #2c2c2c;
-}
-
-.profile-content h2 .highlight {
-  color: #a4022c;
-  font-weight: bold;
-}
-
-.profile-content p {
-  font-size: 1rem;
-  color: #555;
+p {
+  color: var(--dark-color);
   line-height: 1.6;
 }
 
-/* Estrella al lado del nombre */
-.star {
-  color: #a4022c;
-  font-size: 1.5rem;
+a {
+  text-decoration: none;
+  transition: color 0.3s ease;
 }
 
-/* Diseño responsive */
-@media (max-width: 768px) {
-  .team-profile {
-    flex-direction: column;
-    text-align: center;
-  }
-
-  .profile-img {
-    margin-bottom: 20px;
-    margin-right: 0;
-  }
+a:hover {
+  color: var(--secondary-color); /* Links hover en secundario (rojo) */
 }
 
-/* Estilos generales */
-body {
-  background-color: #f8f9fa;
+/* Animaciones */
+@keyframes float {
+  0% { transform: translateY(0) rotate(0deg); }
+  50% { transform: translateY(-20px) rotate(10deg); }
+  100% { transform: translateY(0) rotate(0deg); }
 }
 
-/* Secciones */
-.section {
-  padding: 50px 0;
+@keyframes pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+  100% { transform: scale(1); }
 }
 
-.section-title {
-  text-align: center;
-  font-size: 1.8rem;
-  font-weight: bold;
-  margin-bottom: 30px;
-  color: #273474;
+
+.pulse-animation { animation: pulse 2s infinite; }
+
+/* Clases de utilidad */
+.text-primary { color: var(--primary-color) !important; }
+.text-secondary { color: var(--secondary-color) !important; }
+.text-tertiary { color: var(--tertiary-color) !important; }
+.text-dark { color: var(--dark-color) !important; }
+.text-light { color: var(--light-color) !important; }
+.text-muted { color: rgba(var(--dark-color-rgb), 0.75) !important; }
+.text-red { color: var(--secondary-color) !important; } /* text-red usa secundario (rojo) */
+
+.bg-primary { background-color: var(--primary-color) !important; }
+.bg-secondary { background-color: var(--secondary-color) !important; }
+.bg-tertiary { background-color: var(--tertiary-color) !important; }
+.bg-dark { background-color: var(--dark-color) !important; }
+.bg-light { background-color: var(--light-color) !important; }
+.bg-white { background-color: var(--white-color) !important; }
+
+
+/* ✨ Navbar Mejorado */
+.navbar {
+  position: fixed; top: 0; width: 100%; z-index: 1000;
+  background-color: var(--white-color);
+  border-bottom: 2px solid var(--light-color);
+  padding: 10px 15px; font-family: 'Arial', sans-serif; box-sizing: border-box;
+  height: 72px; transition: all 0.3s ease; box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
 }
 
-/* Tarjetas */
-.card-custom {
-  border-radius: 10px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-  transition: transform 0.3s ease-in-out;
-  border: 1px solid #ddd;
+.navbar.scrolled {
+  background-color: rgba(255, 255, 255, 0.95) !important;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+  height: 60px;
 }
 
-.card-custom:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+.navbar-brand img { transition: height 0.3s ease; }
+.navbar.scrolled .navbar-brand img { height: 40px !important; }
+
+.navbar-toggler { border: none; padding: 0.5rem; }
+.navbar-toggler:focus { box-shadow: none; }
+
+.navbar-toggler-icon {
+  background-image: none; position: relative; width: 24px; height: 2px;
+  background-color: var(--primary-color); /* Icono en primario (azul) */
+  transition: all 0.3s ease;
+}
+.navbar-toggler-icon::before, .navbar-toggler-icon::after {
+  content: ''; position: absolute; width: 24px; height: 2px;
+  background-color: var(--primary-color); /* Líneas en primario (azul) */
+  left: 0; transition: all 0.3s ease;
+}
+.navbar-toggler-icon::before { transform: translateY(-6px); }
+.navbar-toggler-icon::after { transform: translateY(6px); }
+.navbar-toggler[aria-expanded="true"] .navbar-toggler-icon { background-color: transparent; }
+.navbar-toggler[aria-expanded="true"] .navbar-toggler-icon::before { transform: rotate(45deg); }
+.navbar-toggler[aria-expanded="true"] .navbar-toggler-icon::after { transform: rotate(-45deg); }
+
+.nav-link {
+  font-weight: 500; color: var(--dark-color) !important; margin: 0 10px;
+  position: relative;
+}
+.nav-link::after {
+  content: ''; position: absolute; bottom: 0; left: 0; width: 0; height: 2px;
+  background-color: var(--secondary-color); /* Subrayado en secundario (rojo) */
+  transition: width 0.3s ease;
+}
+.nav-link:hover::after, .nav-link.active::after { width: 100%; }
+
+.dropdown-menu { border: none; box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1); }
+.dropdown-item { transition: all 0.3s ease; }
+.dropdown-item:hover {
+  background-color: var(--secondary-color); /* Fondo de dropdown hover en secundario (rojo) */
+  color: var(--white-color) !important;
 }
 
-.card img {
-  border-top-left-radius: 10px;
-  border-top-right-radius: 10px;
+.btn-danger {
+  background-color: var(--secondary-color); /* Botón peligro en secundario (rojo) */
+  border: none; font-weight: 500; transition: all 0.3s ease;
+  padding: 10px 25px; border-radius: 30px;
 }
 
-/* Botón */
+.btn-danger:hover {
+  background-color: var(--primary-color); /* Botón peligro hover en primario (azul) */
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(var(--secondary-color-rgb), 0.3);
+}
+
+
+/* 🎨 Botón Personalizado */
 .btn-custom {
-  background-color: #273474;
-  color: white;
-  font-weight: bold;
-  border-radius: 5px;
-  transition: 0.3s;
+  display: inline-block; padding: 15px 40px; font-size: 1.1rem; font-weight: 600;
+  color: var(--white-color);
+  background: linear-gradient(45deg, var(--secondary-color), var(--primary-color)); /* Degradado Rojo a Azul */
+  border: none; border-radius: 50px; transition: all 0.4s ease; text-decoration: none;
+  box-shadow: 0 4px 15px rgba(var(--secondary-color-rgb), 0.4);
+  position: relative; overflow: hidden;
 }
 
 .btn-custom:hover {
-  background-color: #273474;
+  background: linear-gradient(45deg, var(--primary-color), var(--secondary-color)); /* Degradado inverso */
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(var(--primary-color-rgb), 0.6);
+  color: var(--white-color);
 }
 
-/* Línea divisoria */
-.divider {
-  width: 50%;
-  height: 4px;
-  background: #273474;
-  margin: 20px auto;
-  border-radius: 5px;
+.btn-custom::before {
+  content: ''; position: absolute; top: 0; left: -100%; width: 100%; height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+  transition: 0.5s;
 }
 
-/* Estilos del Hero */
-.hero {
-  height: 90vh;
-  background: linear-gradient(to right, rgba(0, 0, 0, 0.9), rgba(3, 21, 48, 0.784)),
-    url('../assets/img/integrantes/Foto\ con\ todos.png') center/cover no-repeat;
+.btn-custom:hover::before { left: 100%; }
+
+
+/* 🌟 Sección de Títulos General */
+.section-title {
+  text-align: center; margin-bottom: 60px;
+}
+
+.section-title h2 {
+  font-size: 2.5rem; font-weight: 700;
+  color: var(--primary-color); /* Título principal en primario (azul) */
+  position: relative; display: inline-block;
+}
+
+.section-title h2::after {
+  content: ''; position: absolute; bottom: -10px; left: 50%; transform: translateX(-50%);
+  width: 80px; height: 4px;
+  background: var(--secondary-color); /* Subrayado en secundario (rojo) */
+  border-radius: 2px;
+}
+
+.section-subtitle {
+  font-size: 1.8rem;
+  font-weight: 600;
+  color: var(--primary-color); /* Subtítulo en primario (azul) */
+  margin-bottom: 30px;
+  position: relative;
+  /* display: inline-block; */ /* Ya no es necesario si el after no está centrado */
+}
+
+.section-subtitle::after {
+   content: ''; position: absolute; bottom: -5px; left: 0; width: 50px; height: 3px;
+   background: var(--secondary-color); /* Subrayado en secundario (rojo) */
+}
+
+
+.divider { width: 70px; height: 4px; background: var(--primary-color); border-radius: 2px; margin: 20px auto; }
+
+
+/* ✨ Hero Section Equipo */
+.hero-section-equipo {
+  min-height: 90vh;
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), /* Overlay oscuro */
+  url('../assets/img/integrantes/Foto\ Grupal\ \(profe\ lado\ derecho\).jpg') center/cover no-repeat; /* Imagen de fondo */
   display: flex;
   align-items: center;
   justify-content: center;
   text-align: center;
-  color: #ffffff;
+  color: var(--white-color); /* Texto blanco */
+  position: relative;
+  overflow: hidden;
   padding: 20px;
 }
 
-.hero h1 {
-  font-size: 3rem;
-  font-weight: bold;
-  color: #273474;
+.hero-section-equipo .container { position: relative; z-index: 2; } /* Asegura contenido sobre el fondo/overlay */
+
+.hero-section-equipo .hero-content {
+  max-width: 800px; margin: 0 auto; padding: 20px;
 }
 
-.hero h1 span {
-  color: #a4022c;
+.hero-section-equipo .display-4 {
+  font-size: 3.5rem; font-weight: 700; margin-bottom: 10px;
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3); color: var(--white-color); /* Título blanco */
 }
 
-.hero p {
-  font-size: 1.3rem;
-  opacity: 0.8;
-  margin: 20px 0;
+.hero-section-equipo .display-4 span {
+  color: var(--secondary-color); /* Parte del título en secundario (rojo) */
 }
 
-.hero .btn-primary {
-  background-color: #273474;
-  border: none;
-  font-size: 1.2rem;
-  padding: 12px 30px;
-  border-radius: 10px;
-  transition: all 0.3s ease-in-out;
+.hero-section-equipo .lead {
+  font-size: 1.3rem; opacity: 0.95; margin-bottom: 25px; color: rgba(var(--white-color-rgb), 0.9); /* Texto blanco semitransparente */
 }
 
-.hero .btn-primary:hover {
-  background-color: #a4022c;
+
+/* Perfil del Líder */
+.team-profile-section {
+  background-color: var(--light-color); /* Fondo claro */
+  padding: 80px 0;
+}
+
+.team-profile-section .profile-img {
+  width: 250px; /* Ajusta el tamaño de la imagen */
+  height: 250px;
+  object-fit: cover;
+  border-radius: 50%; /* Circular */
+  border: 5px solid var(--primary-color); /* Borde en color primario (azul) */
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.team-profile-section .profile-img:hover {
   transform: scale(1.05);
+  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.15);
+}
+
+
+.team-profile-section .profile-content h3 {
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--primary-color); /* Título en primario (azul) */
+}
+
+.team-profile-section .profile-content h3 span {
+  color: var(--secondary-color); /* Parte del nombre en secundario (rojo) */
+}
+
+.team-profile-section .star-icon {
+  color: var(--secondary-color); /* Color secundario (rojo) para la estrella */
+  font-size: 1.5rem;
+  vertical-align: middle;
+}
+
+.team-profile-section .profile-content p {
+  font-size: 1.05rem;
+  line-height: 1.6;
+  color: var(--dark-color);
+}
+
+.team-profile-section .profile-content p strong {
+  color: var(--primary-color); /* Texto strong en primario (azul) */
+}
+
+
+/* Sección de Miembros del Equipo por Especialidad */
+.team-members-section {
+  background-color: var(--white-color); /* Fondo blanco */
+  padding: 80px 0;
+}
+
+/* --- REDISEÑO DE TARJETAS DE MIEMBRO (Imágenes Rectangulares usando object-fit: contain y sin fondo oscuro) --- */
+.card-custom {
+  border-radius: 12px;
+  background: var(--white-color); /* Fondo blanco */
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08); /* Sombra más pronunciada por defecto */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border: none;
+  text-align: center; /* Centrar contenido */
+  overflow: hidden; /* Asegura que la imagen redondeada no se salga */
+  display: flex; /* Usar flexbox para controlar la disposición interna */
+  flex-direction: column; /* Apilar elementos verticalmente */
+}
+
+.card-custom:hover {
+  transform: translateY(-10px); /* Levantar más en hover */
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15); /* Sombra mayor en hover */
+}
+
+.card-custom .card-img-top {
+  width: 100%; /* Ocupa todo el ancho del contenedor (la tarjeta) */
+  height: 200px; /* Altura fija para las imágenes - ajusta si necesario */
+  object-fit: contain; /* ¡Asegura que la imagen se vea completa, sin cortar! */
+  background-color: transparent; /* ¡Fondo transparente para los posibles espacios vacíos! */
+  border-radius: 12px 12px 0 0; /* Redondear solo las esquinas superiores */
+  display: block; /* Elimina espacio extra debajo de la imagen */
+  transition: transform 0.3s ease;
+  /* Quitar borde y sombra directa de la imagen para un look más limpio */
+  /* border: 4px solid var(--primary-color); */
+  /* box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); */
+}
+
+.card-custom:hover .card-img-top {
+  transform: scale(1.05); /* Zoom sutil en hover */
+}
+
+.card-custom .card-body {
+  padding: 20px;
+  padding-top: 15px; /* Espacio entre la imagen y el texto */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  flex-grow: 1; /* Permite que el body ocupe el espacio restante */
+}
+
+.card-custom .card-title {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: var(--primary-color);
+  margin-bottom: 5px;
+}
+
+.card-custom .card-text {
+  font-size: 0.95rem;
+  color: rgba(var(--dark-color-rgb), 0.8);
+  line-height: 1.5;
+  flex-grow: 1; /* Permite que el texto ocupe el espacio disponible, empujando el botón hacia abajo */
+  margin-bottom: 15px; /* Espacio antes del botón */
+}
+
+/* Botón "Portafolio" en las tarjetas */
+.card-custom .btn-custom {
+  display: inline-block; padding: 8px 20px; font-size: 0.9rem; font-weight: 600;
+  color: var(--white-color);
+  background: linear-gradient(45deg, var(--secondary-color), var(--primary-color)); /* Degradado Rojo a Azul */
+  border: none; border-radius: 50px; transition: all 0.4s ease; text-decoration: none;
+  box-shadow: 0 2px 10px rgba(var(--secondary-color-rgb), 0.3);
+  position: relative; overflow: hidden;
+  margin-top: auto; /* Alinea el botón en la parte inferior del flex container */
+}
+
+.card-custom .btn-custom:hover {
+  background: linear-gradient(45deg, var(--primary-color), var(--secondary-color)); /* Degradado inverso */
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(var(--primary-color-rgb), 0.4);
+  color: var(--white-color);
+}
+
+.card-custom .btn-custom::before {
+  content: ''; position: absolute; top: 0; left: -100%; width: 100%; height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+  transition: 0.5s;
+}
+
+.btn-custom:hover::before { left: 100%; }
+/* --- FIN REDISEÑO DE TARJETAS DE MIEMBRO --- */
+
+
+/* ✨ Footer con Imagen de Fondo y Overlay */
+footer {
+  position: relative;
+  padding: 60px 0 30px;
+  background: url("../assets/img/fondo.webp") no-repeat center center;
+  background-size: cover;
+  color: var(--light-color);
+  font-family: "Poppins", sans-serif;
+  overflow: hidden;
+}
+
+footer::before {
+  content: ""; position: absolute; top: 0; left: 0; width: 100%; height: 100%;
+  background: rgba(0, 0, 0, 0.85);
+  z-index: 1;
+}
+
+footer .container { position: relative; z-index: 2; }
+
+/* Anular clases de Bootstrap si están en el HTML del footer */
+footer.bg-primary { background-color: transparent !important; }
+footer.text-light { color: var(--light-color) !important; }
+
+footer h5 {
+  /* Títulos en el footer - Usamos secundario (rojo) para contraste sobre el overlay oscuro */
+  color: var(--secondary-color) !important;
+  font-weight: 600; margin-bottom: 15px;
+}
+
+footer a {
+  color: var(--light-color);
+  text-decoration: none; transition: color 0.3s ease;
+}
+footer a:hover {
+  color: var(--white-color);
+  text-decoration: underline !important;
+}
+
+footer .social-icons a {
+  display: inline-flex; align-items: center; justify-content: center;
+  width: 35px; height: 35px; background: rgba(255, 255, 255, 0.15);
+  border-radius: 50%; margin-right: 8px; color: var(--light-color);
+  transition: all 0.3s ease;
+}
+footer .social-icons a:hover {
+  background: var(--primary-color); /* Fondo hover en primario (azul) */
+  color: var(--white-color);
+  transform: translateY(-4px);
+}
+
+.map-container {
+  height: 150px; border-radius: 8px; overflow: hidden; margin-bottom: 15px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2); background-color: #ccc;
+}
+
+footer p {
+  font-size: 0.95rem; margin-bottom: 8px; color: var(--light-color);
+}
+
+footer p i {
+  margin-right: 8px;
+  color: var(--secondary-color); /* Ícono en párrafo en secundario (rojo) */
+}
+
+
+/* Responsive adjustments */
+@media (max-width: 1199.98px) {
+  .hero-section-equipo .display-4 { font-size: 3rem; }
+  .hero-section-equipo .lead { font-size: 1.2rem; }
+  .section-title h2 { font-size: 2.2rem; }
+  .section-subtitle { font-size: 1.6rem; }
+   .team-profile-section .profile-content h3 { font-size: 1.8rem; }
+    .card-custom .card-img-top { height: 180px; } /* Ajuste altura imagen en pantallas grandes */
+}
+
+@media (max-width: 991.98px) {
+  body { padding-top: 75px; }
+
+  .hero-section-equipo { min-height: 70vh; }
+   .hero-section-equipo .display-4 { font-size: 2.5rem; }
+   .hero-section-equipo .lead { font-size: 1.1rem; }
+
+
+  .team-profile-section .row { flex-direction: column; text-align: center; }
+  .team-profile-section .profile-img { margin: 0 auto 20px; }
+  .team-profile-section .profile-content { text-align: center; }
+  .team-profile-section .profile-content h3 { display: inline-block; } /* Para centrar el título */
+  .team-profile-section .profile-content .star-icon { display: inline-block; margin-left: 5px; }
+
+
+   .section-title h2 { font-size: 2rem; }
+   .section-subtitle { font-size: 1.4rem; text-align: center; }
+   .section-subtitle::after { left: 50%; transform: translateX(-50%); }
+
+    .card-custom .card-img-top { height: 160px; } /* Ajuste altura imagen en tablet */
+
+
+  /* Ajustes de footer en tablet */
+  footer .col-md-3 { margin-bottom: 30px; text-align: center !important; }
+  footer .d-flex.justify-content-md-start { justify-content: center !important; }
+}
+
+@media (max-width: 767.98px) {
+  body { padding-top: 70px; }
+  .navbar { height: 70px; padding-top: 8px; padding-bottom: 8px; }
+  .navbar.scrolled { height: 60px; padding-top: 5px; padding-bottom: 5px; }
+
+   .hero-section-equipo { min-height: 60vh; }
+   .hero-section-equipo .display-4 { font-size: 2rem; line-height: 1.3; }
+   .hero-section-equipo .lead { font-size: 1rem; }
+   .btn-custom { padding: 12px 30px; font-size: 1rem; }
+
+   .team-profile-section .profile-img { width: 180px; height: 180px; }
+   .team-profile-section .profile-content h3 { font-size: 1.5rem; }
+   .team-profile-section .profile-content p { font-size: 0.9rem; }
+
+   .section-title h2 { font-size: 1.8rem; }
+   .section-subtitle { font-size: 1.2rem; }
+
+   .card-custom .card-img-top { height: 140px; } /* Ajuste altura imagen en móvil */
+
+
+  /* Mobile menu styles (unificados) */
+  .navbar-collapse {
+      position: fixed; top: 70px; left: 0; width: 100%;
+      background-color: white !important; padding: 20px;
+      box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1); z-index: 999;
+      max-height: calc(100vh - 70px); overflow-y: auto;
+  }
+  .navbar-nav { background-color: white !important; margin-top: 15px; }
+  .navbar-nav .nav-item { padding: 10px 0; border-bottom: 1px solid #f0f0f0; }
+  .navbar-nav .nav-item:last-child { border-bottom: none; }
+  .navbar-nav .nav-link {
+      color: var(--primary-color) !important; font-size: 1.1rem;
+      padding: 10px 15px; display: block;
+  }
+  .navbar-nav .nav-link:hover {
+      color: var(--secondary-color) !important; background-color: #f8f8f8;
+      border-radius: 5px;
+  }
+  .dropdown-menu {
+      background-color: #f9f9f9 !important; border: none; box-shadow: none;
+      margin-left: 15px; width: calc(100% - 30px);
+  }
+  .dropdown-item { padding: 10px 25px; }
+
+
+  /* Ajustes de footer en móvil */
+  footer .col-md-3 { margin-bottom: 20px; }
+
+}
+
+@media (max-width: 575.98px) {
+   .hero-section-equipo .display-4 { font-size: 1.8rem; line-height: 1.2; }
+   .section-title h2 { font-size: 1.8rem; }
+   .section-subtitle { font-size: 1rem; }
+   .team-profile-section .profile-img { width: 150px; height: 150px; }
+   .team-profile-section .profile-content h3 { font-size: 1.4rem; }
+   .team-profile-section .profile-content p { font-size: 0.85rem; }
+   .card-custom .card-img-top { height: 120px; border-radius: 12px 12px 0 0; } /* Ajuste altura e.g., móvil */
+   .card-custom .card-body { padding-top: 15px; } /* Ajuste padding top body */
+   .card-custom .card-title { font-size: 1rem; }
+   .card-custom .card-text { font-size: 0.8rem; margin-bottom: 10px; }
+   .card-custom .btn-custom { padding: 6px 15px; font-size: 0.8rem; }
 }

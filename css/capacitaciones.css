@@ -1,306 +1,448 @@
+/* Archivo: css/capacitaciones.css */
+
+/* Variables de color (Alineadas con el tema general) */
+:root {
+  --primary-color: #273474; /* Azul oscuro */
+  --secondary-color: #e4022c; /* Rojo/Vinotinto */
+  --tertiary-color: #394a9e; /* Color terciario (Azul/Morado) */
+  --dark-color: #1a1a2e;
+  --light-color: #f8f9fa;
+  --white-color: #ffffff;
+  --success-color: #28a745; /* Verde estándar de Bootstrap */
+  --warning-color: #f7df1e; /* Amarillo estándar de Bootstrap */
+
+  /* Definir RGB para rgba */
+  --primary-color-rgb: 39, 52, 116;
+  --secondary-color-rgb: 228, 2, 44;
+  --tertiary-color-rgb: 57, 74, 158;
+  --dark-color-rgb: 26, 26, 46;
+  --white-color-rgb: 255, 255, 255;
+}
+
 /* -----------------------------------------------
-   General Styles
-   ----------------------------------------------- */
-
-
+General Styles (Estilos Base para esta página - Replicado para auto-contenido)
+------------------------------------------------ */
 body {
-  font-family: Arial, sans-serif;
+  font-family: "Poppins", sans-serif;
+  background-color: var(--light-color);
+  color: var(--dark-color);
+  padding-top: 72px !important;
+  margin: 0 !important;
+  overflow-x: hidden;
 }
 
-/* Navbar */
-.navbar {
-  position: fixed;
-  top: 0;
-  width: 100%;
-  z-index: 1000;
-  background-color: white;
-  border-bottom: 2px solid #e9ecef;
-  padding: 10px 15px;
-  font-family: 'Arial', sans-serif;
+h1, h2, h3, h4, h5, h6 {
+  color: var(--primary-color);
+  font-weight: 700;
 }
 
-body {
-  padding-top: 80px;
-  /* Ajusta este valor si el navbar es más alto */
+p {
+  color: var(--dark-color);
+  line-height: 1.6;
 }
 
-/* Estilo del Logo */
-.navbar-brand img {
-  max-height: 50px;
-}
-
-/* Links del Navbar */
-.navbar-nav .nav-link {
-  color: black;
-  font-size: 16px;
-  font-weight: bold;
-  margin: 0 10px;
+a {
+  text-decoration: none;
   transition: color 0.3s ease;
 }
 
-.navbar-nav .nav-link:hover {
-  color: #a4022c;
+a:hover {
+  color: var(--secondary-color);
 }
 
-/* Dropdown */
-.dropdown-menu {
-  border-radius: 8px;
-  border: 1px solid #ddd;
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
-}
-
-.dropdown-item {
-  color: black;
-  font-size: 14px;
-  padding: 10px 20px;
-}
-
-.dropdown-item:hover {
-  background-color: #a4022c;
-  color: white;
-  border-radius: 5px;
-}
-
-/* Botón Contáctanos */
-.btn-danger {
-  background-color: #a4022c;
-  border: none;
-  font-size: 16px;
-  font-weight: bold;
-  text-transform: uppercase;
-}
-
-.btn-danger:hover {
-  background-color: #a4022c;
-}
-
-.navbar-brand img {
-  max-height: 50px;
-}
-
-/* Estilos necesarios */
-
-
-/*animacion como funciona*/
-@keyframes float {
-
-  0%,
-  100% {
-    transform: translateY(0);
-  }
-
-  50% {
-    transform: translateY(-20px);
-  }
-}
-
-/*animacion nuestro proceso*/
-.icon-box {
-  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+/* Animaciones (Replicado para auto-contenido) */
+@keyframes floatAnimation {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-15px); }
 }
 
 @keyframes float {
-
-  0%,
-  100% {
-    transform: translateY(0);
-  }
-
-  50% {
-    transform: translateY(-20px);
-  }
+  0%, 100% { transform: translateY(0px) translateX(0px); }
+  50% { transform: translateY(10px) translateX(5px); }
 }
 
-
-
-/* Hero Section */
-
-
-/* Botón */
-.btn-danger {
-  background-color: #a4022c;
-  border-color: #a4022c;
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
 }
 
-.btn-danger:hover {
-  background-color: #a4022c;
-  border-color: #a4022c;
+@keyframes pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+  100% { transform: scale(1); }
 }
 
-/* Mejoras de responsividad */
-@media (max-width: 768px) {
-  .hero .col-lg-6 {
-    text-align: center;
-  }
+.pulse-animation { animation: pulse 2s infinite; }
 
-  .hero .rounded-circle {
-    width: 70%;
-  }
+/* Clases de utilidad (Replicado para auto-contenido) */
+.text-primary { color: var(--primary-color) !important; }
+.text-secondary { color: var(--secondary-color) !important; }
+.text-tertiary { color: var(--tertiary-color) !important; }
+.text-dark { color: var(--dark-color) !important; }
+.text-light { color: var(--light-color) !important; }
+.text-muted { color: rgba(var(--dark-color-rgb), 0.75) !important; }
+.text-red { color: var(--secondary-color) !important; }
 
-  .quote-container {
-    bottom: -30px;
-    left: 50%;
-    transform: translateX(-50%);
-  }
+.bg-primary { background-color: var(--primary-color) !important; }
+.bg-secondary { background-color: var(--secondary-color) !important; }
+.bg-tertiary { background-color: var(--tertiary-color) !important; }
+.bg-dark { background-color: var(--dark-color) !important; }
+.bg-light { background-color: var(--light-color) !important; }
+.bg-white { background-color: var(--white-color) !important; }
+.bg-success { background-color: var(--success-color) !important; }
+.bg-warning { background-color: var(--warning-color) !important; }
+
+
+/* General Section Title Style (Aplicado a todos los títulos de sección .section-title) */
+.section-title {
+  text-align: center; margin-bottom: 60px;
 }
 
+.section-title h2 {
+  font-size: 2.5rem; font-weight: 700;
+  color: var(--primary-color);
+  position: relative; display: inline-block;
+  line-height: 1.4;
+}
+
+.section-title h2::after {
+  content: ''; position: absolute; bottom: -10px; left: 50%; transform: translateX(-50%);
+  width: 80px; height: 4px;
+  background: var(--secondary-color);
+  border-radius: 2px;
+}
+
+/* General Custom Button Style (Aplicado a todos los botones .btn-custom) */
+.btn-custom {
+  display: inline-block; padding: 15px 40px; font-size: 1.1rem; font-weight: 600;
+  color: var(--white-color);
+  background: linear-gradient(45deg, var(--secondary-color), var(--primary-color));
+  border: none; border-radius: 50px; transition: all 0.4s ease; text-decoration: none;
+  box-shadow: 0 6px 20px rgba(var(--secondary-color-rgb), 0.5);
+  position: relative; overflow: hidden;
+}
+
+.btn-custom:hover {
+  background: linear-gradient(45deg, var(--primary-color), var(--secondary-color));
+  transform: translateY(-3px);
+  box-shadow: 0 8px 25px rgba(var(--primary-color-rgb), 0.7);
+  color: var(--white-color);
+}
+
+.btn-custom::before {
+  content: ''; position: absolute; top: 0; left: -100%; width: 100%; height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+  transition: 0.5s;
+}
+
+.btn-custom:hover::before { left: 100%; }
 
 
-/* Overlay oscuro encima de la imagen de fondo */
+/* ✨ Navbar Styles (Contenidos en este archivo) */
+.navbar {
+  position: fixed; top: 0; width: 100%; z-index: 1000;
+  background-color: var(--white-color);
+  border-bottom: 2px solid var(--light-color);
+  padding: 10px 15px; font-family: "Poppins", sans-serif;
+  box-sizing: border-box;
+  height: 72px; transition: all 0.3s ease; box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
+}
 
-footer {
-  background: url("../assets/img/fondo.webp") no-repeat center center/cover;
-  color: #fff;
+.navbar.scrolled {
+  background-color: rgba(255, 255, 255, 0.95) !important;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+  height: 60px;
+}
+
+.navbar-brand img { transition: height 0.3s ease; max-height: 50px; }
+.navbar.scrolled .navbar-brand img { height: 40px !important; }
+
+.navbar-toggler { border: none; padding: 0.5rem; }
+.navbar-toggler:focus { box-shadow: none; }
+
+.navbar-toggler-icon {
+  background-image: none; position: relative; width: 24px; height: 2px;
+  background-color: var(--primary-color);
+  transition: all 0.3s ease;
+}
+.navbar-toggler-icon::before, .navbar-toggler-icon::after {
+  content: ''; position: absolute; width: 24px; height: 2px;
+  background-color: var(--primary-color);
+  left: 0; transition: all 0.3s ease;
+}
+.navbar-toggler-icon::before { transform: translateY(-6px); }
+.navbar-toggler-icon::after { transform: translateY(6px); }
+.navbar-toggler[aria-expanded="true"] .navbar-toggler-icon { background-color: transparent; }
+.navbar-toggler[aria-expanded="true"] .navbar-toggler-icon::before { transform: rotate(45deg); }
+.navbar-toggler[aria-expanded="true"] .navbar-toggler-icon::after { transform: rotate(-45deg); }
+
+.nav-link {
+  font-weight: 500; color: var(--dark-color) !important; margin: 0 10px;
   position: relative;
 }
+.nav-link::after {
+  content: ''; position: absolute; bottom: 0; left: 0; width: 0; height: 2px;
+  background-color: var(--secondary-color);
+  transition: width 0.3s ease;
+}
+.nav-link:hover::after, .nav-link.active::after { width: 100%; }
 
-footer::after {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(0, 0, 0, 0.8);
+.dropdown-menu { border: none; box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1); }
+.dropdown-item { transition: all 0.3s ease; }
+.dropdown-item:hover {
+  background-color: var(--secondary-color);
+  color: var(--white-color) !important;
 }
 
-/* Asegurarse de que los elementos dentro del footer están por encima de la capa oscura */
+/* Botón Contáctanos en Navbar */
+.navbar .btn-danger {
+  background-color: var(--secondary-color);
+  border: none; font-weight: 500; transition: all 0.3s ease;
+  padding: 10px 25px; border-radius: 30px;
+}
+
+.navbar .btn-danger:hover {
+  background-color: var(--primary-color);
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(var(--secondary-color-rgb), 0.3);
+}
+
+
+/* ✨ Footer Styles (Contenidos en este archivo) */
+footer {
+  position: relative;
+  padding: 60px 0 30px;
+  background: url("../assets/img/fondo.webp") no-repeat center center;
+  background-size: cover;
+  color: var(--light-color);
+  font-family: "Poppins", sans-serif;
+  overflow: hidden;
+}
+
+footer::before { /* Overlay */
+  content: ""; position: absolute; top: 0; left: 0; width: 100%; height: 100%;
+  background: rgba(var(--dark-color-rgb), 0.85);
+  z-index: 1;
+}
+
 footer .container {
   position: relative;
   z-index: 2;
 }
 
-.floating-bg {
-  position: absolute;
-  width: 80%;
-  height: 80%;
-  background: rgba(0, 123, 255, 0.1);
-  border-radius: 50%;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  z-index: -1;
-  filter: blur(50px);
+footer h5 {
+  color: var(--secondary-color) !important;
+  font-weight: 600; margin-bottom: 15px;
 }
 
-/* Animación de flotación */
-@keyframes floatAnimation {
-
-  0%,
-  100% {
-    transform: translateY(0);
-  }
-
-  50% {
-    transform: translateY(-10px);
-  }
+footer a {
+  color: var(--light-color);
+  text-decoration: none; transition: color 0.3s ease;
+}
+footer a:hover {
+  color: var(--white-color);
+  text-decoration: underline !important;
 }
 
-/* Estilos del Hero */
-.hero {
-  height: 91vh;
+/* Estilos específicos para los iconos sociales en el footer */
+footer .social-icons a {
+  display: inline-flex; align-items: center; justify-content: center;
+  width: 35px; height: 35px; background: rgba(var(--white-color-rgb), 0.15);
+  border-radius: 50%; margin-right: 8px; color: var(--light-color);
+  transition: all 0.3s ease;
+}
+footer .social-icons a:hover {
+  background: var(--primary-color);
+  color: var(--white-color);
+  transform: translateY(-4px);
+}
+
+.map-container {
+  height: 150px; border-radius: 8px; overflow: hidden; margin-bottom: 15px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2); background-color: #ccc;
+}
+
+footer p {
+  font-size: 0.95rem; margin-bottom: 8px; color: var(--light-color);
+}
+
+footer p i {
+  margin-right: 8px;
+  color: var(--secondary-color);
+}
+
+
+/* --------------- Estilos Específicos de la página de Capacitaciones --------------- */
+
+/* Hero Section Capacitaciones */
+.hero-capacitaciones { /* Usando clase específica */
+  min-height: 90vh; /* Altura ajustada */
   display: flex;
   align-items: center;
   justify-content: center;
   text-align: center;
-  background: linear-gradient(to right, #000000f0, #000000b9),
-    url('../assets/img/fondo.webp') center/cover no-repeat;
   position: relative;
-  padding: 20px;
-  color: white;
+  overflow: hidden;
+  /* Fondo con gradiente de colores del tema y overlay sutil */
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), 
+              url('../assets/img/fondo.webp') center/cover no-repeat; /* Cambiar a una imagen más abstracta si tienes */
+  background-size: cover;
+  padding: 80px 20px; /* Ajuste de padding */
+  color: var(--white-color); /* Texto blanco por defecto */
 }
 
-/* Contenedor del contenido */
-.hero-content {
-  max-width: 800px;
+.hero-capacitaciones .hero-content {
+  position: relative;
   z-index: 2;
+  max-width: 800px;
+  color: var(--white-color); /* Asegurar texto blanco */
 }
 
-.hero h1 {
-  font-size: 3.2rem;
+.hero-capacitaciones h1 {
+  font-size: 3.5rem; /* Ajuste de tamaño */
   font-weight: bold;
+  color: var(--white-color); /* Título blanco */
+  margin-bottom: 15px;
+  /* text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3); /* Sombra de texto eliminada */
 }
 
-.hero h1 {
-  font-size: 3.2rem;
-  font-weight: bold;
-  color: #a4022c;
+.hero-capacitaciones h1 span {
+  color: var(--secondary-color); /* Parte en secundario (rojo) */
 }
 
-.hero p {
-  font-size: 1.3rem;
+.hero-capacitaciones p {
+  font-size: 1.2rem;
   opacity: 0.9;
   margin: 20px 0;
+  color: rgba(var(--white-color-rgb), 0.9); /* Texto blanco semi-transparente */
 }
 
-.hero .btn-custom {
-  background-color: white;
-  color: #273474;
-  font-size: 1.2rem;
-  padding: 12px 30px;
-  border-radius: 8px;
-  transition: all 0.3s ease-in-out;
-  text-decoration: none;
-  display: inline-block;
-  font-weight: bold;
+/* Botón del Hero (Usa la clase btn-custom general) */
+.hero-capacitaciones .btn-custom {
+   margin-top: 20px; /* Espacio encima del botón */
+   padding: 12px 30px; /* Ajuste de padding */
+   font-size: 1.2rem; /* Ajuste de tamaño de fuente */
 }
 
-.hero .btn-custom:hover {
-  background-color: #a4022c;
-  color: white;
-  transform: scale(1.05);
-}
-
-/* Animaciones flotantes */
-@keyframes float {
-
-  0%,
-  100% {
-    transform: translateY(0px);
-  }
-
-  50% {
-    transform: translateY(20px);
-  }
-}
-
-.decorative-circle {
+/* Elementos decorativos animados en el Hero */
+.hero-capacitaciones .decorative-circle {
   position: absolute;
-  background: rgba(0, 123, 255, 0.1);
   border-radius: 50%;
-  animation: float 8s ease-in-out infinite alternate;
+  opacity: 0.1; /* Menor opacidad para sutilidad */
+  z-index: 0;
+  filter: blur(50px); /* Efecto blur pronunciado */
 }
 
-.top-left {
-  width: 250px;
-  height: 250px;
-  top: -100px;
-  left: -100px;
+
+/* Sección Capacitación en Software (Intro) */
+.capacitacion-intro { /* Usando clase específica */
+   padding: 80px 0;
+   background-color: var(--light-color);
+   position: relative;
+   overflow: hidden;
 }
 
-.bottom-right {
-  width: 300px;
-  height: 300px;
-  bottom: -50px;
-  right: -50px;
+.capacitacion-intro .section-title h2 {
+   color: var(--primary-color); /* Título en primario */
 }
 
-/* Efecto hover en tarjetas */
-.hover-effect {
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+.capacitacion-intro h5 {
+  font-weight: bold;
+  color: var(--primary-color); /* Subtítulo en primario */
 }
 
-.hover-effect:hover {
-  transform: translateY(-10px);
-  box-shadow: 0px 15px 30px rgba(0, 0, 0, 0.15);
+.capacitacion-intro p {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  color: rgba(var(--dark-color-rgb), 0.85);
 }
 
-/* Iconos circulares */
-.icon-circle {
-  width: 100px;
-  height: 100px;
+.capacitacion-intro .capacitation-list { /* Estilo para la lista */
+  list-style: none;
+  padding-left: 0;
+}
+
+.capacitation-list li {
+  margin-bottom: 15px; /* Espacio entre ítems de lista */
+  color: rgba(var(--dark-color-rgb), 0.9);
+  font-size: 1rem;
+}
+
+.capacitation-list li i {
+   color: var(--success-color); /* Íconos de lista en verde */
+   margin-right: 10px;
+}
+
+/* ESTILO DE LA IMAGEN DEL PORTAPAPELES (Sombra explicitamente eliminada en CSS, pero *también* hay que quitar la clase shadow-lg en el HTML) */
+.capacitacion-intro .image-container img {
+  border-radius: 8px;
+  box-shadow: none; /* Sombra explicitamente eliminada */
+  width: 80%; /* Reducir el ancho */
+  max-width: 200px; /* Nuevo ancho máximo */
+  transition: all 0.3s ease-in-out; /* Añadida transición suave */
+}
+
+.capacitacion-intro .image-container img:hover {
+  transform: scale(1.05); /* Ligeramente más grande al pasar el ratón (opcional) */
+}
+
+
+/* Elemento decorativo detrás de la imagen */
+.capacitacion-intro .decorative-circle {
+  position: absolute;
+  border-radius: 50%;
+  opacity: 0.08; /* Muy sutil */
+  z-index: -1;
+  filter: blur(40px); /* Efecto blur pronunciado */
+}
+
+
+/* Elementos decorativos animados en esta sección (Ejemplo de uso de variables) */
+.capacitacion-intro .decorative-circle:not(.image-container .decorative-circle) {
+  /* Estilos para los círculos animados grandes, excluyendo el pequeño detrás de la imagen */
+  position: absolute;
+  border-radius: 50%;
+  opacity: 0.06; /* Menor opacidad */
+  z-index: 0;
+  filter: blur(40px); /* Efecto blur */
+}
+
+
+/* Sección Lo que ofrecemos */
+.ofrecemos-section { /* Usando clase específica */
+   padding: 80px 0;
+   background-color: var(--white-color);
+   position: relative;
+   overflow: hidden;
+}
+
+.ofrecemos-section .section-title h2 {
+  color: var(--primary-color); /* Título en primario */
+}
+
+.ofrecemos-section .card {
+  border-radius: 15px; /* Bordes más redondeados */
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+  border: none;
+  position: relative;
+  z-index: 1;
+}
+
+.ofrecemos-section .hover-effect { /* Mantener efecto hover en tarjeta */
+transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.ofrecemos-section .hover-effect:hover {
+transform: translateY(-10px);
+box-shadow: 0px 15px 30px rgba(0, 0, 0, 0.15);
+}
+
+
+.ofrecemos-section .icon-circle { /* Iconos circulares */
+  width: 90px; /* Tamaño ajustado */
+  height: 90px;
   font-size: 2.5rem;
-  color: white;
+  color: var(--white-color); /* Color blanco */
   border-radius: 50%;
   display: flex;
   align-items: center;
@@ -310,7 +452,290 @@ footer .container {
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.hover-effect:hover .icon-circle {
-  transform: scale(1.1) rotate(5deg);
-  box-shadow: 0px 10px 25px rgba(0, 0, 0, 0.3);
+.ofrecemos-section .hover-effect:hover .icon-circle {
+transform: scale(1.1); /* Quitar rotación para simplicidad, mantener escala */
+box-shadow: 0px 10px 25px rgba(0, 0, 0, 0.3);
+}
+
+.ofrecemos-section .card-body h5 {
+  font-weight: bold;
+  color: var(--primary-color); /* Título en primario */
+  margin-bottom: 15px;
+}
+
+.ofrecemos-section .card-body p {
+  color: rgba(var(--dark-color-rgb), 0.8); /* Texto en color oscuro semitransparente */
+}
+
+/* Elementos decorativos animados en esta sección */
+.ofrecemos-section .decorative-circle {
+  position: absolute;
+  border-radius: 50%;
+  opacity: 0.06; /* Menor opacidad */
+  z-index: 0;
+  filter: blur(40px); /* Efecto blur */
+}
+
+
+/* Sección Modalidades de Capacitación */
+.modalidades-section { /* Usando clase específica */
+  padding: 80px 0;
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(to right, var(--primary-color), var(--tertiary-color)); /* Degradado con colores del tema */
+  color: var(--white-color); /* Texto blanco */
+}
+
+.modalidades-section .section-title h2 {
+   color: var(--white-color); /* Título en blanco */
+}
+/* CORRECCIÓN TAMAÑO PALABRA "Capacitación" */
+.modalidades-section .section-title h2 span {
+   color: var(--secondary-color); /* Parte en secundario */
+   font-size: inherit; /* Asegura que herede el tamaño del h2 */
+}
+
+
+.modalidades-section .modalidades-list { /* Estilo para la lista */
+  list-style: none;
+  padding-left: 0;
+}
+
+.modalidades-section .modalidades-list li {
+  margin-bottom: 30px; /* Espacio entre elementos de la lista */
+   color: rgba(var(--white-color-rgb), 0.9); /* Texto blanco semi-transparente */
+   align-items: flex-start !important; /* Alinear ítems al inicio si son multilínea */
+}
+
+.modalidades-section .icon-box { /* Iconos de la lista */
+  width: 70px; /* Tamaño ajustado */
+  height: 70px;
+  font-size: 2.2rem; /* Tamaño de fuente ajustado */
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+  background-color: var(--white-color) !important; /* Fondo blanco */
+  flex-shrink: 0; /* Evita que el icono se encoja */
+  transition: transform 0.3s ease;
+  color: var(--primary-color); /* Color del icono en primario */
+  padding: 0 !important; /* Remover padding extra */
+  margin-right: 20px !important; /* Espacio a la derecha */
+}
+
+.modalidades-section .modalidades-list li:hover .icon-box {
+   transform: scale(1.1);
+}
+
+.modalidades-section span {
+   font-size: 1.1rem; /* Tamaño de fuente */
+   color: rgba(var(--white-color-rgb), 0.9); /* Color texto */
+   flex-grow: 1; /* Permite que el texto ocupe el espacio */
+   padding-top: 5px; /* Ajuste vertical con ícono */
+}
+
+/* Elementos decorativos animados en esta sección */
+.modalidades-section .decorative-circle {
+  position: absolute;
+  border-radius: 50%;
+  opacity: 0.12; /* Menor opacidad */
+  z-index: 0;
+  filter: blur(30px); /* Efecto blur */
+}
+
+
+/* Sección Quote */
+.quote-section { /* Usando clase específica */
+  padding: 60px 0;
+  background-color: var(--white-color);
+}
+
+.quote-section blockquote {
+  margin: 0 auto;
+  max-width: 800px;
+  border-left: 4px solid var(--secondary-color); /* Línea decorativa */
+  padding-left: 20px;
+}
+
+.quote-section blockquote p {
+  font-size: 1.8rem; /* Tamaño de fuente */
+  font-weight: bold;
+  color: var(--primary-color); /* Color primario */
+  margin-bottom: 0;
+  line-height: 1.4;
+}
+
+.quote-section blockquote p span {
+  color: var(--secondary-color); /* Parte en secundario */
+}
+
+
+/* Responsive adjustments (Contenidos en este archivo) */
+
+@media (max-width: 1199.98px) {
+  /* Navbar y Footer responsive ya están arriba */
+
+  /* Hero Capacitaciones */
+  .hero-capacitaciones h1 { font-size: 3rem; }
+  .hero-capacitaciones p { font-size: 1.1rem; }
+  .hero-capacitaciones .btn-custom { padding: 10px 25px; font-size: 1.1rem; }
+   .hero-capacitaciones .decorative-circle { width: 200px; height: 200px; filter: blur(40px); }
+
+  /* Capacitación Intro */
+   .capacitacion-intro h2 { font-size: 2.2rem; }
+   .capacitacion-intro p { font-size: 1rem; }
+   .capacitation-list li i { font-size: 1.8rem; margin-right: 8px; }
+   .capacitation-list li span { font-size: 0.95rem; }
+   .capacitacion-intro .image-container img { max-width: 350px; }
+    .capacitacion-intro .image-container .decorative-circle { width: 200px; height: 200px; filter: blur(30px);}
+    .capacitacion-intro .decorative-circle:not(.image-container .decorative-circle) { width: 250px; height: 250px; filter: blur(30px);}
+
+
+  /* Ofrecemos Section */
+   .ofrecemos-section .section-title h2 { font-size: 2.2rem; }
+   .ofrecemos-section .icon-circle { width: 80px; height: 80px; font-size: 2.2rem; margin-bottom: 15px;}
+   .ofrecemos-section .card-body h5 { font-size: 1.1rem; }
+   .ofrecemos-section .card-body p { font-size: 0.9rem; }
+    .ofrecemos-section .decorative-circle { width: 200px; height: 200px; filter: blur(30px); }
+
+
+  /* Modalidades Section */
+   .modalidades-section .section-title h2 { font-size: 2.2rem; }
+    .modalidades-section .icon-box { width: 60px; height: 60px; font-size: 2rem; margin-right: 15px !important;}
+   .modalidades-section span { font-size: 1rem; }
+    .modalidades-section .decorative-circle { width: 150px; height: 150px; filter: blur(20px);}
+
+  /* Quote Section */
+   .quote-section blockquote p { font-size: 1.6rem; }
+
+}
+
+@media (max-width: 991.98px) {
+  /* Navbar y Footer responsive ya están arriba */
+
+  /* Hero Capacitaciones */
+   .hero-capacitaciones { min-height: 70vh; padding: 60px 15px;}
+   .hero-capacitaciones h1 { font-size: 2.5rem; }
+   .hero-capacitaciones p { font-size: 1rem; }
+   .hero-capacitaciones .btn-custom { padding: 10px 20px; font-size: 1rem; }
+    .hero-capacitaciones .decorative-circle { width: 150px; height: 150px; filter: blur(30px);}
+
+
+  /* Capacitación Intro */
+  .capacitacion-intro .row { flex-direction: column; } /* Apilar columnas */
+  .capacitacion-intro .col-lg-6 { text-align: center; margin-bottom: 30px; } /* Centrar contenido y añadir espacio */
+   .capacitation-list { text-align: left; padding-left: 20px; padding-right: 20px; }
+   .capacitation-list li { justify-content: center;}
+   .capacitacion-intro .image-container img { max-width: 300px; }
+   .capacitacion-intro .image-container .decorative-circle { width: 180px; height: 180px; filter: blur(30px);}
+    .capacitacion-intro .decorative-circle:not(.image-container .decorative-circle) { display: none !important; }
+
+
+  /* Ofrecemos Section */
+   .ofrecemos-section .section-title h2 { font-size: 2rem; }
+    .ofrecemos-section .col-lg-4 { margin-bottom: 30px; }
+   .ofrecemos-section .icon-circle { width: 90px; height: 90px; font-size: 2.5rem; margin-bottom: 15px;}
+   .ofrecemos-section .card-body h5 { font-size: 1.1rem; }
+   .ofrecemos-section .card-body p { font-size: 0.85rem; }
+    .ofrecemos-section .decorative-circle { display: none !important; }
+
+
+  /* Modalidades Section */
+   .modalidades-section { padding: 60px 15px;}
+   .modalidades-section .section-title h2 { font-size: 2rem; }
+    .modalidades-section .icon-box { width: 70px; height: 70px; font-size: 2.2rem; margin-right: 20px !important;}
+   .modalidades-section span { font-size: 1rem; }
+    .modalidades-section .decorative-circle { display: none !important;}
+
+
+  /* Quote Section */
+   .quote-section blockquote p { font-size: 1.4rem; }
+
+}
+
+@media (max-width: 767.98px) {
+  /* Navbar y Footer responsive ya están arriba */
+
+  /* Hero Capacitaciones */
+   .hero-capacitaciones { min-height: 60vh; padding: 40px 10px;}
+   .hero-capacitaciones h1 { font-size: 2rem; line-height: 1.3;}
+   .hero-capacitaciones p { font-size: 0.9rem; }
+   .hero-capacitaciones .btn-custom { padding: 10px 20px; font-size: 0.9rem; }
+   .hero-capacitaciones .decorative-circle { width: 100px; height: 100px; filter: blur(20px);}
+
+
+  /* Capacitación Intro */
+   .capacitacion-intro { padding: 40px 10px;}
+   .capacitacion-intro h2 { font-size: 1.8rem; }
+   .capacitacion-intro p { font-size: 0.9rem; }
+   .capacitation-list { padding-left: 10px; padding-right: 10px; }
+   .capacitation-list li { justify-content: flex-start;}
+   .capacitation-list li i { margin-right: 5px; }
+   .capacitacion-intro .image-container img { max-width: 250px; }
+    .capacitacion-intro .image-container .decorative-circle { width: 150px; height: 150px; filter: blur(20px);}
+
+
+  /* Ofrecemos Section */
+   .ofrecemos-section { padding: 40px 10px;}
+   .ofrecemos-section .section-title h2 { font-size: 1.8rem; }
+    .ofrecemos-section .col-lg-4 { margin-bottom: 25px; }
+   .ofrecemos-section .icon-circle { width: 70px; height: 70px; font-size: 2rem; margin-bottom: 10px;}
+   .ofrecemos-section .card-body h5 { font-size: 1rem; }
+   .ofrecemos-section .card-body p { font-size: 0.8rem; }
+
+
+  /* Modalidades Section */
+   .modalidades-section { padding: 40px 10px;}
+   .modalidades-section .section-title h2 { font-size: 1.8rem; }
+    .modalidades-section .icon-box { width: 60px; height: 60px; font-size: 1.8rem; margin-right: 10px !important;}
+   .modalidades-section span { font-size: 0.9rem; }
+
+
+  /* Quote Section */
+   .quote-section blockquote p { font-size: 1.2rem; }
+
+}
+
+@media (max-width: 575.98px) {
+  /* Navbar y Footer responsive ya están arriba */
+
+   /* Hero Capacitaciones */
+   .hero-capacitaciones { min-height: 50vh; padding: 30px 10px;}
+   .hero-capacitaciones h1 { font-size: 1.8rem; line-height: 1.2; }
+   .hero-capacitaciones p { font-size: 0.8rem; }
+   .hero-capacitaciones .btn-custom { padding: 8px 15px; font-size: 0.8rem; margin-top: 15px;}
+    .hero-capacitaciones .decorative-circle { width: 80px; height: 80px; filter: blur(15px);}
+
+
+   /* Capacitación Intro */
+    .capacitacion-intro { padding: 30px 10px;}
+   .capacitacion-intro h2 { font-size: 1.6rem; }
+   .capacitacion-intro p { font-size: 0.8rem; }
+   .capacitation-list { padding-left: 5px; padding-right: 5px; }
+   .capacitation-list li { justify-content: flex-start;}
+   .capacitation-list li i { margin-right: 5px; }
+   .capacitacion-intro .image-container img { max-width: 200px; }
+   .capacitacion-intro .image-container .decorative-circle { width: 120px; height: 120px; filter: blur(15px);}
+
+
+   /* Ofrecemos Section */
+    .ofrecemos-section { padding: 30px 10px;}
+    .ofrecemos-section .section-title h2 { font-size: 1.6rem; }
+     .ofrecemos-section .col-lg-4 { margin-bottom: 20px; }
+    .ofrecemos-section .icon-circle { width: 60px; height: 60px; font-size: 1.8rem; margin-bottom: 8px;}
+    .ofrecemos-section .card-body h5 { font-size: 0.9rem; }
+   .ofrecemos-section .card-body p { font-size: 0.75rem; }
+
+
+  /* Modalidades Section */
+    .modalidades-section { padding: 30px 10px;}
+    .modalidades-section .section-title h2 { font-size: 1.6rem; }
+    .modalidades-section .icon-box { width: 50px; height: 50px; font-size: 1.6rem; margin-right: 8px !important;}
+   .modalidades-section span { font-size: 0.8rem; }
+
+
+  /* Quote Section */
+   .quote-section blockquote p { font-size: 1rem; }
+    .quote-section blockquote { border-left-width: 3px; padding-left: 15px;}
 }

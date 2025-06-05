@@ -1,232 +1,376 @@
+/* Variables de color (Confirmadas: Primario Azul Oscuro, Secundario Rojo) */
+:root {
+  --primary-color: #273474; /* Azul oscuro */
+  --secondary-color: #e4022c; /* Rojo/Vinotinto */
+  --tertiary-color: #394a9e; /* Color terciario (Azul/Morado) */
+  --dark-color: #1a1a2e;
+  --light-color: #f8f9fa;
+  --white-color: #ffffff;
+
+  /* Definir RGB para rgba */
+  --primary-color-rgb: 39, 52, 116;
+  --secondary-color-rgb: 228, 2, 44;
+  --tertiary-color-rgb: 57, 74, 158;
+  --dark-color-rgb: 26, 26, 46;
+  --white-color-rgb: 255, 255, 255;
+}
+
+/* -----------------------------------------------
+General Styles
+------------------------------------------------ */
 body {
-  font-family: Arial, sans-serif;
+  font-family: "Poppins", sans-serif;
+  background-color: var(--light-color);
+  color: var(--dark-color);
+  padding-top: 72px !important; /* Ajustado a la altura estándar de la navbar */
+  margin: 0 !important;
+  overflow-x: hidden;
 }
 
-/* Navbar */
-.navbar {
-  position: fixed;
-  top: 0;
-  width: 100%;
-  z-index: 1000;
-  background-color: white;
-  border-bottom: 2px solid #e9ecef;
-  padding: 10px 15px;
-  font-family: 'Arial', sans-serif;
+h1, h2, h3, h4, h5, h6 {
+  color: var(--primary-color); /* Títulos en primario (azul) por defecto */
+  font-weight: 700;
 }
 
-body {
-  padding-top: 80px;
-  /* Ajusta este valor si el navbar es más alto */
+p {
+  color: var(--dark-color);
+  line-height: 1.6;
 }
 
-/* Estilo del Logo */
-.navbar-brand img {
-  max-height: 50px;
-}
-
-/* Links del Navbar */
-.navbar-nav .nav-link {
-  color: black;
-  font-size: 16px;
-  font-weight: bold;
-  margin: 0 10px;
+a {
+  text-decoration: none;
   transition: color 0.3s ease;
 }
 
-.navbar-nav .nav-link:hover {
-  color: #a4022c;
+a:hover {
+  color: var(--secondary-color); /* Links hover en secundario (rojo) */
 }
 
-/* Dropdown */
-.dropdown-menu {
-  border-radius: 8px;
-  border: 1px solid #ddd;
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+/* Animaciones */
+@keyframes float {
+  0% { transform: translateY(0) rotate(0deg); }
+  50% { transform: translateY(-20px) rotate(10deg); }
+  100% { transform: translateY(0) rotate(0deg); }
 }
 
-.dropdown-item {
-  color: black;
-  font-size: 14px;
-  padding: 10px 20px;
+@keyframes pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+  100% { transform: scale(1); }
 }
 
+@keyframes shake-icon {
+  0% { transform: scale(1.1) rotate(0deg); }
+  25% { transform: scale(1.1) rotate(5deg); }
+  50% { transform: scale(1.1) rotate(0deg); }
+  75% { transform: scale(1.1) rotate(-5deg); }
+  100% { transform: scale(1.1) rotate(0deg); }
+}
+
+
+.pulse-animation { animation: pulse 2s infinite; }
+
+/* Clases de utilidad */
+.text-primary { color: var(--primary-color) !important; }
+.text-secondary { color: var(--secondary-color) !important; }
+.text-tertiary { color: var(--tertiary-color) !important; }
+.text-dark { color: var(--dark-color) !important; }
+.text-light { color: var(--light-color) !important; }
+.text-muted { color: rgba(var(--dark-color-rgb), 0.75) !important; }
+.text-red { color: var(--secondary-color) !important; } /* text-red usa secundario (rojo) */
+
+.bg-primary { background-color: var(--primary-color) !important; }
+.bg-secondary { background-color: var(--secondary-color) !important; }
+.bg-tertiary { background-color: var(--tertiary-color) !important; }
+.bg-dark { background-color: var(--dark-color) !important; }
+.bg-light { background-color: var(--light-color) !important; }
+.bg-white { background-color: var(--white-color) !important; }
+
+
+/* ✨ Navbar Mejorado */
+.navbar {
+  position: fixed; top: 0; width: 100%; z-index: 1000;
+  background-color: var(--white-color);
+  border-bottom: 2px solid var(--light-color);
+  padding: 10px 15px; font-family: 'Arial', sans-serif; box-sizing: border-box;
+  height: 72px; transition: all 0.3s ease; box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
+}
+
+.navbar.scrolled {
+  background-color: rgba(255, 255, 255, 0.95) !important;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+  height: 60px;
+}
+
+.navbar-brand img { transition: height 0.3s ease; }
+.navbar.scrolled .navbar-brand img { height: 40px !important; }
+
+.navbar-toggler { border: none; padding: 0.5rem; }
+.navbar-toggler:focus { box-shadow: none; }
+
+.navbar-toggler-icon {
+  background-image: none; position: relative; width: 24px; height: 2px;
+  background-color: var(--primary-color); /* Icono en primario (azul) */
+  transition: all 0.3s ease;
+}
+.navbar-toggler-icon::before, .navbar-toggler-icon::after {
+  content: ''; position: absolute; width: 24px; height: 2px;
+  background-color: var(--primary-color); /* Líneas en primario (azul) */
+  left: 0; transition: all 0.3s ease;
+}
+.navbar-toggler-icon::before { transform: translateY(-6px); }
+.navbar-toggler-icon::after { transform: translateY(6px); }
+.navbar-toggler[aria-expanded="true"] .navbar-toggler-icon { background-color: transparent; }
+.navbar-toggler[aria-expanded="true"] .navbar-toggler-icon::before { transform: rotate(45deg); }
+.navbar-toggler[aria-expanded="true"] .navbar-toggler-icon::after { transform: rotate(-45deg); }
+
+.nav-link {
+  font-weight: 500; color: var(--dark-color) !important; margin: 0 10px;
+  position: relative;
+}
+.nav-link::after {
+  content: ''; position: absolute; bottom: 0; left: 0; width: 0; height: 2px;
+  background-color: var(--secondary-color); /* Subrayado en secundario (rojo) */
+  transition: width 0.3s ease;
+}
+.nav-link:hover::after, .nav-link.active::after { width: 100%; }
+
+.dropdown-menu { border: none; box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1); }
+.dropdown-item { transition: all 0.3s ease; }
 .dropdown-item:hover {
-  background-color: #a4022c;
-  color: white;
-  border-radius: 5px;
+  background-color: var(--secondary-color); /* Fondo de dropdown hover en secundario (rojo) */
+  color: var(--white-color) !important;
 }
 
-/* Botón Contáctanos */
 .btn-danger {
-  background-color: #a4022c;
-  border: none;
-  font-size: 16px;
-  font-weight: bold;
-  text-transform: uppercase;
+  background-color: var(--secondary-color); /* Botón peligro en secundario (rojo) */
+  border: none; font-weight: 500; transition: all 0.3s ease;
+  padding: 10px 25px; border-radius: 30px;
 }
 
 .btn-danger:hover {
-  background-color: #a4022c;
-}
-
-.navbar-brand img {
-  max-height: 50px;
-}
-
-/* Estilos necesarios */
-
-
-/*animacion como funciona*/
-@keyframes float {
-
-  0%,
-  100% {
-    transform: translateY(0);
-  }
-
-  50% {
-    transform: translateY(-20px);
-  }
-}
-
-/*animacion nuestro proceso*/
-.icon-box {
-  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
-}
-
-@keyframes float {
-
-  0%,
-  100% {
-    transform: translateY(0);
-  }
-
-  50% {
-    transform: translateY(-20px);
-  }
-}
-
-.shadow-lg {
-  box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.2) !important;
-}
-
-/* Botón */
-.btn-danger {
-  background-color: #a4022c;
-  border-color: #a4022c;
-}
-
-.btn-danger:hover {
-  background-color: #a4022c;
-  border-color: #a4022c;
+  background-color: var(--primary-color); /* Botón peligro hover en primario (azul) */
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(var(--secondary-color-rgb), 0.3);
 }
 
 
-footer {
-  background: url("../assets/img/fondo.webp") no-repeat center center/cover;
-  color: #fff;
-  position: relative;
+/* 🎨 Botón Personalizado */
+.btn-custom {
+  display: inline-block; padding: 15px 40px; font-size: 1.1rem; font-weight: 600;
+  color: var(--white-color);
+  background: linear-gradient(45deg, var(--secondary-color), var(--primary-color)); /* Degradado Rojo a Azul */
+  border: none; border-radius: 50px; transition: all 0.4s ease; text-decoration: none;
+  box-shadow: 0 4px 15px rgba(var(--secondary-color-rgb), 0.4);
+  position: relative; overflow: hidden;
 }
 
-
-footer::after {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(0, 0, 0, 0.8);
+.btn-custom:hover {
+  background: linear-gradient(45deg, var(--primary-color), var(--secondary-color)); /* Degradado inverso */
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(var(--primary-color-rgb), 0.6);
+  color: var(--white-color);
 }
 
-/* Asegurarse de que los elementos dentro del footer están por encima de la capa oscura */
-footer .container {
-  position: relative;
-  z-index: 2;
+.btn-custom::before {
+  content: ''; position: absolute; top: 0; left: -100%; width: 100%; height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+  transition: 0.5s;
 }
 
-/* Estilos del Hero */
-.hero {
-  height: 91vh;
+.btn-custom:hover::before { left: 100%; }
+
+
+/* 🌟 Sección de Títulos General */
+.section-title {
+  text-align: center; margin-bottom: 60px;
+}
+
+.section-title h2 {
+  font-size: 2.5rem; font-weight: 700;
+  color: var(--primary-color); /* Título principal en primario (azul) */
+  position: relative; display: inline-block;
+}
+
+.section-title h2::after {
+  content: ''; position: absolute; bottom: -10px; left: 50%; transform: translateX(-50%);
+  width: 80px; height: 4px;
+  background: var(--secondary-color); /* Subrayado en secundario (rojo) */
+  border-radius: 2px;
+}
+
+.separator { width: 70px; height: 4px; background: var(--primary-color); border-radius: 2px; } /* Separador usado en la última CTA */
+
+
+/* ✨ Hero Section Integración */
+.hero-section-integracion {
+  min-height: 90vh;
+  background: url("../assets/img/fondo.webp") no-repeat center center/cover; /* Usando una imagen de fondo potencial para integración */
+  color: var(--white-color);
   display: flex;
   align-items: center;
   justify-content: center;
   text-align: center;
-  background: linear-gradient(to right, #000000e2, #000000c8),
-    url('../assets/img/fondo.webp') center/cover no-repeat;
   position: relative;
-  padding: 20px;
-  color: white;
+  overflow: hidden;
 }
 
-/* Contenido */
-.hero-content {
-  max-width: 850px;
-  z-index: 2;
+.hero-overlay {
+  position: absolute; top: 0; left: 0; width: 100%; height: 100%;
+  background: rgba(0, 0, 0, 0.6); /* Overlay oscuro */
+  z-index: 1;
 }
 
-.hero h1 {
-  font-size: 3rem;
-  font-weight: bold;
+.hero-section-integracion .container { position: relative; z-index: 2; }
+
+.hero-section-integracion .hero-content {
+  max-width: 800px; margin: 0 auto; padding: 20px;
 }
 
-.hero p {
-  font-size: 1.2rem;
-  opacity: 0.9;
-  margin: 20px 0;
+.hero-section-integracion .hero-content h1 {
+  font-size: 3.5rem; font-weight: 700; margin-bottom: 10px;
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3); color: var(--white-color); /* Título blanco */
 }
 
-.hero h1 {
-  font-size: 3.2rem;
-  font-weight: bold;
-  color: #A4022C;
+.hero-section-integracion .hero-content h1 span {
+  color: var(--primary-color); /* Parte del título en primario (azul) */
 }
 
-.hero .btn-custom {
-  background-color: white;
-  color: #273474;
-  font-size: 1.2rem;
-  padding: 12px 30px;
-  border-radius: 8px;
-  transition: all 0.3s ease-in-out;
-  text-decoration: none;
-  display: inline-block;
-  font-weight: bold;
+
+.hero-section-integracion .lead {
+  font-size: 1.3rem; opacity: 0.95; margin-bottom: 25px; color: rgba(var(--white-color-rgb), 0.9); /* Texto blanco semitransparente */
 }
 
-.hero .btn-custom:hover {
-  background-color: #a4022c;
-  color: white;
-  transform: scale(1.05);
+/* Floating shapes background (adaptados a esta página) */
+.hero-section-integracion .floating-shapes {
+  position: absolute; width: 100%; height: 100%; top: 0; left: 0; overflow: hidden;
+  z-index: 0; /* Detrás del overlay */
+  pointer-events: none;
 }
 
-/* Animación flotante */
-@keyframes float {
-
-  0%,
-  100% {
-    transform: translateY(0px);
-  }
-
-  50% {
-    transform: translateY(15px);
-  }
+.hero-section-integracion .floating-shapes .shape {
+  position: absolute; opacity: 0.08; /* Muy baja opacidad */
+  animation: float 15s infinite ease-in-out;
+}
+.hero-section-integracion .floating-shapes .shape-1 {
+  width: 100px; height: 100px; background: var(--primary-color); /* Azul oscuro */
+  border-radius: 30% 70% 70% 30%/30% 30% 70% 70%;
+  top: 20%; left: 10%; animation-delay: 0s;
+}
+.hero-section-integracion .floating-shapes .shape-2 {
+  width: 80px; height: 80px; background: var(--secondary-color); /* Rojo */
+  border-radius: 50%;
+  top: 60%; left: 80%; animation-delay: 2s;
+}
+.hero-section-integracion .floating-shapes .shape-3 {
+  width: 120px; height: 120px; background: var(--primary-color); /* Azul oscuro */
+  border-radius: 20% 80% 20% 80%/80% 20% 80% 20%;
+  top: 30%; left: 70%; animation-delay: 4s;
+}
+.hero-section-integracion .floating-shapes .shape-4 {
+  width: 60px; height: 60px; background: var(--secondary-color); /* Rojo */
+  border-radius: 50%;
+  top: 80%; left: 20%; animation-delay: 6s;
+}
+.hero-section-integracion .floating-shapes .shape-5 {
+  width: 90px; height: 90px; background: var(--primary-color); /* Azul oscuro */
+  border-radius: 40% 60% 60% 40%/40% 40% 60% 60%;
+  top: 70%; left: 50%; animation-delay: 8s;
 }
 
+
+/* Sección de Introducción a Integración de Sistemas */
+#seccion-integracion-sistemas {
+  background: var(--light-color);
+  padding: 80px 0;
+  position: relative;
+  overflow: hidden;
+}
+
+#seccion-integracion-sistemas h2 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: var(--primary-color);
+  margin-bottom: 20px;
+}
+
+#seccion-integracion-sistemas h2 span {
+  color: var(--secondary-color); /* Parte del título en secundario (rojo) */
+}
+
+#seccion-integracion-sistemas p {
+  color: var(--dark-color);
+  font-size: 1.1rem;
+  line-height: 1.7;
+}
+
+
+
+#seccion-integracion-sistemas ul i {
+  color: var(--primary-color); /* Íconos de lista en primario (azul) */
+  margin-right: 10px;
+}
+
+/* Imagen flotante en la sección de introducción */
+.floating-img {
+   max-width: 80%; /* Ajustar tamaño máximo */
+   height: auto;
+   transition: transform 0.5s ease;
+}
+
+.floating-img:hover {
+   transform: scale(1.05) translateY(-5px);
+}
+
+/* Elemento decorativo detrás de la imagen */
+.shape-behind-image {
+  width: 300px; height: 300px;
+  background: rgba(var(--primary-color-rgb), 0.15); /* Primario con opacidad */
+  top: 50%; left: 50%; transform: translate(-50%, -50%);
+  z-index: -1;
+  border-radius: 50%;
+  position: absolute;
+}
+
+/* Elementos decorativos animados */
 .decorative-circle {
   position: absolute;
-  width: 180px;
-  height: 180px;
-  background: rgba(0, 0, 0, 0.05);
-  top: -50px;
-  left: -50px;
   border-radius: 50%;
-  animation: float 6s ease-in-out infinite;
+  opacity: 0.08; /* Muy baja opacidad */
+  animation: float 8s ease-in-out infinite;
+  pointer-events: none;
+  z-index: 0;
 }
 
-/* Tarjetas con efecto hover */
+.decorative-circle.shape-bottom-right {
+  width: 150px; height: 150px; background: var(--secondary-color); /* Rojo */
+  bottom: -30px; right: -40px; animation-delay: 0s;
+}
+
+.decorative-circle.shape-bottom-left {
+  width: 300px; height: 300px; background: var(--primary-color); /* Azul oscuro */
+  bottom: 100px; left: 200px; animation-delay: 2s;
+}
+
+.decorative-circle.shape-top-right {
+   width: 200px; height: 200px; background: var(--tertiary-color); /* Azul/Morado */
+   top: 20%; right: -50px; animation-delay: 0s;
+}
+.decorative-circle.shape-top-left {
+   width: 200px; height: 200px; background: var(--secondary-color); /* Rojo */
+   top: 20%; left: -50px; animation-delay: 0s;
+}
+
+
+/* Sección de Beneficios de la Integración */
+/* La sección general py-5 bg-light ya tiene estilos base */
+
+/* Efecto hover en tarjetas de beneficio */
 .hover-effect {
   transition: transform 0.3s ease, box-shadow 0.3s ease;
+  background: var(--white-color); /* Asegurar fondo blanco */
+  border-radius: 10px; /* Asegurar border-radius */
+  overflow: hidden; /* Ocultar overflow si hay animaciones internas */
 }
 
 .hover-effect:hover {
@@ -236,21 +380,226 @@ footer .container {
 
 /* Iconos circulares */
 .icon-circle {
-  width: 80px;
-  height: 80px;
-  font-size: 2rem;
-  color: white;
+  width: 80px; height: 80px; font-size: 2rem;
+  color: var(--white-color); /* Ícono blanco */
   border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  display: flex; align-items: center; justify-content: center;
   box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2);
   margin: 0 auto 15px;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
+/* Colores de fondo para los icon-circle usando las clases de Bootstrap mapeadas a variables */
+.icon-circle.bg-primary { background-color: var(--primary-color) !important; } /* Azul Oscuro */
+.icon-circle.bg-tertiary { background-color: var(--tertiary-color) !important; } /* Azul/Morado */
+.icon-circle.bg-secondary { background-color: var(--secondary-color) !important; } /* Rojo */
+
+
 /* Efecto de vibración en los iconos al pasar el mouse */
 .hover-effect:hover .icon-circle {
-  transform: scale(1.1) rotate(5deg);
+  transform: scale(1.1); /* Solo escala en hover */
   box-shadow: 0px 10px 25px rgba(0, 0, 0, 0.3);
+  animation: shake-icon 0.8s ease-in-out; /* Animación de vibración */
+}
+
+.feature-item p { color: rgba(var(--dark-color-rgb), 0.8); } /* Color de texto de párrafo más suave */
+
+
+/* Sección de Proyectos de Integración Comunes */
+/* La sección general py-5 bg-dark ya tiene estilos base */
+
+.bg-dark .text-muted { color: rgba(var(--white-color-rgb), 0.75) !important; } /* Texto muted claro en fondo oscuro */
+
+/* Iconos circulares grandes para esta sección */
+.icon-circle-lg {
+  width: 70px; height: 70px; font-size: 2rem;
+  color: var(--white-color); /* Ícono blanco */
+  border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2);
+  margin: 0 auto 15px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Colores de fondo para los icon-circle-lg usando las clases de Bootstrap mapeadas a variables */
+.icon-circle-lg.bg-primary { background-color: var(--primary-color) !important; } /* Azul Oscuro */
+.icon-circle-lg.bg-tertiary { background-color: var(--tertiary-color) !important; } /* Azul/Morado */
+.icon-circle-lg.bg-secondary { background-color: var(--secondary-color) !important; } /* Rojo */
+
+
+/* Sección de Cita Final */
+/* La sección general text-center py-5 bg-white ya tiene estilos base */
+
+.blockquote.text-dark { color: var(--dark-color) !important; } /* Color del blockquote */
+.blockquote.text-dark p { color: var(--dark-color) !important; } /* Color del texto dentro del blockquote */
+
+/* Asegurar que el separador y el texto lead usen los estilos generales */
+/* .section-title, .separator, .lead ya están definidos globalmente */
+
+
+/* ✨ Footer con Imagen de Fondo y Overlay (Adaptado a esta paleta) */
+footer {
+  position: relative;
+  padding: 60px 0 30px;
+  background: url("../assets/img/fondo.webp") no-repeat center center;
+  background-size: cover;
+  color: var(--light-color);
+  font-family: "Poppins", sans-serif;
+  overflow: hidden;
+}
+
+footer::before {
+  content: ""; position: absolute; top: 0; left: 0; width: 100%; height: 100%;
+  background: rgba(0, 0, 0, 0.85);
+  z-index: 1;
+}
+
+footer .container { position: relative; z-index: 2; }
+
+/* Anular clases de Bootstrap si están en el HTML del footer */
+footer.bg-primary { background-color: transparent !important; }
+footer.text-light { color: var(--light-color) !important; }
+
+footer h5 {
+  /* Títulos en el footer - Usamos secundario (rojo) para contraste sobre el overlay oscuro */
+  color: var(--secondary-color) !important;
+  font-weight: 600; margin-bottom: 15px;
+}
+
+footer a {
+  color: var(--light-color);
+  text-decoration: none; transition: color 0.3s ease;
+}
+footer a:hover {
+  color: var(--white-color);
+  text-decoration: underline !important;
+}
+
+footer .social-icons a {
+  display: inline-flex; align-items: center; justify-content: center;
+  width: 35px; height: 35px; background: rgba(255, 255, 255, 0.15);
+  border-radius: 50%; margin-right: 8px; color: var(--light-color);
+  transition: all 0.3s ease;
+}
+footer .social-icons a:hover {
+  background: var(--primary-color); /* Fondo hover en primario (azul) */
+  color: var(--white-color);
+  transform: translateY(-4px);
+}
+
+.map-container {
+  height: 150px; border-radius: 8px; overflow: hidden; margin-bottom: 15px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2); background-color: #ccc;
+}
+
+footer p {
+  font-size: 0.95rem; margin-bottom: 8px; color: var(--light-color);
+}
+
+footer p i {
+  margin-right: 8px;
+  color: var(--secondary-color); /* Ícono en párrafo en secundario (rojo) */
+}
+
+
+/* Responsive adjustments */
+@media (max-width: 1199.98px) {
+   .hero-section-integracion .hero-content h1 { font-size: 3rem; }
+   .hero-section-integracion .lead { font-size: 1.2rem; }
+   #seccion-integracion-sistemas h2 { font-size: 2rem; }
+   #seccion-integracion-sistemas p { font-size: 1rem; }
+   .blockquote.text-dark p { font-size: 1.8rem; }
+   .section-title h2 { font-size: 2.2rem; }
+}
+
+@media (max-width: 991.98px) {
+  body { padding-top: 75px; }
+
+  .hero-section-integracion { min-height: 70vh; }
+   .hero-section-integracion .hero-content h1 { font-size: 2.5rem; }
+   .hero-section-integracion .lead { font-size: 1.1rem; }
+
+
+  #seccion-integracion-sistemas .col-lg-5,
+  #seccion-integracion-sistemas .col-lg-6 {
+      margin-bottom: 30px;
+  }
+  #seccion-integracion-sistemas h2 { text-align: center; }
+  #seccion-integracion-sistemas h2 span { display: block; } /* Rompe la línea en móvil si el título es largo */
+   #seccion-integracion-sistemas ul { text-align: center; }
+  #seccion-integracion-sistemas ul li { display: inline-block; margin: 0 10px 10px 0; } /* Items de lista inline-block */
+   #seccion-integracion-sistemas ul i { margin-right: 5px; }
+
+
+  .blockquote.text-dark p { font-size: 1.6rem; }
+   .section-title h2 { font-size: 2rem; }
+
+  /* Ajustes de footer en tablet */
+  footer .col-md-3 { margin-bottom: 30px; text-align: center !important; }
+  footer .d-flex.justify-content-md-start { justify-content: center !important; }
+
+  /* Oculta floating/decorative shapes en tablet */
+  .floating-shapes, .decorative-circle { display: none; }
+}
+
+@media (max-width: 767.98px) {
+  body { padding-top: 70px; }
+  .navbar { height: 70px; padding-top: 8px; padding-bottom: 8px; }
+  .navbar.scrolled { height: 60px; padding-top: 5px; padding-bottom: 5px; }
+
+  .hero-section-integracion { min-height: 60vh; }
+   .hero-section-integracion .hero-content h1 { font-size: 2rem; line-height: 1.3; }
+   .hero-section-integracion .lead { font-size: 1rem; }
+   .btn-custom { padding: 12px 30px; font-size: 1rem; }
+
+   #seccion-integracion-sistemas h2 { font-size: 1.8rem; }
+   #seccion-integracion-sistemas p { font-size: 1rem; }
+   #seccion-integracion-sistemas ul li { display: block; text-align: left; margin: 5px 0; }
+
+
+  .blockquote.text-dark p { font-size: 1.4rem; }
+  .section-title h2 { font-size: 1.8rem; }
+
+   /* Mobile menu styles (ya estaban en tu código, unificados) */
+  .navbar-collapse {
+      position: fixed; top: 70px; left: 0; width: 100%;
+      background-color: white !important; padding: 20px;
+      box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1); z-index: 999;
+      max-height: calc(100vh - 70px); overflow-y: auto;
+  }
+  .navbar-nav { background-color: white !important; margin-top: 15px; }
+  .navbar-nav .nav-item { padding: 10px 0; border-bottom: 1px solid #f0f0f0; }
+  .navbar-nav .nav-item:last-child { border-bottom: none; }
+  .navbar-nav .nav-link {
+      color: var(--primary-color) !important; font-size: 1.1rem;
+      padding: 10px 15px; display: block;
+  }
+  .navbar-nav .nav-link:hover {
+      color: var(--secondary-color) !important; background-color: #f8f8f8;
+      border-radius: 5px;
+  }
+  .dropdown-menu {
+      background-color: #f9f9f9 !important; border: none; box-shadow: none;
+      margin-left: 15px; width: calc(100% - 30px);
+  }
+  .dropdown-item { padding: 10px 25px; }
+
+
+  /* Ajustes de footer en móvil */
+  footer .col-md-3 { margin-bottom: 20px; }
+
+}
+
+@media (max-width: 575.98px) {
+   .hero-section-integracion .hero-content h1 { font-size: 1.8rem; line-height: 1.2; }
+   .section-title h2 { font-size: 1.8rem; }
+   #seccion-integracion-sistemas p { font-size: 0.9rem; }
+    .blockquote.text-dark p { font-size: 1.2rem; }
+
+   /* Ajuste de tamaño de íconos en tarjetas de beneficio */
+   .icon-circle { width: 60px; height: 60px; font-size: 1.6rem; }
+   .icon-circle-lg { width: 60px; height: 60px; font-size: 1.6rem; }
+
+   /* Ajuste de imagen flotante */
+   .floating-img { max-width: 90%; }
 }

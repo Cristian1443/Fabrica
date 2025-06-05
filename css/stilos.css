@@ -1,637 +1,667 @@
-  /* -----------------------------------------------
-    General Styles
-    ----------------------------------------------- */
-    body {
-      font-family: Arial, sans-serif;
-      padding-top: 72px; /* Ajusta este valor según la altura exacta de tu navbar */
-    }
-
-  header {
-    position: sticky;
-    top: 0px;
-    animation-timeline: scroll();
-    animation-range: 0 200px;
-  }
-
-  .hero-section,
-  .stats-section,
-  footer {
-    background: url("../assets/img/fondo.webp") no-repeat center center/cover;
-    color: #fff;
-    position: relative;
-  }
-
-  .hero-section::after,
-  .stats-section::after,
-  footer::after {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.8);
-  }
-
-  .hero-section {
-    position: relative;
-    height: 89vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    color: white;
-  }
-
-  /* Capa de opacidad */
-  .hero-overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.4);
-    /* Opacidad */
-  }
-
-  /* Contenido sobre la imagen */
-  .hero-content {
-    position: relative;
-    z-index: 2;
-    max-width: 800px;
-    padding: 20px;
-  }
-
-  /* Texto destacado */
-  .highlight {
-    color: #e4022c;
-    font-weight: bold;
-  }
-
-  /* Botón */
-  .hero-button {
-    background-color: #273474;
-    color: white;
-    border-radius: 5px;
-    padding: 10px 20px;
-    text-decoration: none;
-    display: inline-block;
-    margin-top: 15px;
-  }
-
-  .hero-button:hover {
-    background-color: dark#273474;
-  }
-
-  /* Ícono de engranaje */
-  .gear-icon {
-    font-size: 50px;
-    position: absolute;
-    top: -35px;
-    left: 50%;
-    transform: translateX(-50%);
-  }
-
-  .hero-section .container,
-  .stats-section .container,
-  footer .container {
-    position: relative;
-    z-index: 1;
-  }
-
-  #redess {
-    color: #273474;
-  }
-
-  /* -----------------------------------------------
-      Navbar Styles
-      ----------------------------------------------- */
-  /* Navbar */
-  .navbar {
-    position: fixed;
-    top: 0;
-    width: 100%;
-    z-index: 1000;
-    background-color: white;
-    border-bottom: 2px solid #e9ecef;
-    padding: 10px 15px;
-    font-family: 'Arial', sans-serif;
-    box-sizing: border-box;
-    height: 72px;
-  }
-
-  body {
-    font-family: Arial, sans-serif;
-    padding-top: 72px !important; /* Fuerza este valor */
-    margin: 0 !important; /* Elimina márgenes por defecto */
-  }
-
-  /* Espaciado para el Hero */
-  .hero {
-    margin-top: 80px;
-    /* Esto asegura que el contenido del hero no quede oculto */
-  }
-
-  /* Estilo del Logo */
-  .navbar-brand img {
-    margin-right: 10px;
-  }
-
-  /* Links del Navbar */
-  .navbar-nav .nav-link {
-    color: black;
-    font-size: 16px;
-    font-weight: bold;
-
-    margin: 0 10px;
-    transition: color 0.3s ease;
-  }
-
-  .navbar-nav .nav-link:hover {
-    color: #e4022c;
-  }
-
-  /* Dropdown */
-  .dropdown-menu {
-    border-radius: 8px;
-    border: 1px solid #ddd;
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
-  }
-
-  .dropdown-item {
-    color: black;
-    font-size: 14px;
-    padding: 10px 20px;
-  }
-
-  .dropdown-item:hover {
-    background-color: #e4022c;
-    color: white;
-    border-radius: 5px;
-  }
-
-  /* Botón Contáctanos */
-  .btn-danger {
-    background-color: #e4022c;
-    border: none;
-    font-size: 16px;
-    font-weight: bold;
-    text-transform: uppercase;
-  }
-
-  .btn-danger:hover {
-    background-color: #e4022c;
-  }
-
-
-  /* Estilo general para la sección */
-
-
-  .about-us {
-    background-color: #f8f9fa;
-    /* Color de fondo suave */
-    padding: 60px 20px;
-    position: relative;
-    overflow: hidden;
-  }
-
-
-
-  /* Estilo del título */
-  .section-title {
-    color: #e4022c;
-    /* Rojo intenso */
-    font-size: 2.5rem;
-    font-weight: bold;
-    margin-bottom: 20px;
-    border-bottom: 3px solid #e4022c;
-    display: inline-block;
-  }
-
-
-  .image-container::before {
-    content: '';
-    position: absolute;
-    top: -10%;
-    left: -10%;
-    width: 120%;
-    height: 120%;
-    background: rgba(0, 0, 0, 0.05);
-    clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
-    z-index: 0;
-  }
-
-
-
-
-  /* -----------------------------------------------
-      Responsive Styles (Mobile & Tablet)
-      ----------------------------------------------- */
-  @media (max-width: 768px) {
-    .navbar-nav .nav-item {
-      padding: 10px 0;
-    }
-
-    .navbar-toggler {
-      padding: 0.5rem 1rem;
-      font-size: 1.5rem;
-      border: none;
-      background-color: transparent;
-    }
-
-    .navbar-nav {
-      font-size: 1.1rem;
-      text-align: center;
-    }
-
-    .navbar-collapse {
-      padding-top: 10px;
-    }
-
-    .navbar-dark .navbar-nav {
-      background-color: #000000;
-    }
-  }
-
-  /* -----------------------------------------------
-    Servicios Section - Estilos Generales
-    ----------------------------------------------- */
-
-
-
-  .card-img-top {
-    height: 200px;
-    object-fit: contain;
-    border-radius: 8px;
-  }
-
-  /* -----------------------------------------------
-      Responsive Design
-      ----------------------------------------------- */
-  @media (max-width: 768px) {
-    #servicios h2 {
-      font-size: 2rem;
-    }
-
-    .card-body {
-      padding: 15px;
-    }
-
-    .card-title {
-      font-size: 1.2rem;
-    }
-
-    .card-text {
-      font-size: 0.9rem;
-    }
-  }
-
-  /* Estilo General del Navbar */
-
-  /* Animación para las tarjetas del equipo */
-
-  .team-member {
-    background: #fff;
-    border-radius: 15px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-  }
-
-  .team-member:hover {
-    transform: translateY(-8px);
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
-  }
-
-
-  .social-icons a {
-    display: inline-block;
-    color: #273474;
-    margin: 0 5px;
-    font-size: 1.2rem;
-    transition: transform 0.3s ease, color 0.3s ease;
-  }
-
-  .social-icons a:hover {
-    transform: scale(1.2);
-    color: #e4022c;
-  }
-
-  /* Estilos para las flechas del carrusel */
-  .carousel-control-prev,
-  .carousel-control-next {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    width: 50px;
-    /* Tamaño fijo para evitar solapamientos */
-    height: 50px;
-    background-color: rgba(228, 2, 43, 0.375);
-    /* Color de fondo */
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    z-index: 10;
-    /* Asegura que las flechas estén por encima del contenido */
-  }
-
-  .carousel-control-prev {
-    left: -60px;
-    /* Ajustar posición para que no toque las tarjetas */
-  }
-
-  .carousel-control-next {
-    right: -60px;
-  }
-
-
-  .stat-item img {
-    max-width: 60px;
-    /* Limita el ancho máximo */
-    height: auto;
-    /* Mantiene la proporción original */
-    transition: transform 0.3s ease;
-    /* Efecto de transición para el hover */
-  }
-
-  .stat-item img:hover {
-    transform: scale(1.1);
-    /* Amplía la imagen un poco al pasar el ratón */
-  }
-
-  /* Animación en hover para las tarjetas */
-  .service-card {
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-  }
-
-  .service-card:hover {
-    transform: translateY(-8px);
-    box-shadow: 0px 10px 25px rgba(0, 0, 0, 0.15);
-  }
-
-  /* Icono de servicio */
-  .service-icon {
-    width: 100px;
-    height: 100px;
-    margin: -50px auto 10px;
-    background: #f8f9fa;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-  }
-
-  .service-card:hover .service-icon {
-    transform: scale(1.1);
-    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.2);
-  }
-
-  .service-icon img {
-    width: 60px;
-  }
-
-  .stat-item {
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-  }
-
-  .stat-item:hover {
-    transform: translateY(-5px);
-    box-shadow: 0px 10px 25px rgba(0, 0, 0, 0.15);
-  }
-
-  .stat-icon-container {
-    width: 100px;
-    height: 100px;
-    margin: 0 auto 15px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background: #f8f9fa;
-    border-radius: 50%;
-    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.1);
-  }
-
-  .stat-icon {
-    width: 60px;
-    height: auto;
-  }
-
-  .stat-number {
-    font-size: 2.5rem;
-    font-weight: bold;
-    color: #dc3545;
-  }
-
-  /* Estilos generales del portafolio */
-  .portfolio-item {
-    position: relative;
-    overflow: hidden;
-    border-radius: 12px;
-  }
-
-  .portfolio-video {
-    width: 100%;
-    height: auto;
-    transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
-  }
-
-  /* Efecto de hover en los videos */
-  .portfolio-item:hover .portfolio-video {
-    transform: scale(1.05);
-    opacity: 0.9;
-  }
-
-  /* Superposición de descripción */
-  .portfolio-overlay {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    background: rgba(0, 0, 0, 0.7);
-    color: white;
-    text-align: center;
-    padding: 15px;
-    opacity: 0;
-    transition: opacity 0.3s ease-in-out;
-  }
-
-  /* Mostrar la superposición al pasar el mouse */
-  .portfolio-item:hover .portfolio-overlay {
-    opacity: 1;
-  }
-
-
-  /* Hacer que las imágenes mantengan su proporción sin cortar las caras */
-  .team-member img {
-    width: 100%;
-    height: auto;
-    /* Evita cortes */
-    max-height: 300px;
-    /* Mantiene proporción sin deformar */
-    object-fit: contain;
-    /* Muestra toda la imagen sin recortes */
-  }
-
-  /* Ajustes específicos para móviles */
-  @media (max-width: 768px) {
-    .carousel-inner {
-      display: flex;
-      overflow-x: auto;
-      /* Permite desplazamiento táctil */
-      scroll-snap-type: x mandatory;
-      /* Se desliza por secciones */
-    }
-
-    .carousel-item {
-      flex: 0 0 100%;
-      scroll-snap-align: center;
-      /* Centra cada elemento */
-    }
-
-    /* Hacer las flechas del carrusel más pequeñas y sutiles */
-    .carousel-control-prev,
-    .carousel-control-next {
-      width: 30px;
-      height: 30px;
-      background: rgba(0, 0, 0, 0.5);
-      border-radius: 50%;
-    }
-
-    /* Mejor separación entre elementos */
-    .team-member {
-      padding: 15px;
-    }
-
-    h2 {
-      font-size: 1.8rem;
-      /* Reduce el tamaño del título en móvil */
-    }
-  }
-
-  .team-card {
-    background: #fff;
-    border-radius: 15px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    width: 100%;
-    max-width: 280px;
-  }
-
-  .team-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
-  }
-
-  .img-container {
-    width: 170px;
-    height: 220px;
-    margin: 0 auto;
-    overflow: hidden;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  }
-
-  .img-container img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-  }
-
-  .btn-custom {
-    background: #e4022c;
-    color: white;
-    border-radius: 50px;
-    padding: 8px 15px;
-    transition: background 0.3s ease;
-    font-size: 14px;
-  }
-
-  .btn-custom:hover {
-    background: #273474;
-  }
-
-  @media (max-width: 768px) {
-    .team-card {
-      max-width: 320px;
-    }
-  }
-  .testimonials-section {
-    background: url('../assets/img/fondo.webp') center/cover no-repeat;
-    position: relative;
-    z-index: 1;
-  }
-
-  /* Capa oscura semi-transparente */
-  .testimonials-section .overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.5); /* Opacidad ajustable */
-    z-index: 0;
-  }
-
-  .testimonials-section .container {
-    position: relative;
-    z-index: 2;
-  }
-
-  /* ===============================================
-   NAVBAR MOBILE - Menú Hamburguesa corregido
-   =============================================== */
-@media (max-width: 768px) {
-  .navbar-collapse {
-    position: fixed;
-    top: 72px; /* Altura de tu navbar */
-    left: 0;
-    width: 100%;
-    background-color: white !important; /* Fondo blanco */
-    padding: 20px;
-    box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
-    z-index: 999;
-    max-height: calc(100vh - 72px);
-    overflow-y: auto;
-  }
-
-  .navbar-nav {
-    background-color: white !important; /* Doble seguro para el fondo */
-    margin-top: 15px;
-  }
-
-  .navbar-nav .nav-item {
-    padding: 10px 0;
-    border-bottom: 1px solid #f0f0f0;
-  }
-
-  .navbar-nav .nav-item:last-child {
-    border-bottom: none;
-  }
-
-  .navbar-nav .nav-link {
-    color: #273474 !important; /* Color oscuro para mejor contraste */
-    font-size: 1.1rem;
-    padding: 10px 15px;
-    display: block;
-  }
-
-  .navbar-nav .nav-link:hover {
-    color: #e4022c !important;
-    background-color: #f8f8f8;
-    border-radius: 5px;
-  }
-
-  .dropdown-menu {
-    background-color: #f9f9f9 !important;
-    border: none;
-    box-shadow: none;
-    margin-left: 15px;
-    width: calc(100% - 30px);
-  }
-
-  .dropdown-item {
-    padding: 10px 25px;
-  }
+/* Variables de color del primer código (Confirmadas para este archivo) */
+:root {
+  --primary-color: #273474; /* Azul oscuro */
+  --secondary-color: #e4022c; /* Rojo/Vinotinto */
+  --dark-color: #1a1a2e;
+  --light-color: #f8f9fa;
+  --white-color: #ffffff; /* Añadido color blanco */
+
+  /* Definir RGB para rgba si es necesario */
+  --primary-color-rgb: 39, 52, 116; /* RGB para Azul oscuro */
+  --secondary-color-rgb: 228, 2, 44; /* RGB para Rojo/Vinotinto */
+  --dark-color-rgb: 26, 26, 46; /* Añadido RGB para dark-color */
+  --white-color-rgb: 255, 255, 255; /* Añadido RGB para white-color */
 }
 
+
+/* -----------------------------------------------
+General Styles with Floating Shapes
+------------------------------------------------ */
+body {
+  font-family: "Poppins", sans-serif;
+  background-color: var(--light-color);
+  color: var(--dark-color); /* Usar dark-color para texto general */
+  padding-top: 80px !important;
+  margin: 0 !important;
+  overflow-x: hidden;
+}
+
+/* Floating shapes animation */
+.floating-shapes {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  overflow: hidden;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.shape {
+  position: absolute;
+  opacity: 0.15; /* Opacidad ajustada */
+  animation: float 15s infinite ease-in-out;
+}
+
+.shape-1 {
+  width: 100px; height: 100px; background: var(--secondary-color); /* Rojo */
+  border-radius: 30% 70% 70% 30%/30% 30% 70% 70%;
+  top: 20%; left: 10%; animation-delay: 0s;
+}
+
+.shape-2 {
+  width: 80px; height: 80px; background: var(--primary-color); /* Azul oscuro */
+  border-radius: 50%;
+  top: 60%; left: 80%; animation-delay: 2s;
+}
+
+.shape-3 {
+  width: 120px; height: 120px; background: var(--secondary-color); /* Rojo */
+  border-radius: 20% 80% 20% 80%/80% 20% 80% 20%;
+  top: 30%; left: 70%; animation-delay: 4s;
+}
+
+.shape-4 {
+  width: 60px; height: 60px; background: var(--primary-color); /* Azul oscuro */
+  border-radius: 50%;
+  top: 80%; left: 20%; animation-delay: 6s;
+}
+
+.shape-5 {
+  width: 90px; height: 90px; background: var(--secondary-color); /* Rojo */
+  border-radius: 40% 60% 60% 40%/40% 40% 60% 60%;
+  top: 70%; left: 50%; animation-delay: 8s;
+}
+
+@keyframes float {
+  0% { transform: translateY(0) rotate(0deg); }
+  50% { transform: translateY(-20px) rotate(10deg); }
+  100% { transform: translateY(0) rotate(0deg); }
+}
+
+
+/* ✨ Navbar Mejorado */
+.navbar {
+  position: fixed; top: 0; width: 100%; z-index: 1000;
+  background-color: var(--white-color); /* Fondo blanco */
+  border-bottom: 2px solid var(--light-color); /* Borde inferior claro */
+  padding: 10px 15px; font-family: 'Arial', sans-serif; box-sizing: border-box;
+  transition: all 0.3s ease; box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
+}
+
+.navbar.scrolled {
+  background-color: rgba(255, 255, 255, 0.95) !important;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+  padding-top: 5px; padding-bottom: 5px;
+}
+
+.navbar-brand img { transition: height 0.3s ease; }
+.navbar.scrolled .navbar-brand img { height: 40px !important; }
+
+.navbar-toggler { border: none; padding: 0.5rem; }
+.navbar-toggler:focus { box-shadow: none; }
+
+.navbar-toggler-icon {
+  background-image: none; position: relative; width: 24px; height: 2px;
+  background-color: var(--primary-color); /* Icono en color primario (azul) */
+  transition: all 0.3s ease;
+}
+
+.navbar-toggler-icon::before, .navbar-toggler-icon::after {
+  content: ''; position: absolute; width: 24px; height: 2px;
+  background-color: var(--primary-color); /* Líneas en color primario (azul) */
+  left: 0; transition: all 0.3s ease;
+}
+
+.navbar-toggler-icon::before { transform: translateY(-6px); }
+.navbar-toggler-icon::after { transform: translateY(6px); }
+.navbar-toggler[aria-expanded="true"] .navbar-toggler-icon { background-color: transparent; }
+.navbar-toggler[aria-expanded="true"] .navbar-toggler-icon::before { transform: rotate(45deg); }
+.navbar-toggler[aria-expanded="true"] .navbar-toggler-icon::after { transform: rotate(-45deg); }
+
+.nav-link {
+  font-weight: 500; color: var(--dark-color) !important; margin: 0 10px;
+  position: relative;
+}
+.nav-link::after {
+  content: ''; position: absolute; bottom: 0; left: 0; width: 0; height: 2px;
+  background-color: var(--secondary-color); /* Subrayado en color secundario (rojo) */
+  transition: width 0.3s ease;
+}
+.nav-link:hover::after, .nav-link.active::after { width: 100%; }
+
+.dropdown-menu { border: none; box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1); }
+.dropdown-item { transition: all 0.3s ease; }
+.dropdown-item:hover {
+  background-color: var(--secondary-color); /* Fondo de dropdown hover en secundario (rojo) */
+  color: var(--white-color) !important; /* Texto blanco en hover */
+}
+
+.btn-danger {
+  background-color: var(--secondary-color); /* Botón peligro en secundario (rojo) */
+  border: none; font-weight: 500; transition: all 0.3s ease;
+}
+
+.btn-danger:hover {
+  background-color: var(--primary-color); /* Botón peligro hover en primario (azul) */
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(var(--secondary-color-rgb), 0.3); /* Sombra basada en secundario */
+}
+
+
+/* ✨ Hero Section Mejorado */
+.hero-section {
+  background: url('../assets/img/fondo.webp') no-repeat center center;
+  background-size: cover;
+  position: relative;
+  min-height: 90vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: var(--white-color); /* Texto blanco */
+  overflow: hidden;
+}
+
+.hero-overlay {
+  position: absolute; top: 0; left: 0; width: 100%; height: 100%;
+  background: rgba(0, 0, 0, 0.55); z-index: 2;
+}
+
+.hero-content {
+  position: relative; z-index: 3; max-width: 800px; padding: 20px; margin: 0 auto;
+  text-align: center;
+}
+
+.hero-content h1 {
+  font-size: 3.5rem; font-weight: 700; margin-bottom: 20px;
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3); text-align: center;
+}
+
+.highlight {
+  color: var(--secondary-color); /* Destacado en secundario (rojo) */
+  font-weight: bold;
+}
+
+/* 🎨 Botón Personalizado */
+.btn-custom {
+  display: inline-block; padding: 15px 40px; font-size: 1.1rem; font-weight: 600;
+  color: var(--white-color);
+  background: linear-gradient(45deg, var(--secondary-color), var(--primary-color)); /* Degradado de secundario (rojo) a primario (azul) */
+  border: none; border-radius: 50px; transition: all 0.4s ease; text-decoration: none;
+  box-shadow: 0 4px 15px rgba(var(--secondary-color-rgb), 0.4); /* Sombra basada en secundario */
+  position: relative; overflow: hidden;
+}
+
+.btn-custom:hover {
+  background: linear-gradient(45deg, var(--primary-color), var(--secondary-color)); /* Degradado inverso en hover */
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(var(--primary-color-rgb), 0.6); /* Sombra basada en primario */
+  color: var(--white-color);
+}
+
+.btn-custom::before {
+  content: ''; position: absolute; top: 0; left: -100%; width: 100%; height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+  transition: 0.5s;
+}
+
+.btn-custom:hover::before { left: 100%; }
+
+/* Estilos para el icono gear-icon */
+.gear-icon {
+  font-size: 50px;
+  position: absolute;
+  top: -35px;
+  left: 50%;
+  transform: translateX(-50%);
+  animation: spin 8s linear infinite;
+  color: var(--secondary-color); /* Color secundario (rojo) */
+}
+
+@keyframes spin {
+  from { transform: translateX(-50%) rotate(0deg); }
+  to { transform: translateX(-50%) rotate(360deg); }
+}
+
+
+/* 🌟 Sección de Títulos */
+.section-title { text-align: center; margin-bottom: 60px; }
+
+.section-title h2 {
+  font-size: 2.5rem; font-weight: 700;
+  color: var(--primary-color); /* Título principal en primario (azul) */
+  position: relative; display: inline-block;
+}
+
+.section-title h2::after {
+  content: ''; position: absolute; bottom: -10px; left: 50%; transform: translateX(-50%);
+  width: 80px; height: 4px;
+  background: var(--secondary-color); /* Subrayado en secundario (rojo) */
+  border-radius: 2px;
+}
+
+/* Estilos para el Banner de Uniempresarial */
+.uniempresarial-banner {
+  padding: 60px 0;
+  background-color: var(--light-color);
+  text-align: center;
+}
+
+.uniempresarial-logo {
+  max-height: 80px; width: auto; margin-bottom: 20px;
+}
+
+.uniempresarial-banner h2 {
+  color: var(--primary-color); /* Título en primario (azul) */
+  font-weight: 700; margin-bottom: 15px;
+}
+
+.uniempresarial-banner p {
+  max-width: 800px; margin: 0 auto 20px auto; font-size: 1.1rem; line-height: 1.6;
+  color: #555;
+}
+
+.uniempresarial-banner .program-list {
+  padding: 0; margin: 0 auto 20px auto; list-style: none;
+}
+
+.uniempresarial-banner .program-list li {
+  font-size: 1.1rem; font-weight: 600;
+  color: var(--primary-color); /* Items de lista en primario (azul) */
+  margin: 0 10px; display: inline-block;
+}
+
+/* Estilo para el botón secundario (outline) */
+.uniempresarial-banner .btn-outline-primary {
+  border-color: var(--primary-color); /* Borde en primario (azul) */
+  color: var(--primary-color); /* Texto en primario (azul) */
+  font-weight: 600; padding: 15px 40px; font-size: 1.1rem; border-radius: 50px;
+  transition: all 0.3s ease;
+}
+
+.uniempresarial-banner .btn-outline-primary:hover {
+  background-color: var(--primary-color); /* Fondo hover en primario (azul) */
+  color: var(--white-color); /* Texto blanco en hover */
+  box-shadow: 0 4px 15px rgba(var(--primary-color-rgb), 0.3); /* Sombra basada en primario */
+}
+
+
+/* Clases de utilidad */
+.text-red {
+  color: var(--secondary-color); /* text-red ahora usa el color secundario (rojo) */
+}
+.text-primary { color: var(--primary-color) !important; } /* text-primary usa primario (azul) */
+.text-secondary { color: var(--secondary-color) !important; } /* text-secondary usa secundario (rojo) */
+
+
+/* Services section improvements */
+/* Contenedor principal de servicios */
+#servicios {
+  padding: 80px 0;
+  background-color: var(--light-color);
+}
+
+/* Tarjeta de servicio rediseñada */
+.service-card {
+  border: none; border-radius: 12px; overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease; height: 100%;
+  display: flex; flex-direction: column; background: var(--white-color); /* Fondo blanco */
+}
+
+/* Contenedor de imagen ajustado */
+.service-img-container {
+  height: 200px; overflow: hidden; display: flex; align-items: center; justify-content: center;
+  background: var(--light-color); /* Fondo claro */
+}
+
+/* Imagen dentro del contenedor */
+.service-img-container img {
+  width: 100%; height: 100%; object-fit: contain; padding: 20px;
+  transition: transform 0.5s ease;
+}
+
+/* Cuerpo de la tarjeta */
+.service-card .card-body {
+  flex: 1; display: flex; flex-direction: column; padding: 25px;
+}
+
+/* Título de la tarjeta */
+.service-card .card-title {
+  font-size: 1.25rem; margin-bottom: 15px;
+  color: var(--primary-color); /* Título de tarjeta en primario (azul) */
+}
+
+/* Texto de la tarjeta */
+.service-card .card-text {
+  flex-grow: 1; margin-bottom: 20px; line-height: 1.6;
+  color: #555;
+}
+
+/* Botón de la tarjeta */
+.service-card .btn {
+  margin-top: auto; align-self: flex-start;
+  background-color: var(--secondary-color); /* Botón en secundario (rojo) */
+  border: none; padding: 10px 25px; border-radius: 30px;
+  font-weight: 600; transition: all 0.3s ease;
+}
+
+.service-card .btn:hover {
+  background-color: var(--primary-color); /* Botón hover en primario (azul) */
+  transform: translateY(-2px);
+}
+
+/* Efecto hover */
+.service-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+}
+
+.service-card:hover img { transform: scale(1.05); }
+
+
+/* Estilos para el Banner de Portafolio Mendix */
+.mendix-portfolio-banner {
+    padding: 80px 0; /* Ajusta el padding para que sea similar a otras secciones */
+    background-color: var(--light-color); /* Fondo claro */
+    text-align: center;
+}
+
+.mendix-logo {
+    max-height: 100px; /* Ajusta el tamaño del logo según necesidad */
+    width: auto;
+    margin-bottom: 30px;
+}
+
+.mendix-portfolio-banner h2 {
+    color: var(--primary-color); /* Título en primario (azul) */
+    font-weight: 700;
+    margin-bottom: 20px;
+    font-size: 2.5rem; /* Consistente con section-title */
+}
+
+.mendix-portfolio-banner p {
+    max-width: 900px;
+    margin: 0 auto 30px auto;
+    font-size: 1.15rem;
+    line-height: 1.6;
+    color: #555;
+}
+
+
+/* About section improvements */
+.about-us {
+  background-color: var(--white-color); /* Fondo blanco */
+  padding: 80px 0;
+  position: relative;
+}
+
+.image-container { transition: all 0.3s ease; }
+.image-container:hover { transform: scale(1.02); }
+.image-container img { width: 100%; height: auto; transition: all 0.5s ease; }
+.image-container:hover img { transform: scale(1.05); }
+
+.about-us .section-title h2 { text-align: start; }
+.about-us .section-title h2::after { left: 0; transform: translateX(0); }
+
+
+/* Portfolio section improvements */
+#portafolio {
+  padding: 80px 0;
+  background-color: var(--light-color); /* Fondo claro */
+}
+
+.portfolio-item {
+  position: relative; overflow: hidden; border-radius: 15px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease; background: var(--white-color); /* Fondo blanco */
+}
+
+.portfolio-item:hover { box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2); }
+
+.portfolio-video { width: 100%; height: auto; transition: all 0.5s ease; }
+.portfolio-item:hover .portfolio-video { transform: scale(1.05); }
+
+.portfolio-overlay {
+  position: absolute; bottom: 0; left: 0; width: 100%;
+  background: rgba(0, 0, 0, 0.7); color: var(--white-color); /* Texto blanco */
+  padding: 20px; transform: translateY(100%); transition: all 0.3s ease;
+}
+
+.portfolio-item:hover .portfolio-overlay { transform: translateY(0); }
+
+
+/* Team section improvements */
+.team-section { padding: 80px 0; background-color: var(--white-color); /* Fondo blanco */ }
+
+.team-carousel-container { position: relative; padding: 0 40px; }
+
+.team-card {
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); transform: scale(0.95);
+  border: none; border-radius: 15px; overflow: hidden; box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  margin-bottom: 20px; background: var(--light-color); /* Fondo claro */
+}
+
+.team-card:hover { transform: scale(1) translateY(-10px); box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2); }
+
+.img-container {
+  width: 170px; height: 220px; margin: 0 auto; overflow: hidden; border-radius: 15px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1); transition: all 0.3s ease;
+}
+.team-card:hover .img-container { transform: scale(1.05); box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2); }
+.img-container img { width: 100%; height: 100%; object-fit: cover; transition: all 0.5s ease; }
+.team-card:hover .img-container img { transform: scale(1.1); }
+
+/* Botón de portafolio en tarjetas de equipo */
+.team-card .btn-custom {
+  display: inline-block; padding: 8px 20px; font-size: 14px; font-weight: 600;
+  color: var(--white-color);
+  background: linear-gradient(45deg, var(--secondary-color), var(--primary-color)); /* Degradado de secundario (rojo) a primario (azul) */
+  border: none; border-radius: 50px; transition: all 0.4s ease; text-decoration: none;
+  box-shadow: 0 2px 10px rgba(var(--secondary-color-rgb), 0.3); /* Sombra basada en secundario */
+  position: relative; overflow: hidden;
+}
+
+.team-card .btn-custom:hover {
+  background: linear-gradient(45deg, var(--primary-color), var(--secondary-color)); /* Degradado inverso en hover */
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(var(--primary-color-rgb), 0.4); /* Sombra basada en primario */
+  color: var(--white-color);
+}
+
+.team-card .btn-custom::before {
+  content: ''; position: absolute; top: 0; left: -100%; width: 100%; height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+  transition: 0.5s;
+}
+
+.team-card .btn-custom:hover::before { left: 100%; }
+
+
+.carousel-control-prev, .carousel-control-next {
+  width: 40px; height: 40px;
+  background-color: var(--primary-color); /* Fondo en primario (azul) */
+  border-radius: 50%; top: 50%; transform: translateY(-50%); opacity: 1;
+}
+
+.carousel-control-prev { left: -20px; }
+.carousel-control-next { right: -20px; }
+
+.carousel-control-prev:hover, .carousel-control-next:hover {
+  background-color: var(--secondary-color); /* Fondo hover en secundario (rojo) */
+}
+
+.carousel-indicators { position: relative; margin-top: 30px; }
+
+.carousel-indicators button {
+  width: 10px; height: 10px; border-radius: 50%; background-color: #ccc; border: none;
+}
+
+.carousel-indicators .active {
+  background-color: var(--primary-color); /* Indicador activo en primario (azul) */
+}
+
+
+/* ✨ Footer con Imagen de Fondo y Overlay (Adaptado a esta paleta) */
+footer {
+  position: relative;
+  padding: 60px 0 30px;
+  background: url("../assets/img/fondo.webp") no-repeat center center;
+  background-size: cover;
+  color: var(--light-color); /* Texto base claro */
+  font-family: "Poppins", sans-serif;
+  overflow: hidden;
+}
+
+footer::before {
+  content: ""; position: absolute; top: 0; left: 0; width: 100%; height: 100%;
+  background: rgba(0, 0, 0, 0.85); /* Capa oscura */
+  z-index: 1;
+}
+
+footer .container { position: relative; z-index: 2; }
+
+/* Anular clases de Bootstrap si están en el HTML del footer */
+footer.bg-primary { background-color: transparent !important; }
+footer.text-light { color: var(--light-color) !important; }
+
+
+footer h5 {
+  color: var(--secondary-color) !important; /* Títulos en secundario (rojo) para contraste */
+  font-weight: 600; margin-bottom: 15px;
+}
+
+footer a {
+  color: var(--light-color); /* Links en color claro */
+  text-decoration: none; transition: color 0.3s ease;
+}
+footer a:hover {
+  color: var(--white-color); /* Links hover en blanco */
+  text-decoration: underline !important;
+}
+
+footer .social-icons a {
+  display: inline-flex; align-items: center; justify-content: center;
+  width: 35px; height: 35px; background: rgba(255, 255, 255, 0.15);
+  border-radius: 50%; margin-right: 8px; color: var(--light-color);
+  transition: all 0.3s ease;
+}
+footer .social-icons a:hover {
+  background: var(--primary-color); /* Fondo hover en primario (azul) */
+  color: var(--white-color); /* Ícono hover en blanco */
+  transform: translateY(-4px);
+}
+
+.map-container {
+  height: 150px; border-radius: 8px; overflow: hidden; margin-bottom: 15px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2); background-color: #ccc;
+}
+
+footer p {
+  font-size: 0.95rem; margin-bottom: 8px; color: var(--light-color);
+}
+
+footer p i {
+  margin-right: 8px; color: var(--secondary-color); /* Ícono en párrafo en secundario (rojo) */
+}
+
+
+/* Responsive adjustments */
+@media (max-width: 1199.98px) {
+  .hero-content h1 { font-size: 3rem; }
+}
+
+@media (max-width: 991.98px) {
+  .hero-section { height: auto; padding: 100px 0; }
+  .hero-content h1 { font-size: 2.5rem; }
+  .service-card { margin-bottom: 30px; }
+  .team-carousel-container { padding: 0; }
+  .carousel-control-prev, .carousel-control-next { width: 30px; height: 30px; }
+  .carousel-control-prev { left: 5px; }
+  .carousel-control-next { right: 5px; }
+  .team-card { max-width: 85%; margin: 0 auto 30px; }
+
+  .about-us .section-title h2 { text-align: center; }
+  .about-us .section-title h2::after { left: 50%; transform: translateX(-50%); }
+
+  /* Responsive para el Banner de Uniempresarial */
+  .uniempresarial-logo { max-height: 60px; }
+  .uniempresarial-banner h2 { font-size: 1.8rem; }
+  .uniempresarial-banner p { font-size: 1rem; }
+  .uniempresarial-banner .program-list li { font-size: 1rem; }
+
+  /* Responsive adjustments for Mendix Banner */
+  .mendix-logo { max-height: 80px; }
+  .mendix-portfolio-banner h2 { font-size: 2rem; }
+  .mendix-portfolio-banner p { font-size: 1.05rem; }
+
+  /* Ajustes de footer en tablet */
+  footer .col-md-3 { margin-bottom: 30px; text-align: center !important; }
+  footer .d-flex.justify-content-md-start { justify-content: center !important; }
+
+  /* Oculta floating shapes en tablet */
+  .floating-shapes { display: none; }
+}
+
+@media (max-width: 767.98px) {
+  body { padding-top: 75px; } /* Ajuste para la altura de la navbar en móvil */
+  .navbar { padding-top: 8px; padding-bottom: 8px; }
+  .navbar.scrolled { padding-top: 5px; padding-bottom: 5px; }
+  .navbar-brand img { height: 45px !important; max-width: none !important; }
+  .navbar.scrolled .navbar-brand img { height: 40px !important; }
+
+  .hero-content h1 { font-size: 1.8rem; line-height: 1.3; }
+  .btn-custom { padding: 12px 30px; font-size: 1rem; }
+
+  /* Mobile menu styles */
+  .navbar-collapse {
+    position: fixed; top: 75px; left: 0; width: 100%;
+    background-color: white !important; padding: 20px;
+    box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1); z-index: 999;
+    max-height: calc(100vh - 75px); overflow-y: auto;
+  }
+
+  .navbar-nav { background-color: white !important; margin-top: 15px; }
+  .navbar-nav .nav-item { padding: 10px 0; border-bottom: 1px solid #f0f0f0; }
+  .navbar-nav .nav-item:last-child { border-bottom: none; }
+  .navbar-nav .nav-link {
+    color: var(--primary-color) !important; font-size: 1.1rem;
+    padding: 10px 15px; display: block;
+  }
+  .navbar-nav .nav-link:hover {
+    color: var(--secondary-color) !important; background-color: #f8f8f8;
+    border-radius: 5px;
+  }
+
+  .dropdown-menu {
+    background-color: #f9f9f9 !important; border: none; box-shadow: none;
+    margin-left: 15px; width: calc(100% - 30px);
+  }
+  .dropdown-item { padding: 10px 25px; }
+
+  .section-title h2 { font-size: 2rem; }
+
+  /* Responsive adjustments for Mendix Banner */
+  .mendix-logo { max-height: 70px; }
+  .mendix-portfolio-banner h2 { font-size: 1.8rem; }
+  .mendix-portfolio-banner p { font-size: 1rem; }
+
+  /* Ajustes de footer en móvil */
+  footer .col-md-3 { margin-bottom: 20px; }
+
+  /* Oculta floating shapes en móvil */
+  .floating-shapes { display: none; }
+}
+
+@media (max-width: 575.98px) {
+  .hero-content h1 { font-size: 1.8rem; line-height: 1.3; }
+  .section-title h2 { font-size: 1.8rem; }
+  .portfolio-overlay { padding: 15px; }
+
+  /* Responsive adjustments for Mendix Banner */
+  .mendix-logo { max-height: 60px; }
+  .mendix-portfolio-banner h2 { font-size: 1.6rem; }
+  .mendix-portfolio-banner p { font-size: 0.95rem; }
+}
